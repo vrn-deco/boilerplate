@@ -1,0 +1,12 @@
+/**
+ * @Author       Shijie.Li
+ * @Desc         global_css
+ */
+@function val($val) {
+  @return $val*720rem/(750*12);
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}

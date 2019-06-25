@@ -1,0 +1,4 @@
+// 功能函数
+@function val($val) {
+  @return ($val / 2) + px;
+}

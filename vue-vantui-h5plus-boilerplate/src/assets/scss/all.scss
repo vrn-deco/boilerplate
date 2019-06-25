@@ -1,0 +1,16 @@
+/*
+ * @Author: Cphayim
+ * @Description: 全局样式文件，已自动导入
+ */
+
+/*
+规则：屏幕宽度 * 0.08 / 3
+例如 iPhone 6 下，宽度为 375px
+375 * 0.08 / 3 === 10
+则基准 font-size 为 10px
+请勿修改计算规则
+*/
+
+html {
+  font-size: calc(8vw / 3 * 2);
+}
