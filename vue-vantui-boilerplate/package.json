@@ -1,12 +1,12 @@
 {
-  "name": "vue-boilerplate-mobile",
-  "version": "0.1.0",
+  "name": "vue-vantui-boilerplate",
+  "version": "1.0.4",
   "private": true,
   "scripts": {
+    "dev": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "npm run serve",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {

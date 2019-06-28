@@ -1,12 +1,12 @@
 {
-  "name": "vue-boilerplate-mobile",
-  "version": "0.1.0",
+  "name": "vue-vantui-h5plus-boilerplate",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
+    "dev": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --no-clean",
     "lint": "vue-cli-service lint",
-    "dev": "npm run serve",
     "test:unit": "vue-cli-service test:unit",
     "watch": "vue-cli-service build --watch"
   },
