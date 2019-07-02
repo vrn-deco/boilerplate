@@ -1,7 +1,7 @@
 /*
  * @Author: Aozhi
  * @Date: 2019-05-12 22:48:53
- * @LastEditTime: 2019-05-31 13:15:54
+ * @LastEditTime: 2019-07-02 08:31:30
  * @Description:
  */
 
@@ -10,13 +10,12 @@ import base64 from 'base-64'
 
 import Auth from '../utils/auth'
 import router from '@/router'
+import { Toast } from '@/utils'
 // import{ codeMessage } from'@/utils/code-message'
 
 const isDev = process.env.NODE_ENV === 'development'
 // 从暴露的全局配置中获取当前环境对应的配置对象
 const globalConfig = NT_CONFIG[isDev ? 'DEV' : 'PROD']
-
-let layerLoading // 弹出窗口对象
 
 const DEFAULT_OPTIONS = {
   timeout: 10000,
@@ -39,12 +38,12 @@ Axios.interceptors.request.use(
       config.headers.Authorization = base64.encode(`${random}:${token}`)
     }
     // 发送请求之前做一些处理
-    layerLoading = layer.load(1, { skin: 'layer-load' })
+    Toast.loading({ message: '加载中...' })
     return config
   },
   error => {
     // 当请求异常时做一些处理
-    layer.close(layerLoading)
+    Toast.clear()
     const errorInfo = error.data.error ? error.data.error.message : error.data
     return Promise.reject(errorInfo)
   }
@@ -56,7 +55,7 @@ Axios.interceptors.request.use(
 Axios.interceptors.response.use(
   response => {
     // 返回响应时做一些统一处理
-    layer.close(layerLoading)
+    Toast.clear()
     if(response.data.status === 10002) {
       // netintech.msg(codeMessages['10002'] + ':' + response.data.desc)
     } else if(response.data.status === 10004) {
@@ -68,7 +67,7 @@ Axios.interceptors.response.use(
   },
   error => {
     console.error(error)
-    layer.close(layerLoading)
+    Toast.clear()
   }
 )
 
