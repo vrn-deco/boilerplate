@@ -1,0 +1,17 @@
+- base: Vue
+  boilerplates:
+    - title: ElementUI
+      type: PC Web
+      name: vue-elementui-boilerplate
+      version: 1.1.1
+      tgz: vue-elementui-boilerplate.tgz
+    - title: VantUI
+      type: Mobile Web
+      name: vue-vantui-boilerplate
+      version: 1.0.4
+      tgz: vue-vantui-boilerplate.tgz
+    - title: VantUI + H5Plus
+      type: Hybrid App
+      name: vue-vantui-h5plus-boilerplate
+      version: 1.0.1
+      tgz: vue-vantui-h5plus-boilerplate.tgz

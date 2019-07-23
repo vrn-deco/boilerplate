@@ -1,0 +1,31 @@
+{
+  "name": "@naintech/boilerplate",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "release": "cy-node --entry scripts/release.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Cphayim/bolierplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Cphayim/bolierplate/issues"
+  },
+  "homepage": "https://gitlab.com/Cphayim/bolierplate#readme",
+  "dependencies": {
+    "@naughty/cy-node": "^1.0.6",
+    "compressing": "^1.4.0",
+    "dotenv": "^8.0.0",
+    "shelljs": "^0.8.3",
+    "yaml": "^1.6.0",
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.10"
+  }
+}

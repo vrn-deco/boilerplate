@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-23 09:14:55
- * @LastEditTime: 2019-06-28 16:04:04
+ * @LastEditTime: 2019-07-02 10:20:17
  * @Description: 入口文件
  */
 
@@ -27,5 +27,8 @@ registerEventBus()
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  plusReady() {
+    console.log(`网络类型: ${this.$plus.Network.getCurrentType()}`)
+  }
 }).$mount('#app')

@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-25 11:25:22
- * @LastEditTime: 2019-06-25 15:05:21
+ * @LastEditTime: 2019-07-02 10:00:54
  * @Description: 事件
  */
 
@@ -15,12 +15,4 @@ export function plusReady(callack) {
   } else {
     document.addEventListener('plusready', callack, false)
   }
-}
-
-/**
- * 设备网络状态变化事件
- * @param netchangeCallback
- */
-export function listenNetwork(netchangeCallback) {
-  document.addEventListener('netchange', netchangeCallback, false)
 }

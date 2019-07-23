@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-24 11:12:13
- * @LastEditTime: 2019-06-04 11:00:47
+ * @LastEditTime: 2019-07-16 19:32:44
  * @Description: 轻提示
  */
 
@@ -10,7 +10,6 @@ import { Toast as _Toast } from 'vant'
 // _Toast.allowMultiple()
 
 export default class Toast {
-  #instance = _Toast
   /**
    * 打开 loading
    * @param {Object} options
@@ -31,7 +30,7 @@ export default class Toast {
     forbidClick = true,
     duration = 0,
   } = {}) {
-    this.#instance.loading({ message, position, mask, forbidClick, duration })
+    _Toast.loading({ message, position, mask, forbidClick, duration })
   }
 
   /**
@@ -53,7 +52,7 @@ export default class Toast {
     forbidClick = true,
     duration = 2500,
   } = {}) {
-    this.#instance.success({ message, position, mask, forbidClick, duration })
+    _Toast.success({ message, position, mask, forbidClick, duration })
   }
 
   /**
@@ -75,7 +74,7 @@ export default class Toast {
     forbidClick = true,
     duration = 2500,
   } = {}) {
-    this.#instance.fail({ message, position, mask, forbidClick, duration })
+    _Toast.fail({ message, position, mask, forbidClick, duration })
   }
 
   /**
@@ -85,6 +84,6 @@ export default class Toast {
    * Toast.clear()
    */
   static clear() {
-    this.#instance.clear()
+    _Toast.clear()
   }
 }
