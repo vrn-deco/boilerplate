@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "release": "cy-node --entry scripts/release.js"
+    "release": "cy-node --entry scripts/release.js",
+    "deploy": "cy-node --entry scripts/deploy.js"
   },
   "repository": {
     "type": "git",
