@@ -8,7 +8,7 @@ export default [
     component: AxiosTest
   },
   {
-    path: '/form/:id',
+    path: '/form',
     name: 'formtest',
     component: FormTest
   }

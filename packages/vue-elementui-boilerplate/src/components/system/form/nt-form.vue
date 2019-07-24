@@ -28,18 +28,18 @@
 </template>
 
 <script>
-import { flatStructData } from "./utils.js";
-import NTWidget from "@/components/system/form/nt-widget.vue";
+import { flatStructData } from './utils.js'
+import NTWidget from '@/components/system/form/nt-widget.vue'
 
 export default {
   // 组件名
-  name: "NTForm",
+  name: 'NTForm',
   components: {
     NTWidget
   },
   model: {
-    prop: "structData",
-    event: "change"
+    prop: 'structData',
+    event: 'change'
   },
   // 组件属性
   props: {
@@ -56,7 +56,7 @@ export default {
        * @property {Set<string>}
        */
       invalidKeySet: new Set()
-    };
+    }
   },
   watch: {},
   methods: {
@@ -73,8 +73,8 @@ export default {
         rowIndex,
         colIndex,
         widgetData
-      });
-      this.$emit("change", newStructData);
+      })
+      this.$emit('change', newStructData)
     },
     /**
      * 处理合法性
@@ -83,7 +83,7 @@ export default {
      * @param {boolean} params.isValid 是否有效
      */
     handleValidity({ key, isValid }) {
-      isValid ? this.invalidKeySet.delete(key) : this.invalidKeySet.add(key);
+      isValid ? this.invalidKeySet.delete(key) : this.invalidKeySet.add(key)
     },
     /**
      * 合并 StructData，插入新的 widgetData
@@ -95,15 +95,13 @@ export default {
      * @return {Array<Array<WidgetData>>}
      */
     _combineStructData({ rowIndex, colIndex, widgetData }) {
-      const newStructData = this.structData.map(rowData => [...rowData]);
+      const newStructData = this.structData.map(rowData => [...rowData])
       try {
-        newStructData[rowIndex][colIndex] = widgetData;
+        newStructData[rowIndex][colIndex] = widgetData
       } catch (error) {
-        console.warn(
-          `NTForm: 接收到了无效的索引 (row -> ${rowIndex}, col -> ${colIndex})`
-        );
+        console.warn(`NTForm: 接收到了无效的索引 (row -> ${rowIndex}, col -> ${colIndex})`)
       }
-      return newStructData;
+      return newStructData
     },
     /**
      * 获取表单键值对数据
@@ -111,7 +109,7 @@ export default {
      */
     getMap() {
       // 如果存在未通过验证的字段，则返回 null
-      return this.invalidKeySet.size ? null : this._scanfDataByStructData();
+      return this.invalidKeySet.size ? null : this._scanfDataByStructData()
     },
 
     /**
@@ -120,7 +118,7 @@ export default {
      * @return {any}
      */
     _peel(data) {
-      return typeof data === "object" ? JSON.parse(JSON.stringify(data)) : data;
+      return typeof data === 'object' ? JSON.parse(JSON.stringify(data)) : data
     },
     /**
      * 扫描 structData 返回 dataMap 键值对
@@ -128,17 +126,17 @@ export default {
      * @return {{[key:string]: any}}
      */
     _scanfDataByStructData() {
-      const flat = flatStructData(this.structData);
+      const flat = flatStructData(this.structData)
       return flat.reduce(
         (dataMap, widgetData) => ({
           ...dataMap,
           [widgetData.key]: this._peel(widgetData.data.value)
         }),
         {}
-      );
+      )
     }
   }
-};
+}
 </script>
 
 <style lang="scss">

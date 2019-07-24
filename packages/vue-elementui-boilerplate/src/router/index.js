@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/views/web/home/home.vue'
-// import demoRoutes from '@/views/demo/routes'
+import demoRoutes from '@/views/demo/routes'
 
 Vue.use(Router)
 
@@ -41,8 +41,8 @@ const router = new Router({
       path: '/home',
       name: 'home',
       component: Home
-    }
-    // ...demoRoutes,
+    },
+    ...demoRoutes
   ]
 })
 
