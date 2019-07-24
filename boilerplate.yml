@@ -3,7 +3,7 @@
     - title: ElementUI
       type: PC Web
       name: vue-elementui-boilerplate
-      version: 1.1.1
+      version: 1.1.2
       tgz: vue-elementui-boilerplate.tgz
     - title: VantUI
       type: Mobile Web
