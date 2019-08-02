@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2019-07-23 21:32:28
+ * @LastEditTime: 2019-08-02 13:43:31
  * @Description: 一键发布脚本
  */
 import { join } from 'path'
@@ -41,7 +41,7 @@ const result = sh.ls(PKG_DIR).every(pkgName => {
 
       cd ${PKG_DIR}
       # 创建 tgz 压缩包
-      tar --exclude=node_modules -P -cvzf ${output} ${pkgName}
+      tar --exclude=node_modules --exclude=.DS_Store -P -cvzf ${output} ${pkgName}
     `,
     { silent: true, shell: '/bin/zsh' }
   )
