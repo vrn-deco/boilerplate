@@ -1,0 +1,25 @@
+{
+  "name": "server-express-boilerplate",
+  "version": "0.0.1",
+  "description": "组件库后端api",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "benaozhi",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "base-64": "^0.1.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "js-md5": "^0.7.3",
+    "moment": "^2.24.0",
+    "multer": "^1.4.1",
+    "mysql": "^2.16.0",
+    "node-uuid": "^1.4.8",
+    "xml2js": "^0.4.19"
+  }
+}

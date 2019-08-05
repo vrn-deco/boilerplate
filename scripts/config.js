@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-07-01 01:00:20
- * @LastEditTime: 2019-07-23 15:43:26
+ * @LastEditTime: 2019-08-05 13:29:32
  * @Description: 配置文件
  */
 import { join } from 'path'
@@ -47,6 +47,29 @@ export const releaseInfoTpl = [
         title: 'VantUI + H5Plus',
         type: 'Hybrid App',
         name: 'vue-vantui-h5plus-boilerplate',
+        version: '',
+        tgz: ''
+      }
+    ]
+  },
+  // {
+  //   base: 'React',
+  //   boilerplates: []
+  // },
+  {
+    base: 'Server',
+    boilerplates: [
+      {
+        title: 'Express + MySQL',
+        type: 'REST API',
+        name: 'server-express-boilerplate',
+        version: '',
+        tgz: ''
+      },
+      {
+        title: 'Nest + TypeORM',
+        type: 'REST API / GraphyQL / MicroService',
+        name: 'server-nest-boilerplate',
         version: '',
         tgz: ''
       }

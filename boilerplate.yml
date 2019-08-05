@@ -15,3 +15,15 @@
       name: vue-vantui-h5plus-boilerplate
       version: 1.0.1
       tgz: vue-vantui-h5plus-boilerplate.tgz
+- base: Server
+  boilerplates:
+    - title: Express + MySQL
+      type: REST API
+      name: server-express-boilerplate
+      version: 0.0.1
+      tgz: server-express-boilerplate.tgz
+    - title: Nest + TypeORM
+      type: REST API / GraphyQL / MicroService
+      name: server-nest-boilerplate
+      version: 0.0.1
+      tgz: server-nest-boilerplate.tgz
