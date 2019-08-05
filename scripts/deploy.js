@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 09:21:54
- * @LastEditTime: 2019-07-23 21:22:58
+ * @LastEditTime: 2019-08-05 15:16:00
  * @Description: 一键部署脚本
  */
 import sh from 'shelljs'
@@ -35,7 +35,7 @@ const { code, stderr } = sh.exec(
     "
 
     # 将 release 目录下的文件递归提交到服务端指定目录
-    scp -i ${PRIVATE_KEY} -r ${RELEASE_DIR} ${YML_FILE} ${SERVER_SIDE_USER}@${SERVER_SIDE_IP}:${SERVER_SIDE_RELEASE_DIR}
+    scp -i ${PRIVATE_KEY} ${RELEASE_DIR}/* ${SERVER_SIDE_USER}@${SERVER_SIDE_IP}:${SERVER_SIDE_RELEASE_DIR}
     # 上传 nginx 配置
     scp -i ${PRIVATE_KEY} ${NGINX_CONF} ${SERVER_SIDE_USER}@${SERVER_SIDE_IP}:${SERVER_SIDE_NGINX_CONF_DIR}
 

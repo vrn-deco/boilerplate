@@ -1,0 +1,34 @@
+# - title: Vue # 一级列表名称
+#   boilerplates: # 样板数组
+#     - title: boilerplate_title # 标题，显示在交互界面中中
+#       key: vue-elementui-boilerplate # 真实名称
+#       tags: # 标签数组
+#         - PC Web
+
+- title: Vue
+  boilerplates:
+    - title: ElementUI
+      key: vue-elementui-boilerplate
+      tags:
+        - PC Web
+    - title: VantUI
+      key: vue-vantui-boilerplate
+      tags:
+        - Mobile Web
+    - title: VantUI + H5Plus
+      key: vue-vantui-h5plus-boilerplate
+      tags:
+        - Hybrid App
+
+- title: Node Server
+  boilerplates:
+    - title: Express + MySQL
+      key: server-express-boilerplate
+      tags:
+        - REST API
+    - title: Nest + TypeORM
+      key: server-nest-boilerplate
+      tags:
+        - REST API
+        - GraphyQL
+        - MicroService

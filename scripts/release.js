@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2019-08-02 13:43:31
+ * @LastEditTime: 2019-08-05 14:06:05
  * @Description: 一键发布脚本
  */
 import { join } from 'path'
@@ -23,6 +23,9 @@ sh.mkdir('-p', RELEASE_DIR)
 // 清空目录 -> rm -f "$RELEASE_DIR/*"
 sh.rm('-f', join(RELEASE_DIR, '*'))
 
+/**
+ * @var {[key:string]: {version: string, tgz: string}}
+ */
 const map = {}
 
 // 生成发布文件 tgz
@@ -31,9 +34,9 @@ Logger.info('开始创建发布文件包...')
 const result = sh.ls(PKG_DIR).every(pkgName => {
   // 找到对应 boilerplate 下的 package.json 读取版本号
   const version = require(join(PKG_DIR, pkgName, 'package.json')).version
-  const tgzName = `${pkgName}${TGZ_EXT}`
-  const output = join(RELEASE_DIR, tgzName)
-  Logger.info(`创建 tgz 文件 ${tgzName}...`)
+  const tgz = `${pkgName}${TGZ_EXT}`
+  const output = join(RELEASE_DIR, tgz)
+  Logger.info(`创建 tgz 文件 ${tgz}...`)
 
   const { code, stderr } = sh.exec(
     `
@@ -46,11 +49,11 @@ const result = sh.ls(PKG_DIR).every(pkgName => {
     { silent: true, shell: '/bin/zsh' }
   )
   if (code) {
-    Logger.error(`${tgzName}打包失败: ${stderr}`)
+    Logger.error(`${tgz}打包失败: ${stderr}`)
     return false
   }
   Logger.success(`${output}`)
-  map[pkgName] = { version, tgz: tgzName }
+  map[pkgName] = { version, tgz }
   return true
 })
 
@@ -64,9 +67,10 @@ if (result) {
 function genReleaseYaml() {
   releaseInfoTpl.forEach(base => {
     base.boilerplates.forEach(boilerplate => {
-      if (map[boilerplate.name]) {
-        boilerplate.version = map[boilerplate.name].version
-        boilerplate.tgz = map[boilerplate.name].tgz
+      const item = map[boilerplate.key]
+      if (item) {
+        boilerplate.version = item.version
+        boilerplate.tgz = item.tgz
       }
     })
   })

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "release": "cy-node --entry scripts/release.js",
-    "deploy": "cy-node --entry scripts/deploy.js"
+    "deploy": "cy-node --entry scripts/deploy.js",
+    "test": "cy-node --entry scripts/test.js"
   },
   "repository": {
     "type": "git",
