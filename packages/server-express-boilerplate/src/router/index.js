@@ -1,8 +1,8 @@
-const login = require('../apiComponents/login')
-const system = require('../apiComponents/system')
+const apiRouter = require('../api')
 
 module.exports = (app) => {
   // 后端api路由
-  app.use('/login', login)
-  app.use('/system',system)
+  Object.keys(apiRouter).forEach((item) => {
+    app.use('/' + item, apiRouter[item])
+  })
 }

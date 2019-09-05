@@ -4,13 +4,17 @@
  */
 
 /*
+计算 rem 基准值
 规则：屏幕宽度 * 0.08 / 3
 例如 iPhone 6 下，宽度为 375px
-375 * 0.08 / 3 === 10
-则基准 font-size 为 10px
-请勿修改计算规则
+375 * 0.08 / 3 * 2 === 20
+则基准 font-size 为 20px
+没有把握的情况下，请勿随便修改计算规则
 */
-
 html {
   font-size: calc(8vw / 3 * 2);
+}
+
+body {
+  background-color: #f2f2f2;
 }

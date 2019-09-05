@@ -1,0 +1,40 @@
+/*
+ * @Author: Cphayim
+ * @Description: VSCode 关联配置（勿修改）
+ * @Date: 2019-05-12 17:48:50
+ * @LastEditTime: 2019-05-19 22:45:00
+ */
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  },
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.vue",
+    "tests/**/*.js",
+    "tests/**/*.jsx",
+    "tests/unit/.eslintrc.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

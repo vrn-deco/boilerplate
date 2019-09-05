@@ -1,11 +1,10 @@
-/**
- *  title
- *
- *  useage
- *
- *  Author: aozhi
- *  CreatDate: 2019-04-03
+/*
+ * @Author: benaozhi
+ * @Date: 2019-06-14 18:19:01
+ * @LastEditTime: 2019-08-10 18:18:23
+ * @Description:
  */
+
 module.exports = {
     10001: "操作成功",
     10002: "数据错误",

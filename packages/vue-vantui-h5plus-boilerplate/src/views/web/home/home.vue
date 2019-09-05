@@ -1,48 +1,35 @@
 <template>
   <div class="home">
-    123
-    <van-button type="default">默认按钮</van-button>
+    <HeaderBar title="首页"/>
+    <div class="content">
+      内容区
+    </div>
+    <FooterTab :items="tabItems" tabActive.sync="tabActive" />
   </div>
 </template>
 
 <script>
+import HeaderBar from '@/components/public/header-bar'
+import FooterTab from '@/components/public/footer-tab'
 export default {
   name: 'home',
-  components: {},
-  mounted() {
-    // this.printNetworkType()
-    this.printScreenInfo()
-    this.record()
-  },
-  methods: {
-    // 获取网络信息
-    printNetworkType() {
-      const networkType = this.$plus.Network.getCurrentType()
-      console.log(`网络类型: ${networkType}`)
-    },
-    // 获取屏幕信息
-    printScreenInfo() {
-      const { resolutionWidth, resolutionHeight } = this.$plus.Screen.getInfo()
-      console.log(`屏幕宽度: ${resolutionWidth}`)
-      console.log(`屏幕高度: ${resolutionHeight}`)
-    },
-    record() {
-      const r = new this.$plus.Audio.Recorder()
-      r.start()
-        .then(res => console.log(res))
-        .catch(err => console.error(err))
-      setTimeout(() => {
-        r.stop()
-      }, 2000)
+  components: { HeaderBar, FooterTab },
+  data() {
+    return {
+      tabActive: 0,
+      tabItems: [{ title: '首页', icon: 'home-o' }, { title: '我的', icon: 'user-o' }]
     }
-  }
+  },
+  mounted() {},
+  methods: {}
 }
 </script>
 
 <style lang="scss" scoped>
+// 所有单位按照设计稿（750宽度）的尺寸测量填写，不要加单位
+// 比如 750 设计稿上测量宽度为 100px
+// width: val(100)
 .home {
-  // 按照设计稿（750宽度）的尺寸测量填写，不要加单位
-  // 例如此处在 iphone6 上显示为 16px
   font-size: val(32);
 }
 </style>

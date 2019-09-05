@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-25 11:12:05
- * @LastEditTime: 2019-07-02 10:21:37
+ * @LastEditTime: 2019-08-09 15:59:38
  * @Description: 平台信息
  */
 
@@ -67,6 +67,13 @@ export function isPlusRuntime() {
   return platform.plus
 }
 
+/**
+ * 环境校验装饰器
+ * @export
+ * @param {*} t
+ * @param {*} p
+ * @param {*} d
+ */
 export function RuntimeValid(t, p, d) {
   const fn = d.value
   d.value = function(...args) {
