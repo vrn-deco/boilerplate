@@ -29,6 +29,13 @@
       tags:
         - Mobile Web
 
+- title: React
+  boilerplates:
+    - title: <typescript> Redux + AntDesign
+      key: react-redux-antd-boilerplate
+      tags:
+        - PC Web
+
 # 后端服务样板
 - title: Node Server
   boilerplates:

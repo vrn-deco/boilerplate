@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2019-08-05 14:06:05
+ * @LastEditTime: 2019-09-18 16:19:04
  * @Description: 一键发布脚本
  */
 import { join } from 'path'
@@ -10,7 +10,7 @@ import { writeFileSync } from 'fs'
 import sh from 'shelljs'
 import YAML from 'yaml'
 
-import { PKG_DIR, RELEASE_DIR, TGZ_EXT, releaseInfoTpl, ROOT_DIR, YML_FILE } from './config'
+import { PKG_DIR, RELEASE_DIR, TGZ_EXT, releaseInfoTpl, ROOT_DIR, YML_FILE, IGNORES } from './config'
 import { Logger } from './log'
 
 /**
@@ -21,7 +21,7 @@ import { Logger } from './log'
 // 初始化目录（如果存在则忽略）-> mkdir -p "$RELEASE_DIR"
 sh.mkdir('-p', RELEASE_DIR)
 // 清空目录 -> rm -f "$RELEASE_DIR/*"
-sh.rm('-f', join(RELEASE_DIR, '*'))
+sh.rm('-rf', join(RELEASE_DIR, '*'))
 
 /**
  * @var {[key:string]: {version: string, tgz: string}}
@@ -38,13 +38,15 @@ const result = sh.ls(PKG_DIR).every(pkgName => {
   const output = join(RELEASE_DIR, tgz)
   Logger.info(`创建 tgz 文件 ${tgz}...`)
 
+  const ignoreArgs = IGNORES.map(i => '--exclude=' + i).join(' ')
+  console.log(ignoreArgs)
   const { code, stderr } = sh.exec(
     `
       set -e
 
       cd ${PKG_DIR}
       # 创建 tgz 压缩包
-      tar --exclude=node_modules --exclude=.DS_Store -P -cvzf ${output} ${pkgName}
+      tar ${ignoreArgs} -P -cvzf ${output} ${pkgName}
     `,
     { silent: true, shell: '/bin/zsh' }
   )

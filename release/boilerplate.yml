@@ -3,44 +3,55 @@
     - title: ElementUI
       key: vue-elementui-boilerplate
       tags:
-        - 用于构建 PC 网站
+        - PC Web
       version: 1.1.2
       tgz: vue-elementui-boilerplate.tgz
     - title: VantUI
       key: vue-vantui-boilerplate
       tags:
-        - 用于构建移动端网站
+        - Mobile Web
       version: 1.0.5
       tgz: vue-vantui-boilerplate.tgz
     - title: VantUI + H5Plus
       key: vue-vantui-h5plus-boilerplate
       tags:
-        - 用于构建移动端 WebApp
+        - Mobile WebApp
       version: 1.0.1
       tgz: vue-vantui-h5plus-boilerplate.tgz
     - title: <dockerify> ElementUI
       key: vue-elementui-docker-boilerplate
       tags:
-        - 用于构建 PC 网站
+        - PC Web
       version: 1.1.2
       tgz: vue-elementui-docker-boilerplate.tgz
     - title: <dockerify> VantUI
       key: vue-vantui-docker-boilerplate
       tags:
-        - 用于构建移动端网站
+        - Mobile Web
       version: 1.0.5
       tgz: vue-vantui-docker-boilerplate.tgz
+- title: React
+  boilerplates:
+    - title: <typescript> Redux + AntDesign
+      key: react-redux-antd-boilerplate
+      tags:
+        - PC Web
+      version: 0.0.1
+      tgz: react-redux-antd-boilerplate.tgz
 - title: Node Server
   boilerplates:
     - title: Express
       key: server-express-boilerplate
       tags:
-        - 用于构建 REST API 服务或服务端渲染网站
+        - REST API
+        - Server Render
       version: 0.3.0
       tgz: server-express-boilerplate.tgz
-    - title: Nest + TypeORM
+    - title: <dockerify / typescript> Nest + TypeORM
       key: server-nest-boilerplate
       tags:
-        - 用于构建 REST API、GraphyQL、MicroService
+        - REST API
+        - GraphyQL
+        - MicroService
       version: 0.0.1
       tgz: server-nest-boilerplate.tgz

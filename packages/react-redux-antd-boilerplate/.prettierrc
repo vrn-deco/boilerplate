@@ -1,0 +1,16 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": ["*.jsx", "*.tsx"],
+      "options": {
+        "printWidth": 80,
+        "jsxSingleQuote": true,
+        "jsxBracketSameLine": false
+      }
+    }
+  ]
+}

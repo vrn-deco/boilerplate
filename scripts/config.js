@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-07-01 01:00:20
- * @LastEditTime: 2019-08-05 15:15:54
+ * @LastEditTime: 2019-09-18 15:30:07
  * @Description: 配置文件
  */
 import { join } from 'path'
@@ -20,6 +20,16 @@ export const PKG_DIR = join(ROOT_DIR, 'packages')
 export const RELEASE_DIR = join(ROOT_DIR, 'release')
 export const YML_FILE = join(RELEASE_DIR, 'boilerplate.yml')
 export const NGINX_CONF = join(ROOT_DIR, 'boilerplate.conf')
+export const IGNORES = [
+  // mac 缓存文件
+  '.DS_Store',
+  // 依赖包
+  'node_modules',
+  // vue 打包输出
+  'dist',
+  // react 打包输出
+  'build'
+]
 
 // 服务端目录与配置
 export const SERVER_SIDE_USER = 'root'
