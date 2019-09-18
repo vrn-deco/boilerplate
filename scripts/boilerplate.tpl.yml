@@ -11,23 +11,23 @@
     - title: ElementUI
       key: vue-elementui-boilerplate
       tags:
-        - 用于构建 PC 网站
+        - PC Web
     - title: VantUI
       key: vue-vantui-boilerplate
       tags:
-        - 用于构建移动端网站
+        - Mobile Web
     - title: VantUI + H5Plus
       key: vue-vantui-h5plus-boilerplate
       tags:
-        - 用于构建移动端 WebApp
+        - Mobile WebApp
     - title: <dockerify> ElementUI
       key: vue-elementui-docker-boilerplate
       tags:
-        - 用于构建 PC 网站
+        - PC Web
     - title: <dockerify> VantUI
       key: vue-vantui-docker-boilerplate
       tags:
-        - 用于构建移动端网站
+        - Mobile Web
 
 # 后端服务样板
 - title: Node Server
@@ -35,8 +35,11 @@
     - title: Express
       key: server-express-boilerplate
       tags:
-        - 用于构建 REST API 服务或服务端渲染网站
-    - title: Nest + TypeORM
+        - REST API
+        - Server Render
+    - title: <dockerify / typescript> Nest + TypeORM
       key: server-nest-boilerplate
       tags:
-        - 用于构建 REST API、GraphyQL、MicroService
+        - REST API
+        - GraphyQL
+        - MicroService
