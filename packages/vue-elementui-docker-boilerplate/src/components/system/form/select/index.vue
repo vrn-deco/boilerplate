@@ -19,6 +19,7 @@
     :filterable="data.filterable"
     :placeholder="data.placeholder"
     :size="data.size"
+    :allow-create="data.createItem"
     autocomplete="off"
   >
     <el-option

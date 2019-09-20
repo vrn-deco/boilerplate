@@ -202,6 +202,7 @@ export class SelectData extends ControlData {
    * @param {boolean} [params.clearable] 是否支持清空选项
    * @param {boolean} [params.filterable] 是否可搜索选项
    * @param {'medium' | 'small' | 'mini'} [params.size] 样式大小
+   * @param {boolean} [params.createItem] 是否可输入(请确保createItem为true时，filterable也为true，否则会导致createItem无效)
    * @param {boolean} [params.required] 是否必填
    */
   constructor({
@@ -215,6 +216,7 @@ export class SelectData extends ControlData {
     clearable = false,
     filterable = false,
     size = 'medium',
+    createItem = false,
     required = false
   }) {
     super({ type: SelectData.type, disabled, required })
@@ -228,6 +230,7 @@ export class SelectData extends ControlData {
     this.clearable = clearable
     this.filterable = filterable
     this.size = size
+    this.createItem = createItem
   }
 }
 
