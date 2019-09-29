@@ -1,6 +1,6 @@
 {
   "name": "vue-vantui-h5plus-boilerplate",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "dev": "npm run serve",

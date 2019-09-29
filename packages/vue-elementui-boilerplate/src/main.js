@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-13 00:52:43
- * @LastEditTime: 2019-06-28 16:05:15
+ * @LastEditTime: 2019-09-29 14:09:16
  * @Description: 入口文件
  */
 
@@ -11,6 +11,8 @@ import Vue from 'vue'
 import '@/assets/scss'
 
 import { registerPlugins } from '@/plugins'
+import { registerDirectives } from '@/directives'
+import { registerFilters } from '@/filters'
 import { registerEventBus } from '@/utils/system/event-bus'
 
 import router from '@/router'
@@ -21,6 +23,10 @@ Vue.config.productionTip = false
 
 // 注册所有插件
 registerPlugins(Vue)
+// 注册全局指令
+registerDirectives(Vue)
+// 注册全局过滤器
+registerFilters(Vue)
 // 注册 EventBus
 registerEventBus()
 

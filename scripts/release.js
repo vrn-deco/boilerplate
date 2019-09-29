@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2019-09-18 16:19:04
+ * @LastEditTime: 2019-09-29 14:09:53
  * @Description: 一键发布脚本
  */
 import { join } from 'path'
@@ -39,7 +39,7 @@ const result = sh.ls(PKG_DIR).every(pkgName => {
   Logger.info(`创建 tgz 文件 ${tgz}...`)
 
   const ignoreArgs = IGNORES.map(i => '--exclude=' + i).join(' ')
-  console.log(ignoreArgs)
+
   const { code, stderr } = sh.exec(
     `
       set -e
