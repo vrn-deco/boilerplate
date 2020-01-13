@@ -1,10 +1,10 @@
 /*
- * @Author: Cphayim
- * @Date: 2019-05-24 10:22:40
- * @LastEditTime: 2019-05-24 10:23:56
- * @Description: 错误页面路由
+ * @Author: benaozhi
+ * @Date: 2020-01-07 10:46:43
+ * @LastEditTime : 2020-01-07 11:14:01
+ * @Description: 导出所有路由
  */
-
+import demo from './demo.routes'
 // 404页面
 const NotFoundPage = resolve => {
   require.ensure(['@/views/system/pageUndefind.vue'], () => {
@@ -16,7 +16,18 @@ const BadPage = resolve => {
     resolve(require('@/views/system/pageBadGateway.vue'))
   })
 }
+
+const rootRoute = {
+  path: '/',
+  name: 'root',
+  // 重定向到项目列表页
+  redirect: demo[0].path,
+}
+
 export default [
+  rootRoute,
+  ...demo,
+  // 兜底 404 页面
   {
     // 404 页面
     path: '*',

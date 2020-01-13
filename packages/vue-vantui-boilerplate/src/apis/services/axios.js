@@ -1,16 +1,16 @@
 /*
  * @Author: Aozhi
  * @Date: 2019-05-12 22:48:53
- * @LastEditTime: 2019-07-02 08:31:57
+ * @LastEditTime : 2020-01-03 18:47:06
  * @Description:
  */
 
 import axios from 'axios'
-import base64 from 'base-64'
 
-import Auth from '../utils/auth'
+import store from '@/store'
+import { authorizationFormat, Toast } from '@/utils'
 import router from '@/router'
-import { Toast } from '@/utils'
+
 // import{ codeMessage } from'@/utils/code-message'
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -31,14 +31,11 @@ const Axios = axios.create(DEFAULT_OPTIONS)
  */
 Axios.interceptors.request.use(
   config => {
-    const token = Auth.getToken()
+    const token = store.getters['auth/token']
     // token 存在且请求头中没有 Authorization 字段时添加
     if(token && !config.headers.Authorization) {
-      const random = parseInt(Math.random() * Math.pow(10, 6)).toString()
-      config.headers.Authorization = base64.encode(`${random}:${token}`)
+      config.headers.Authorization = authorizationFormat(token)
     }
-    // 发送请求之前做一些处理
-    Toast.loading({ message: '加载中...' })
     return config
   },
   error => {
@@ -55,11 +52,11 @@ Axios.interceptors.request.use(
 Axios.interceptors.response.use(
   response => {
     // 返回响应时做一些统一处理
-    Toast.clear()
     if(response.data.status === 10002) {
       // netintech.msg(codeMessages['10002'] + ':' + response.data.desc)
     } else if(response.data.status === 10004) {
       // netintech.msg(codeMessages['10004'])
+      // TODO token 过期
       return router.push('/')
     } else {
       return response.data
@@ -67,7 +64,6 @@ Axios.interceptors.response.use(
   },
   error => {
     console.error(error)
-    Toast.clear()
   }
 )
 
