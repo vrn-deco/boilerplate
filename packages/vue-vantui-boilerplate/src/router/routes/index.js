@@ -1,21 +1,11 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-01-07 10:46:43
- * @LastEditTime : 2020-01-07 11:14:01
+ * @LastEditTime : 2020-01-13 15:23:47
  * @Description: 导出所有路由
  */
 import demo from './demo.routes'
-// 404页面
-const NotFoundPage = resolve => {
-  require.ensure(['@/views/system/pageUndefind.vue'], () => {
-    resolve(require('@/views/system/pageUndefind.vue'))
-  })
-}
-const BadPage = resolve => {
-  require.ensure(['@/views/system/pageBadGateway.vue'], () => {
-    resolve(require('@/views/system/pageBadGateway.vue'))
-  })
-}
+import err from './error.routes'
 
 const rootRoute = {
   path: '/',
@@ -28,18 +18,5 @@ export default [
   rootRoute,
   ...demo,
   // 兜底 404 页面
-  {
-    // 404 页面
-    path: '*',
-    name: 'NotFound',
-    component: NotFoundPage,
-    meta: { title: '404' }
-  },
-  {
-    // 502 页面
-    path: '/502',
-    name: 'Bad',
-    component: BadPage,
-    meta: { title: '502' }
-  }
+  ...err
 ]
