@@ -5,7 +5,7 @@
 #       tags: # 标签数组
 #         - PC Web
 
-# Vue 相关样板
+# 浏览器端 Vue 相关样板
 - title: Vue
   boilerplates:
     - title: ElementUI
@@ -19,7 +19,7 @@
     - title: VantUI + H5Plus
       key: vue-vantui-h5plus-boilerplate
       tags:
-        - Mobile WebApp
+        - Mobile HybridApp
     - title: <dockerify> ElementUI
       key: vue-elementui-docker-boilerplate
       tags:
@@ -29,6 +29,7 @@
       tags:
         - Mobile Web
 
+# 浏览器端 React 相关样板
 - title: React
   boilerplates:
     - title: <typescript> Redux + AntDesign
@@ -36,7 +37,7 @@
       tags:
         - PC Web
 
-# 后端服务样板
+# 服务端 Node.js 样板
 - title: Node Server
   boilerplates:
     - title: Express
