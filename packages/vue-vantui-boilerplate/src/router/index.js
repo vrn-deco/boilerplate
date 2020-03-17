@@ -1,8 +1,8 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-24 10:22:40
- * @LastEditTime : 2020-01-07 11:22:14
- * @Description: 错误页面路由
+ * @LastEditTime: 2020-03-14 16:47:30
+ * @Description: 路由入口
  */
 
 import Vue from 'vue'

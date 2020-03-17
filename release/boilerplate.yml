@@ -10,12 +10,12 @@
       key: vue-vantui-boilerplate
       tags:
         - Mobile Web
-      version: 1.0.8
+      version: 2.0.1
       tgz: vue-vantui-boilerplate.tgz
     - title: VantUI + H5Plus
       key: vue-vantui-h5plus-boilerplate
       tags:
-        - Mobile WebApp
+        - Mobile HybridApp
       version: 1.0.3
       tgz: vue-vantui-h5plus-boilerplate.tgz
     - title: <dockerify> ElementUI
