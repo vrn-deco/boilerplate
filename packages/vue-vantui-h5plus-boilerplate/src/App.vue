@@ -1,12 +1,32 @@
 <!--
  * @Author: Cphayim
  * @Date: 2019-05-23 09:14:55
- * @LastEditTime: 2019-06-03 13:25:55
+ * @LastEditTime: 2020-03-17 13:32:56
  * @Description: 入口组件
- * 本组件只作为容器，不应当包含任何逻辑
 -->
+
 <template>
   <div id="app">
-    <router-view/>
+    <RouterTransition>
+      <keep-alive :include="keepAliveComponents">
+        <router-view />
+      </keep-alive>
+    </RouterTransition>
   </div>
 </template>
+
+<script>
+import { mapState } from 'vuex'
+import RouterTransition from '@/components/common/router-transition.vue'
+export default {
+  name: 'App',
+  components: { RouterTransition },
+  computed: {
+    // 动态添加移除的 keepalive 列表
+    ...mapState(['keepAliveComponents']),
+  },
+  data() {
+    return {}
+  },
+}
+</script>

@@ -1,33 +1,26 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-24 10:22:40
- * @LastEditTime: 2019-06-24 09:49:47
- * @Description: 错误页面路由
+ * @LastEditTime: 2020-03-14 16:47:30
+ * @Description: 路由入口
  */
 
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import errorRoutes from './error'
-import Home from '@/views/web/home/home.vue'
+import routes from './routes'
+
+import { registerBeforeGuard, registerAfterGuard } from './guards'
 
 Vue.use(Router)
 
 const router = new Router({
   base: process.env.BASE_URL,
-  routes: [
-    // 错误页面路由规则
-    ...errorRoutes,
-    {
-      path: '/',
-      redirect: '/home'
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: Home
-    }
-  ]
+  routes
 })
+
+// 注册守卫
+registerBeforeGuard(router)
+registerAfterGuard(router)
 
 export default router
