@@ -1,6 +1,6 @@
 {
   "name": "vue-vantui-h5plus-boilerplate",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": true,
   "scripts": {
     "dev": "npm run serve",
@@ -16,7 +16,7 @@
     "core-js": "^2.6.5",
     "debounce": "^1.2.0",
     "moment": "^2.24.0",
-    "vant": "^2.0.0-beta.3",
+    "vant": "^2.5.5",
     "vconsole": "^3.3.4",
     "vue": "^2.6.10",
     "vue-class-component": "^7.2.3",

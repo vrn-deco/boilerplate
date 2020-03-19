@@ -9,7 +9,7 @@
   var config = {
     DEV: {
       BASE_URL_MAP: {
-        DEFAULT: 'http://192.168.1.103:8011'
+        DEFAULT: 'http://localhost:8012'
       }
     },
     PROD: {
