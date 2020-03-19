@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-23 09:14:55
- * @LastEditTime: 2019-09-29 14:08:17
+ * @LastEditTime: 2020-03-19 17:02:17
  * @Description: 入口文件
  */
 
@@ -33,5 +33,7 @@ registerEventBus()
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  // h5plus
+  plusReady: () => {},
 }).$mount('#app')

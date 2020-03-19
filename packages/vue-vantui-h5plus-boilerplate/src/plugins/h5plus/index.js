@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-25 11:06:21
- * @LastEditTime: 2019-07-02 10:52:30
+ * @LastEditTime: 2020-03-19 17:03:45
  * @Description: 安装器
  */
 import platform from './libs/platform'
@@ -21,16 +21,16 @@ VueH5Plus.install = Vue => {
   Vue.mixin({
     created() {
       // 当前处于 plus 平台下
-      if(platform.plus) {
+      if (platform.plus) {
         const _options = this.$options
         // 注册 plusready 事件
         plusReady(() => {
-          if(!IS_READY) {
+          if (!IS_READY) {
             process.env.NODE_ENV !== 'production' && console.info('PLUS_READY : 运行时准备就绪')
             IS_READY = true
           }
           // 执行 plusReady 的回调
-          if(isFunction(_options.plusReady)) {
+          if (isFunction(_options.plusReady)) {
             _options.plusReady.call(this)
           }
         })
@@ -59,7 +59,7 @@ function bindToVuePrototype(Vue, o = {}) {
 }
 
 // 直接引入兼容
-if(typeof window !== 'undefined' && window.Vue) {
+if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use()
 }
 

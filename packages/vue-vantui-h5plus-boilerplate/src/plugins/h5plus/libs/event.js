@@ -10,7 +10,7 @@
  * @param callack
  */
 export function plusReady(callack) {
-  if(window.plus) {
+  if (window.plus) {
     callack()
   } else {
     document.addEventListener('plusready', callack, false)

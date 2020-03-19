@@ -30,24 +30,24 @@ const iphone = ua.match(/(iPhone\sOS)\s([\d_]+)/)
 // ipad
 const ipad = ua.match(/(iPad).*OS\s([\d_]+)/)
 
-if(plus) platform.plus = true
+if (plus) platform.plus = true
 
-if(stream) platform.stream = true
+if (stream) platform.stream = true
 
-if(wechat) platform.wechat = true
+if (wechat) platform.wechat = true
 
-if(android) {
+if (android) {
   platform.android = true
   platform.version = android[2]
   platform.isBadAndroid = !/Chrome\/\d/.test(window.navigator.appVersion)
 }
 
-if(iphone) {
+if (iphone) {
   platform.ios = platform.iphone = true
   platform.version = iphone[2].replace(/_/g, '.')
 }
 
-if(ipad) {
+if (ipad) {
   platform.ios = platform.ipad = true
   platform.version = ipad[2].replace(/_/g, '.')
 }
@@ -59,7 +59,7 @@ export default platform
  * @export
  */
 export function isPlusRuntime() {
-  if(!platform.plus && process.env.NODE_ENV !== 'production') {
+  if (!platform.plus && process.env.NODE_ENV !== 'production') {
     console.warn(
       '你在代码中调用了 plusAPI，当前运行环境非 plus 运行时，请确保使用模拟器、基座或真机调试'
     )
@@ -77,7 +77,7 @@ export function isPlusRuntime() {
 export function RuntimeValid(t, p, d) {
   const fn = d.value
   d.value = function(...args) {
-    if(!isPlusRuntime()) return null
+    if (!isPlusRuntime()) return null
     return fn.call(this, ...args)
   }
 }
