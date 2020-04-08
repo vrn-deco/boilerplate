@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-12 22:48:53
- * @LastEditTime: 2020-03-14 17:52:34
+ * @LastEditTime: 2020-04-08 15:59:21
  * @Description: 自定义 axios
  */
 
@@ -44,10 +44,9 @@ Axios.interceptors.request.use(
  * 响应时拦截
  */
 Axios.interceptors.response.use(response => {
-  if (response.data.code === 10001) {
+  if (response.data.code === config.RESPONSE_CODE.OK) {
     return response.data.data
-  }
-  if (response.data.code === 10004) {
+  } else if (response.data.code === config.RESPONSE_CODE.UNAUTHORIZED) {
     // token 过期
     // 此处提交一个登出的 action
     // 或者控制路由跳转到登录页
@@ -67,8 +66,16 @@ export class AxiosConfig {
    * @param {string} options.url 请求路径
    * @param {Object} [options.data = {}] 请求数据
    * @param {Object} [options.headers = {}] 请求头
+   * @param {string} [options.responseType = 'json'] 服务端返回的数据类型，默认为 json
    */
-  constructor({ baseURL, url, method = 'GET', data = {}, headers = {} } = {}) {
+  constructor({
+    baseURL,
+    url,
+    method = 'GET',
+    data = {},
+    headers = {},
+    responseType = 'json',
+  } = {}) {
     if (!url) {
       throw new RangeError('缺少 url 参数')
     }
@@ -82,5 +89,6 @@ export class AxiosConfig {
     } else {
       this.data = data
     }
+    this.responseType = responseType
   }
 }

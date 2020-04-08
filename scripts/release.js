@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2019-09-29 14:09:53
+ * @LastEditTime: 2020-04-07 14:57:01
  * @Description: 一键发布脚本
  */
 import { join } from 'path'
@@ -43,10 +43,11 @@ const result = sh.ls(PKG_DIR).every(pkgName => {
   const { code, stderr } = sh.exec(
     `
       set -e
-
       cd ${PKG_DIR}
       # 创建 tgz 压缩包
-      tar ${ignoreArgs} -P -cvzf ${output} ${pkgName}
+      # -P 绝对路径还原
+      # -h 打包软链指向的文件而不是软链文件
+      tar ${ignoreArgs} -cvzhPf ${output} ${pkgName}
     `,
     { silent: true, shell: '/bin/zsh' }
   )
