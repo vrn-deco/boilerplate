@@ -18,5 +18,7 @@ yarn-error.log*
 *.sln
 *.sw?
 
+release/*.tgz
+
 tmp
 uniapp-boilerplate

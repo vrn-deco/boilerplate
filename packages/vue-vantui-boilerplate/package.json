@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "npm run serve",
-    "serve": "vue-cli-service serve --open",
+    "serve": "vue-cli-service serve --open --mode=prod",
     "build": "vue-cli-service build",
+    "build:xxx": "vue-cli-service build --custom-env=xxx",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
