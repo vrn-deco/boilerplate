@@ -24,10 +24,10 @@ export class WidgetData {
    * @param {ControlData} params.data 控件数据
    */
   constructor({ key, title = '控件文字', data }) {
-    if(!key || typeof key !== 'string') {
+    if (!key || typeof key !== 'string') {
       throw new TypeError(`Param 'key' is required and must be 'string'`)
     }
-    if(!data || !(data instanceof ControlData)) {
+    if (!data || !(data instanceof ControlData)) {
       throw new TypeError(`Param 'key' is required and must be 'ControlData'`)
     }
     this.key = key

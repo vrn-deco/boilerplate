@@ -29,6 +29,8 @@ module.exports = {
     },
   },
   globals: {
-    // 暴露全局变量 [x:string]: boolean
+    // 暴露全局变量
+    NT_CONFIG: true,
+    plus: true,
   },
 }
