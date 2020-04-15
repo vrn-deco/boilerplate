@@ -1,12 +1,12 @@
 {
-  "name": "@naintech/boilerplate",
+  "name": "boilerplate",
   "version": "0.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "release": "cy-node --entry scripts/release.js",
-    "deploy": "cy-node --entry scripts/deploy.js",
-    "test": "cy-node --entry scripts/test.js"
+    "release": "cy-node scripts/release.js",
+    "deploy": "cy-node scripts/deploy.js",
+    "test": "cy-node scripts/test.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   },
   "homepage": "https://gitlab.com/Cphayim/bolierplate#readme",
   "dependencies": {
-    "@naughty/cy-node": "^1.0.6",
+    "@naughty/cy-node": "^1.0.12",
     "compressing": "^1.4.0",
     "dotenv": "^8.0.0",
     "shelljs": "^0.8.3",
