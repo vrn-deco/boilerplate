@@ -1,22 +1,20 @@
-const argv = require('yargs').argv
-
 const { resolve } = require('path')
-module.exports = {
+const { VueEnvLoader } = require('@naughty/vue-env-loader')
+
+const config = new VueEnvLoader({
+  // env 目录绝对路径
+  envPath: resolve(__dirname, 'env'),
+  // 自定义通过命令行参数注入单个环境变量所用的变量名
+  customName: 'custom-env',
+}).inject({
   productionSourceMap: false,
+  publicPath: './',
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'scss',
       patterns: [resolve(__dirname, 'src/assets/scss/libs/*.scss')],
     },
   },
-  chainWebpack: config => {
-    config.plugin('define').tap(definitions => {
-      // process.env
-      definitions[0]['process.env'] = {
-        ...definitions[0]['process.env'],
-        CUSTOM_ENV: JSON.stringify(argv['custom-env']),
-      }
-      return definitions
-    })
-  },
-}
+})
+
+module.exports = config

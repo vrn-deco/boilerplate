@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@naughty/githook-vcm": "^1.2.2",
+    "@naughty/vue-env-loader": "^1.0.4",
     "@types/jest": "^24.9.1",
     "@vue/cli-plugin-babel": "^3.12.1",
     "@vue/cli-plugin-eslint": "^3.12.1",
