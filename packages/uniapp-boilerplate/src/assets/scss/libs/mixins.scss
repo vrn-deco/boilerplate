@@ -1,0 +1,22 @@
+/*
+ * @Author: Cphayim
+ * @Date: 2019-06-15 14:26:23
+ * @LastEditTime: 2019-06-15 14:27:55
+ * @Description: scss 混合宏（已自动导入，可直接在组件中使用）
+ */
+
+// 单行文字溢出修剪(使用前请先在样式上定义 width 或 max-width)
+@mixin text-clip-single() {
+  overflow: hidden;
+  white-space: nowrap; // 单行溢出部分转为 ...
+  text-overflow: ellipsis;
+}
+
+// 多行文字溢出修剪
+@mixin text-clip-multi($rows: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $rows;
+}
