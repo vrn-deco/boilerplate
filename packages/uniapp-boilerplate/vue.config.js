@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-03-09 14:33:35
- * @LastEditTime: 2020-04-22 13:31:25
+ * @LastEditTime: 2020-04-23 09:11:18
  * @Description: vue-cli 配置文件
  *    此文件尽量不要改动，如有通用的可靠方案
  *    请联系前端架构组，考虑集成到模板中
@@ -16,8 +16,8 @@ module.exports = {
       preProcessor: 'scss',
       patterns: [
         // !注意：
-        // uni-app app-plus 端不兼容 style-resources-loader
-        // resolve(__dirname, 'src/assets/scss/libs/index.scss'),
+        // uni-app app-plus 端编译层不兼容 style-resources-loader
+        // resolve(__dirname, 'src/assets/scss/libs/*.scss'),
       ],
     },
   },

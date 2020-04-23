@@ -1,6 +1,6 @@
 {
   "name": "uniapp-boilerplate",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "private": true,
   "scripts": {
     "serve": "npm run dev:h5",
