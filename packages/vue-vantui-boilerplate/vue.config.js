@@ -1,3 +1,11 @@
+/*
+ * @Author: Cphayim
+ * @Date: 2019-11-13 14:33:35
+ * @LastEditTime: 2020-04-23 09:12:56
+ * @Description: vue-cli 配置文件
+ *    此文件尽量不要改动，如有通用的可靠方案
+ *    请联系前端架构组，考虑集成到模板中
+ */
 const { resolve } = require('path')
 const { VueEnvLoader } = require('@naughty/vue-env-loader')
 

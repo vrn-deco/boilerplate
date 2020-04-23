@@ -1,7 +1,16 @@
+/*
+ * @Author: Cphayim
+ * @Date: 2019-11-18 9:25:54
+ * @LastEditTime: 2020-04-23 09:14:54
+ * @Description: vue-cli 配置文件
+ *    此文件尽量不要改动，如有通用的可靠方案
+ *    请联系前端架构组，考虑集成到模板中
+ */
 const { resolve } = require('path')
 const { VueEnvLoader } = require('@naughty/vue-env-loader')
 // 是否是 hybridApp 项目
 const IS_APP = true
+// 请修改此处的 APP_NAME 为项目名称
 const APP_NAME = 'boilerplate'
 
 const config = new VueEnvLoader({
