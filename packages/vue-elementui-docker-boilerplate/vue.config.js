@@ -9,6 +9,11 @@ const config = new VueEnvLoader({
 }).inject({
   productionSourceMap: false,
   publicPath: './',
+  chainWebpack(config) {
+    config
+      // https://webpack.js.org/configuration/devtool/#development
+      .when(process.env.NODE_ENV === 'development', config => config.devtool('source-map'))
+  },
 })
 
 module.exports = config
