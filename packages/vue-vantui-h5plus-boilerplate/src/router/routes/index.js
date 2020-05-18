@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-01-07 10:46:43
- * @LastEditTime: 2020-03-14 17:27:55
+ * @LastEditTime: 2020-05-14 15:32:45
  * @Description: 导出所有路由
  */
 
@@ -10,6 +10,8 @@ import NotFound from '@/views/404'
 import mallRoutes from './mall.routes'
 import infoRoutes from './info.routes'
 import userRoutes from './user.routes'
+// 发布打包时把 demo 路由注释掉
+import demoRoutes from './demo.routes'
 
 const rootRoute = {
   path: '/',
@@ -23,6 +25,7 @@ export default [
   ...mallRoutes,
   ...infoRoutes,
   ...userRoutes,
+  ...demoRoutes,
   // 兜底 404 页面
   {
     name: 'NotFound',

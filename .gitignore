@@ -21,3 +21,5 @@ yarn-error.log*
 release/*
 
 tmp
+secret/
+data/

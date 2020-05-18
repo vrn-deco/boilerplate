@@ -1,11 +1,11 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-03-14 17:18:38
- * @LastEditTime: 2020-03-14 18:21:28
+ * @LastEditTime: 2020-05-14 16:01:55
  * @Description: 商城模块路由
  */
 
-import { MallTabPage, MallDetailPage } from '@/views/mall'
+import { MallTabPage, MallListPage } from '@/views/mall'
 
 export default [
   {
@@ -23,11 +23,11 @@ export default [
     },
   },
   {
-    path: '/mall/detail',
-    name: MallDetailPage.name,
-    component: MallDetailPage,
+    path: '/mall/list',
+    name: MallListPage.name,
+    component: MallListPage,
     meta: {
-      title: '详情',
+      title: '商品列表',
       index: 1,
       keepAlive: false,
     },
