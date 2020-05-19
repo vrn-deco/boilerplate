@@ -4,7 +4,7 @@
  */
 export class ControlData {
   constructor({ type, disabled = false, required = false }) {
-    if(!type || typeof type !== 'string') {
+    if (!type || typeof type !== 'string') {
       throw new TypeError(`Param 'type' is required and must be 'string'`)
     }
     this.type = type

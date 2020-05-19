@@ -1,28 +1,22 @@
 /*
- * @Author: Aozhi
+ * @Author: Cphayim
  * @Date: 2019-05-12 22:48:53
- * @LastEditTime: 2019-05-31 13:15:54
- * @Description:
+ * @LastEditTime: 2020-03-14 16:30:12
+ * @Description: 自定义 axios
  */
 
 import axios from 'axios'
-import base64 from 'base-64'
 
-import Auth from '../utils/auth'
+import store from '@/store'
+import { authorizationFormat } from '@/utils'
+import config from '@/config'
 import router from '@/router'
-// import{ codeMessage } from'@/utils/code-message'
-
-const isDev = process.env.NODE_ENV === 'development'
-// 从暴露的全局配置中获取当前环境对应的配置对象
-const globalConfig = NT_CONFIG[isDev ? 'DEV' : 'PROD']
-
-let layerLoading // 弹出窗口对象
 
 const DEFAULT_OPTIONS = {
-  timeout: 10000,
+  timeout: 30000,
   responseType: 'json',
-  withCredentials: true, // 是否允许带cookie
-  headers: { 'Content-Type': 'application/json;charset=utf-8' }
+  withCredentials: false, // 是否允许带cookie
+  headers: { 'Content-Type': 'application/json;charset=utf-8' },
 }
 
 const Axios = axios.create(DEFAULT_OPTIONS)
@@ -32,47 +26,38 @@ const Axios = axios.create(DEFAULT_OPTIONS)
  */
 Axios.interceptors.request.use(
   config => {
-    const token = Auth.getToken()
+    // 从 store 中获取 token
+    const token = store.getters['auth/token']
     // token 存在且请求头中没有 Authorization 字段时添加
-    if(token && !config.headers.Authorization) {
-      const random = parseInt(Math.random() * Math.pow(10, 6)).toString()
-      config.headers.Authorization = base64.encode(`${random}:${token}`)
+    if (token && !config.headers.Authorization) {
+      config.headers.Authorization = authorizationFormat(token)
     }
-    // 发送请求之前做一些处理
-    layerLoading = layer.load(1, { skin: 'layer-load' })
     return config
   },
   error => {
-    // 当请求异常时做一些处理
-    layer.close(layerLoading)
     const errorInfo = error.data.error ? error.data.error.message : error.data
     return Promise.reject(errorInfo)
-  }
+  },
 )
 
 /**
  * 响应时拦截
  */
-Axios.interceptors.response.use(
-  response => {
-    // 返回响应时做一些统一处理
-    layer.close(layerLoading)
-    if(response.data.status === 10002) {
-      // netintech.msg(codeMessages['10002'] + ':' + response.data.desc)
-    } else if(response.data.status === 10004) {
-      // netintech.msg(codeMessages['10004'])
-      return router.push('/')
-    } else {
-      return response.data
-    }
-  },
-  error => {
-    console.error(error)
-    layer.close(layerLoading)
+Axios.interceptors.response.use(response => {
+  if (response.data.code === 10001) {
+    return response.data.data
   }
-)
+  if (response.data.code === 10004) {
+    // TODO token 过期，提交一个 logout action
+    router.replace({ path: '/auth/logout' })
+    throw new Error(response.data.msg)
+  } else {
+    throw new Error(response.data.msg)
+  }
+})
 
 export default Axios
+
 export class AxiosConfig {
   /**
    * @param {Object} options
@@ -82,15 +67,15 @@ export class AxiosConfig {
    * @param {Object} [options.headers = {}] 请求头
    */
   constructor({ baseURL, url, method = 'GET', data = {}, headers = {} } = {}) {
-    if(!url) {
+    if (!url) {
       throw new RangeError('缺少 url 参数')
     }
     // 如果没有传入 baseURL 使用 GLOBAL_CONFIG 对应当前环境的 DEFAULT 配置
-    this.baseURL = baseURL || globalConfig.BASE_URL_MAP.DEFAULT
+    this.baseURL = baseURL || config.BASE_URL
     this.url = url
     this.method = method
     this.headers = headers
-    if(this.method === 'GET') {
+    if (this.method === 'GET') {
       this.params = data
     } else {
       this.data = data

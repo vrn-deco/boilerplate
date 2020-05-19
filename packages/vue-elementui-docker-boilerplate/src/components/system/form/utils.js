@@ -7,7 +7,7 @@
 export function updateValueByKey(structData, key, value) {
   const flat = flatStructData(structData)
   flat.forEach(widgetData => {
-    if(widgetData.key === key) {
+    if (widgetData.key === key) {
       widgetData.data.value = value
     }
   })
@@ -19,12 +19,12 @@ export function updateValueByKey(structData, key, value) {
  * @param {{[key:string]: any}} map 数据对象
  */
 export function updateValueByMap(structData, map) {
-  if(!map || typeof map !== 'object') {
+  if (!map || typeof map !== 'object') {
     throw TypeError('params map must be Object type')
   }
   const flat = flatStructData(structData)
   flat.forEach(widgetData => {
-    if(map.hasOwnProperty(widgetData.key)) {
+    if (map.hasOwnProperty(widgetData.key)) {
       widgetData.data.value = map[widgetData.key]
     }
   })
@@ -37,7 +37,7 @@ export function updateValueByMap(structData, map) {
  */
 export function flatStructData(structData) {
   return structData.reduce((pre, cur) => {
-    if(!Array.isArray(cur)) {
+    if (!Array.isArray(cur)) {
       return [...pre, cur]
     } else {
       return [...pre, ...flatStructData(cur)]

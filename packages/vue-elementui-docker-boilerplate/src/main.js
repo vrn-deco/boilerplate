@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-13 00:52:43
- * @LastEditTime: 2019-09-29 14:09:26
+ * @LastEditTime: 2020-05-19 11:11:54
  * @Description: 入口文件
  */
 
@@ -13,7 +13,7 @@ import '@/assets/scss'
 import { registerPlugins } from '@/plugins'
 import { registerDirectives } from '@/directives'
 import { registerFilters } from '@/filters'
-import { registerEventBus } from '@/utils/system/event-bus'
+import { registerEventBus } from '@/utils/event-bus'
 
 import router from '@/router'
 import store from '@/store'
