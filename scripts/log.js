@@ -1,14 +1,17 @@
 import chalk from 'chalk'
 
 export class Logger {
-  static info(message) {
-    Logger.print(chalk.blue(`[信息]: ${message}`))
+  static info(message, tip = '信息') {
+    Logger.print(chalk.blue(`[${tip}]: ${message}`))
   }
-  static success(message) {
-    Logger.print(chalk.green(`[完成]: ${message}`))
+  static exec(message, tip = '执行') {
+    Logger.print(chalk.yellow(`[${tip}]: ${message}`))
   }
-  static error(message) {
-    Logger.print(chalk.red(`[错误]: ${message}`))
+  static success(message, tip = '完成') {
+    Logger.print(chalk.green(`[${tip}]: ${message}`))
+  }
+  static error(message, tip = '错误') {
+    Logger.print(chalk.red(`[${tip}]: ${message}`))
   }
   static print(message) {
     process.stdout.write(message + '\n')

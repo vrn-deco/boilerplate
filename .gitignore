@@ -23,3 +23,5 @@ release/*
 tmp
 secret/
 data/
+
+flutter*

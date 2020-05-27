@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-07-01 01:00:20
- * @LastEditTime: 2019-09-18 15:30:07
+ * @LastEditTime: 2020-05-27 11:00:22
  * @Description: 配置文件
  */
 import { join } from 'path'
@@ -23,12 +23,32 @@ export const NGINX_CONF = join(ROOT_DIR, 'boilerplate.conf')
 export const IGNORES = [
   // mac 缓存文件
   '.DS_Store',
+  /**
+   * Start: JS 项目
+   */
   // 依赖包
   'node_modules',
   // vue 打包输出
   'dist',
   // react 打包输出
-  'build'
+  'build',
+  /**
+   * End: JS 项目
+   */
+
+  /**
+   * Start: Flutter 项目
+   */
+  '.idea',
+  '.dart_tool',
+  '.flutter-plugins',
+  '.flutter-plugins-dependencies',
+  '.packages',
+  '.pub-cache/',
+  '.pub/',
+  /**
+   * End: Flutter 项目
+   */
 ]
 
 // 服务端目录与配置

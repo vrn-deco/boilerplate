@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 09:21:54
- * @LastEditTime: 2019-08-05 15:16:00
+ * @LastEditTime: 2020-05-27 11:17:57
  * @Description: 一键部署脚本
  */
 import sh from 'shelljs'
@@ -26,7 +26,7 @@ Logger.info('开始执行部署...')
 const { code, stderr } = sh.exec(
   `
     set -e
-
+    # 设置目录权限
     ssh ${SERVER_SIDE_USER}@${SERVER_SIDE_IP} -i ${PRIVATE_KEY} "
       set -e
       # 创建对应目录，设置权限
@@ -35,10 +35,16 @@ const { code, stderr } = sh.exec(
     "
 
     # 将 release 目录下的文件递归提交到服务端指定目录
+    echo '正在将 release 目录下的文件递归上传至 ${SERVER_SIDE_IP} 服务器'
     scp -i ${PRIVATE_KEY} ${RELEASE_DIR}/* ${SERVER_SIDE_USER}@${SERVER_SIDE_IP}:${SERVER_SIDE_RELEASE_DIR}
-    # 上传 nginx 配置
-    scp -i ${PRIVATE_KEY} ${NGINX_CONF} ${SERVER_SIDE_USER}@${SERVER_SIDE_IP}:${SERVER_SIDE_NGINX_CONF_DIR}
+    echo '文件部署完毕'
 
+    # 上传 nginx 配置
+    echo '正在上传 nginx 配置文件至 ${SERVER_SIDE_IP} 服务器 '
+    scp -i ${PRIVATE_KEY} ${NGINX_CONF} ${SERVER_SIDE_USER}@${SERVER_SIDE_IP}:${SERVER_SIDE_NGINX_CONF_DIR}
+    echo 'nginx 配置文件部署完毕'
+
+    echo '正在为 ${SERVER_SIDE_IP} 服务器重载 nginx 服务'
     ssh ${SERVER_SIDE_USER}@${SERVER_SIDE_IP} -i ${PRIVATE_KEY} "
       set -e
       # 重载 nginx 服务
@@ -49,7 +55,7 @@ const { code, stderr } = sh.exec(
 )
 
 if (!code) {
-  Logger.success('部署成功')
+  Logger.success('部署任务完成')
 } else {
-  Logger.error(`部署失败: ${stderr}`)
+  Logger.error(`部署任务失败: ${stderr}`)
 }
