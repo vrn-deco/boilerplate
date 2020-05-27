@@ -2,16 +2,16 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2020-05-27 11:07:59
+ * @LastEditTime: 2020-05-27 14:12:13
  * @Description: 一键发布脚本
  */
 import { join } from 'path'
 import { writeFileSync, existsSync, readFileSync } from 'fs'
 import sh from 'shelljs'
 import YAML from 'yaml'
+import { Logger } from '@naughty/logger'
 
 import { PKG_DIR, RELEASE_DIR, TGZ_EXT, releaseInfoTpl, ROOT_DIR, YML_FILE, IGNORES } from './config'
-import { Logger } from './log'
 
 /**
  * ? 将 packages 下的所有目录，生成对应的 tgz 文件保存在 release 目录

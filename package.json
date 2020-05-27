@@ -21,6 +21,7 @@
   "homepage": "https://gitlab.com/Cphayim/bolierplate#readme",
   "dependencies": {
     "@naughty/cy-node": "^1.0.12",
+    "@naughty/logger": "^1.0.1",
     "compressing": "^1.4.0",
     "dotenv": "^8.0.0",
     "shelljs": "^0.8.3",

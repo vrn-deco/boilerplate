@@ -2,10 +2,11 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 09:21:54
- * @LastEditTime: 2020-05-27 11:17:57
+ * @LastEditTime: 2020-05-27 14:11:59
  * @Description: 一键部署脚本
  */
 import sh from 'shelljs'
+import { Logger } from '@naughty/logger'
 import {
   PRIVATE_KEY,
   SERVER_SIDE_RELEASE_DIR,
@@ -14,9 +15,8 @@ import {
   SERVER_SIDE_IP,
   YML_FILE,
   SERVER_SIDE_NGINX_CONF_DIR,
-  NGINX_CONF
+  NGINX_CONF,
 } from './config'
-import { Logger } from './log'
 
 /**
  * ?将模板包和配置文件上传到服务器对应目录
