@@ -2,11 +2,11 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2020-05-27 14:12:13
+ * @LastEditTime: 2020-06-08 14:25:46
  * @Description: 一键发布脚本
  */
 import { join } from 'path'
-import { writeFileSync, existsSync, readFileSync } from 'fs'
+import { writeFileSync, existsSync, readFileSync, copyFileSync } from 'fs'
 import sh from 'shelljs'
 import YAML from 'yaml'
 import { Logger } from '@naughty/logger'
@@ -35,6 +35,7 @@ Logger.info('开始创建发布文件包...')
 const result = sh.ls(PKG_DIR).every((pkgName) => {
   // 找到对应 boilerplate 下的 package.json 读取版本号
   const version = getVersion(pkgName)
+  console.log(version)
   const tgz = `${pkgName}${TGZ_EXT}`
   const output = join(RELEASE_DIR, tgz)
   Logger.info(`创建 tgz 文件 ${tgz}...`)
@@ -69,13 +70,14 @@ if (result) {
   Logger.success('发布文件包创建成功')
   Logger.info('开始生成 yml 文件')
   genReleaseYaml()
+  genTeamYaml()
   Logger.success(`写入文件: ${YML_FILE}`)
 }
 
 function getVersion(pkgName) {
   if (existsSync(join(PKG_DIR, pkgName, 'package.json'))) {
     // 如果是 JS 项目
-    const packageJSON = readFileSync(join(PKG_DIR, pkgName, 'package.json')).toJSON()
+    const packageJSON = JSON.parse(readFileSync(join(PKG_DIR, pkgName, 'package.json')).toString())
     return packageJSON.version
   } else if (existsSync(join(PKG_DIR, pkgName, 'pubspec.yaml'))) {
     // 如果是 Flutter 项目
@@ -100,4 +102,15 @@ function genReleaseYaml() {
     })
   })
   writeFileSync(YML_FILE, YAML.stringify(releaseInfoTpl))
+}
+
+/**
+ * 生成团队信息文件
+ */
+function genTeamYaml() {
+  if (existsSync(join(ROOT_DIR, 'data', 'team.yml'))) {
+    copyFileSync(join(ROOT_DIR, 'data', 'team.yml'), join(RELEASE_DIR, 'team.yml'))
+  } else {
+    Logger.info(`team.yml 不存在，跳过操作`)
+  }
 }
