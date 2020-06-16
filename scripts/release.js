@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2020-06-08 14:25:46
+ * @LastEditTime: 2020-06-15 11:02:50
  * @Description: 一键发布脚本
  */
 import { join } from 'path'
@@ -35,7 +35,6 @@ Logger.info('开始创建发布文件包...')
 const result = sh.ls(PKG_DIR).every((pkgName) => {
   // 找到对应 boilerplate 下的 package.json 读取版本号
   const version = getVersion(pkgName)
-  console.log(version)
   const tgz = `${pkgName}${TGZ_EXT}`
   const output = join(RELEASE_DIR, tgz)
   Logger.info(`创建 tgz 文件 ${tgz}...`)
