@@ -1,20 +1,21 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-01-03 18:29:42
- * @LastEditTime : 2020-01-08 18:23:32
+ * @LastEditTime: 2020-06-15 11:02:04
  * @Description:
  */
 import b64 from 'base-64'
 import Axios, { AxiosConfig } from '@/apis/services/axios'
 
 // 登录
-export function login(data) {
+export function login({ username, password }) {
   return Axios(
     new AxiosConfig({
-      url: '/login',
+      url: '/auth/login',
       method: 'POST',
       data: {
-        data: b64.encode(`${data.loginName}:${data.password}`),
+        username,
+        password,
       },
     }),
   )

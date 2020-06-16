@@ -39,7 +39,7 @@ export default {
             title: '公司名',
             data: new InputData({
               inputType: 'text',
-              value: '网进科技',
+              value: 'XX科技',
               placeholder: '请输入公司名',
               required: true,
               regexp: /^[\u4e00-\u9fa5]{3,5}$/
