@@ -49,6 +49,11 @@
       tags:
         - REST API
         - Server Render
+    - title: Express + Mock.js
+      key: server-express-mock-boilerplate
+      tags:
+        - REST API
+        - Mock.js Server
     - title: <dockerify / typescript> Nest + TypeORM
       key: server-nest-boilerplate
       tags:

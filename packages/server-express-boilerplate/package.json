@@ -1,4 +1,6 @@
 {
+  "name": "server-express-boilerplate",
+  "version": "0.3.1",
   "dependencies": {
     "axios": "^0.19.2",
     "base-64": "^0.1.0",
@@ -13,9 +15,7 @@
     "proxy": "^0.2.4",
     "xml2js": "^0.4.23"
   },
-  "name": "plug-library",
-  "version": "0.3.0",
-  "description": "组件库后端api",
+  "description": "",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
