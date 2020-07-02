@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-/dist
 
 # local env files
 
@@ -18,10 +17,12 @@ yarn-error.log*
 *.sln
 *.sw?
 
-release/*
+/release
 
-tmp
-secret/
-data/
+/tmp
+/secret
+/data
+/release
+/keys
 
-flutter*
+flutter_*
