@@ -1,7 +1,7 @@
 {
   "name": "boilerplate",
   "version": "0.1.2",
-  "description": "",
+  "description": "🔧🔨🔩 Full stack engineering boilerplate.",
   "main": "index.js",
   "scripts": {
     "release": "cy-node scripts/release.js",
@@ -21,15 +21,24 @@
   },
   "homepage": "https://gitlab.com/Cphayim/bolierplate#readme",
   "dependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
     "@naughty/cy-node": "^1.0.12",
     "@naughty/logger": "^1.0.1",
+    "commitizen": "^4.1.2",
     "compressing": "^1.4.0",
+    "cz-conventional-changelog": "^3.2.0",
     "dotenv": "^8.0.0",
     "shelljs": "^0.8.3",
+    "turndown": "^6.0.0",
     "yaml": "^1.6.0",
-    "yargs": "^13.2.4"
+    "yargs": "^13.2.4",
+    "yorkie": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^12.0.10"
+  },
+  "gitHooks": {
+    "commit-msg": "commitlint -e --config commitlint.config.js"
   }
 }
