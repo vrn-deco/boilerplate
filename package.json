@@ -6,7 +6,8 @@
   "scripts": {
     "release": "cy-node scripts/release.js && cy-node scripts/readme.js",
     "deploy": "cy-node scripts/deploy.js",
-    "test": "cy-node scripts/test.js"
+    "test": "cy-node scripts/test.js",
+    "commit": "git add . && git-cz"
   },
   "private": true,
   "repository": {
@@ -40,5 +41,10 @@
   },
   "gitHooks": {
     "commit-msg": "commitlint -e --config commitlint.config.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
