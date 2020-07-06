@@ -1,10 +1,11 @@
-#!/usr/bin/env node
+#!/usr/bin/env cy-node
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2020-07-06 10:40:52
+ * @LastEditTime: 2020-07-06 12:24:34
  * @Description: 一键发布脚本
  */
+
 import { join } from 'path'
 import { writeFileSync, existsSync, readFileSync, copyFileSync } from 'fs'
 import sh from 'shelljs'

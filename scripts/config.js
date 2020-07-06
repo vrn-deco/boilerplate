@@ -1,21 +1,27 @@
+#!/usr/bin/env cy-node
 /*
  * @Author: Cphayim
  * @Date: 2019-07-01 01:00:20
- * @LastEditTime: 2020-07-06 10:49:26
+ * @LastEditTime: 2020-07-06 12:27:49
  * @Description: 配置文件
  */
+
 import { join } from 'path'
 import { readFileSync } from 'fs'
 import YAML from 'yaml'
 import dotenv from 'dotenv'
+import { getArgByEnvOrBlock, genSSHPrivateKey } from './utils'
 
-dotenv.config()
+export const ROOT_DIR = join(__dirname, '..')
+export const PKG_DIR = join(ROOT_DIR, 'packages')
+
+const envFiles = ['.env', '.env.local']
+envFiles.forEach((item) => dotenv.config({ path: join(ROOT_DIR, item) }))
 
 // 打包文件后缀
 export const TGZ_EXT = '.tgz'
 
-export const ROOT_DIR = join(__dirname, '..')
-export const PKG_DIR = join(ROOT_DIR, 'packages')
+// 打包文件
 export const RELEASE_DIR = join(ROOT_DIR, 'release')
 export const RELEASE_YML_FILE = join(RELEASE_DIR, 'boilerplate.yml')
 export const RELEASE_JSON_FILE = join(RELEASE_DIR, 'boilerplate.json')
@@ -54,12 +60,15 @@ export const IGNORES = [
 ]
 
 // 服务端目录与配置
-export const SERVER_SIDE_USER = 'root'
-export const SERVER_SIDE_IP = '172.16.1.10'
-export const SERVER_SIDE_RELEASE_DIR = '/projects/boilerplate/'
-export const SERVER_SIDE_NGINX_CONF_DIR = '/etc/nginx/conf.d/'
+export const SERVER_SIDE_USER = getArgByEnvOrBlock('SERVER_SIDE_USER')
+export const SERVER_SIDE_IP = getArgByEnvOrBlock('SERVER_SIDE_IP')
+export const SERVER_SIDE_RELEASE_DIR = getArgByEnvOrBlock('SERVER_SIDE_RELEASE_DIR')
+export const SERVER_SIDE_NGINX_CONF_DIR = getArgByEnvOrBlock('SERVER_SIDE_NGINX_CONF_DIR')
 
-export const PRIVATE_KEY = join(ROOT_DIR, 'keys', 'boilerplate_rsa')
+// 连接私钥
+const LOCAL_PRIVATE_KEY = join(ROOT_DIR, 'keys', 'boilerplate_rsa')
+export const SSH_PRIVATE_KEY = genSSHPrivateKey({ localKeyFile: LOCAL_PRIVATE_KEY, rootDir: ROOT_DIR })
 
+// 发布用资源对象
 const RESOURCE_FILE = join(ROOT_DIR, 'resource.yml')
 export const releaseMap = YAML.parse(readFileSync(RESOURCE_FILE).toString())

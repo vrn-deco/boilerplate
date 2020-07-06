@@ -1,15 +1,16 @@
-#!/usr/bin/env node
+#!/usr/bin/env cy-node
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 09:21:54
- * @LastEditTime: 2020-07-06 10:51:19
+ * @LastEditTime: 2020-07-06 12:25:37
  * @Description: 一键部署脚本
  */
+
 import sh from 'shelljs'
 import { Logger } from '@naughty/logger'
 import {
   RELEASE_DIR,
-  PRIVATE_KEY,
+  SSH_PRIVATE_KEY,
   SERVER_SIDE_USER,
   SERVER_SIDE_IP,
   SERVER_SIDE_RELEASE_DIR,
@@ -26,7 +27,7 @@ const { code, stderr } = sh.exec(
   `
     set -e
     # 设置目录权限
-    ssh ${SERVER_SIDE_USER}@${SERVER_SIDE_IP} -i ${PRIVATE_KEY} "
+    ssh ${SERVER_SIDE_USER}@${SERVER_SIDE_IP} -i ${SSH_PRIVATE_KEY} "
       set -e
       # 创建对应目录，设置权限
       mkdir -p ${SERVER_SIDE_RELEASE_DIR}
@@ -35,16 +36,16 @@ const { code, stderr } = sh.exec(
 
     # 将 release 目录下的文件递归提交到服务端指定目录
     echo '正在将 release 目录下的文件递归上传至 ${SERVER_SIDE_IP} 服务器'
-    scp -i ${PRIVATE_KEY} ${RELEASE_DIR}/* ${SERVER_SIDE_USER}@${SERVER_SIDE_IP}:${SERVER_SIDE_RELEASE_DIR}
+    scp -i ${SSH_PRIVATE_KEY} ${RELEASE_DIR}/* ${SERVER_SIDE_USER}@${SERVER_SIDE_IP}:${SERVER_SIDE_RELEASE_DIR}
     echo '文件部署完毕'
 
     # 上传 nginx 配置
     echo '正在上传 nginx 配置文件至 ${SERVER_SIDE_IP} 服务器 '
-    scp -i ${PRIVATE_KEY} ${NGINX_CONF} ${SERVER_SIDE_USER}@${SERVER_SIDE_IP}:${SERVER_SIDE_NGINX_CONF_DIR}
+    scp -i ${SSH_PRIVATE_KEY} ${NGINX_CONF} ${SERVER_SIDE_USER}@${SERVER_SIDE_IP}:${SERVER_SIDE_NGINX_CONF_DIR}
     echo 'nginx 配置文件部署完毕'
 
     echo '正在为 ${SERVER_SIDE_IP} 服务器重载 nginx 服务'
-    ssh ${SERVER_SIDE_USER}@${SERVER_SIDE_IP} -i ${PRIVATE_KEY} "
+    ssh ${SERVER_SIDE_USER}@${SERVER_SIDE_IP} -i ${SSH_PRIVATE_KEY} "
       set -e
       # 重载 nginx 服务
       systemctl reload nginx
