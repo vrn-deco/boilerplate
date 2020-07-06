@@ -4,7 +4,7 @@
   "description": "🔧🔨🔩 Full stack engineering boilerplate.",
   "main": "index.js",
   "scripts": {
-    "release": "cy-node scripts/release.js",
+    "release": "cy-node scripts/release.js && cy-node scripts/readme.js",
     "deploy": "cy-node scripts/deploy.js",
     "test": "cy-node scripts/test.js"
   },
