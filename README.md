@@ -75,9 +75,15 @@
   <tbody>
     
 <tr>
+  <td>Redux + AntDesign</td>
+  <td>PC Web</td>
+  <td><a href="./packages/react-antd-boilerplate">react-antd-boilerplate</a></td>
+</tr>
+  
+<tr>
   <td>&lttypescript&gt Redux + AntDesign</td>
   <td>PC Web</td>
-  <td><a href="./packages/react-redux-antd-boilerplate">react-redux-antd-boilerplate</a></td>
+  <td><a href="./packages/react-antd-typescript-boilerplate">react-antd-typescript-boilerplate</a></td>
 </tr>
   
   </tbody>
