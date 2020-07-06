@@ -1,3 +1,5 @@
+# 打包资源配置文件
+
 # - title: Vue # 一级列表名称
 #   boilerplates: # 样板数组
 #     - title: boilerplate_title # 标题，显示在交互界面中中

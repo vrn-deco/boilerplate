@@ -26,3 +26,6 @@ yarn-error.log*
 /keys
 
 flutter_*
+
+/*.local
+/.env*

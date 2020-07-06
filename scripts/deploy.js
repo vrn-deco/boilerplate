@@ -2,18 +2,17 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 09:21:54
- * @LastEditTime: 2020-05-27 14:11:59
+ * @LastEditTime: 2020-07-06 10:51:19
  * @Description: 一键部署脚本
  */
 import sh from 'shelljs'
 import { Logger } from '@naughty/logger'
 import {
-  PRIVATE_KEY,
-  SERVER_SIDE_RELEASE_DIR,
   RELEASE_DIR,
+  PRIVATE_KEY,
   SERVER_SIDE_USER,
   SERVER_SIDE_IP,
-  YML_FILE,
+  SERVER_SIDE_RELEASE_DIR,
   SERVER_SIDE_NGINX_CONF_DIR,
   NGINX_CONF,
 } from './config'

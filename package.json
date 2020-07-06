@@ -8,12 +8,13 @@
     "deploy": "cy-node scripts/deploy.js",
     "test": "cy-node scripts/test.js"
   },
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+ssh://git@gitlab.com/Cphayim/bolierplate.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Cphayim",
   "license": "ISC",
   "bugs": {
     "url": "https://gitlab.com/Cphayim/bolierplate/issues"

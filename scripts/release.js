@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2020-06-15 11:02:50
+ * @LastEditTime: 2020-07-06 10:40:52
  * @Description: 一键发布脚本
  */
 import { join } from 'path'
@@ -11,7 +11,16 @@ import sh from 'shelljs'
 import YAML from 'yaml'
 import { Logger } from '@naughty/logger'
 
-import { PKG_DIR, RELEASE_DIR, TGZ_EXT, releaseInfoTpl, ROOT_DIR, YML_FILE, IGNORES } from './config'
+import {
+  ROOT_DIR,
+  PKG_DIR,
+  RELEASE_DIR,
+  TGZ_EXT,
+  IGNORES,
+  RELEASE_JSON_FILE,
+  RELEASE_YML_FILE,
+  releaseMap,
+} from './config'
 
 /**
  * ? 将 packages 下的所有目录，生成对应的 tgz 文件保存在 release 目录
@@ -70,7 +79,7 @@ if (result) {
   Logger.info('开始生成 yml 文件')
   genReleaseYaml()
   genTeamYaml()
-  Logger.success(`写入文件: ${YML_FILE}`)
+  Logger.success(`写入文件: ${RELEASE_YML_FILE}`)
 }
 
 function getVersion(pkgName) {
@@ -91,7 +100,7 @@ function getVersion(pkgName) {
  * 生成发布配置文件 boilerplate.yml
  */
 function genReleaseYaml() {
-  releaseInfoTpl.forEach((base) => {
+  releaseMap.forEach((base) => {
     base.boilerplates.forEach((boilerplate) => {
       const item = map[boilerplate.key]
       if (item) {
@@ -100,7 +109,8 @@ function genReleaseYaml() {
       }
     })
   })
-  writeFileSync(YML_FILE, YAML.stringify(releaseInfoTpl))
+  writeFileSync(RELEASE_YML_FILE, YAML.stringify(releaseMap))
+  writeFileSync(RELEASE_JSON_FILE, JSON.stringify(releaseMap, null, 2))
 }
 
 /**
