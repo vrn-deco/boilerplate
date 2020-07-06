@@ -8,7 +8,7 @@
  * @see '@/components/form/struct-data.js -> StructData'
  -->
 <template>
-  <div v-if="structData" class="netintech_formtable">
+  <div v-if="structData" class="vrn_formtable">
     <!-- 遍历行 -->
     <div class="row" v-for="(rowData, rowIndex) in structData" :key="rowIndex">
       <!-- 遍历列 -->
@@ -140,7 +140,7 @@ export default {
 </script>
 
 <style lang="scss">
-.netintech_formtable {
+.vrn_formtable {
   width: 100%;
   /* overflow: hidden; */
   .row {

@@ -168,7 +168,7 @@ $height: 40px;
     display: flex;
     align-items: center;
   }
-  .netintech_cascader {
+  .vrn_cascader {
     width: 75%;
     height: 100%;
   }
