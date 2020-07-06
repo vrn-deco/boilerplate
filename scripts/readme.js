@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-06 15:39:52
- * @LastEditTime: 2020-07-06 21:40:52
+ * @LastEditTime: 2020-07-06 22:32:11
  * @Description: 生成 README.md
  */
 import { writeFileSync, existsSync, readFileSync } from 'fs'
@@ -36,25 +36,25 @@ const tagList = [
 ]
 
 const content = `
-  <h1>${pkg.name}</h1>
-  <p>${pkg.description}</p>
+<h1>${pkg.name}</h1>
+<p>${pkg.description}</p>
 
-  <p>
-    ${tagList.map((tag) => buildTag(tag)).join(' ')}
-  </p>
+<p>
+  ${tagList.map((tag) => buildTag(tag)).join(' ')}
+</p>
 
-  ${resource
-    .map((item) => {
-      return [buildTitle(item.title), buildTable(item.boilerplates)].join('')
-    })
-    .join(' ')}
+${resource
+  .map((item) => {
+    return [buildTitle(item.title), buildTable(item.boilerplates)].join('')
+  })
+  .join(' ')}
 `
 
 function buildTag(tag) {
   return `
-    <a href="${tag.linkUrl}">
-      <img src="${tag.imgUrl}" alt="${tag.label}"/>
-    </a>
+<a href="${tag.linkUrl}">
+  <img src="${tag.imgUrl}" alt="${tag.label}"/>
+</a>
   `
 }
 
@@ -64,28 +64,28 @@ function buildTitle(title) {
 
 function buildTable(boilerplates) {
   return `
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Package</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${boilerplates.map((item) => buildTableItem(item)).join('')}
-      </tbody>
-    </table>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Package</th>
+    </tr>
+  </thead>
+  <tbody>
+    ${boilerplates.map((item) => buildTableItem(item)).join('')}
+  </tbody>
+</table>
   `
 }
 
 function buildTableItem(item) {
   return `
-    <tr>
-      <td>${item.title.replace(/</g, '&lt').replace(/>/g, '&gt')}</td>
-      <td>${item.tags.join(', ')}</td>
-      <td><a href="./packages/${item.key}">${item.key}</a></td>
-    </tr>
+<tr>
+  <td>${item.title.replace(/</g, '&lt').replace(/>/g, '&gt')}</td>
+  <td>${item.tags.join(', ')}</td>
+  <td><a href="./packages/${item.key}">${item.key}</a></td>
+</tr>
   `
 }
 
