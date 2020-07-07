@@ -8,7 +8,8 @@
  * @see '@/components/form/struct-data.js -> InputData'
  -->
 <template>
-  <el-input :class="['nt-input', {invalid: !isValid}]"
+  <el-input
+    :class="['vrn-input', { invalid: !isValid }]"
     v-model="value"
     @change="handleChange"
     :type="data.inputType"
@@ -20,22 +21,22 @@
 
 <script>
 export default {
-  name: 'NTInput',
+  name: 'VRNInput',
   components: {},
   model: {
     prop: 'data',
-    event: 'change'
+    event: 'change',
   },
   props: {
     data: {
       required: true,
-      type: Object
-    }
+      type: Object,
+    },
   },
   data() {
     return {
       value: '',
-      isValid: true // 是否是有效值
+      isValid: true, // 是否是有效值
     }
   },
   watch: {
@@ -44,8 +45,8 @@ export default {
       deep: true,
       handler(newData, oldData) {
         this.initValue(newData)
-      }
-    }
+      },
+    },
   },
   methods: {
     /**
@@ -68,7 +69,7 @@ export default {
       // 此处不需要验证数据的有效性，待 props 更新后触发验证
     },
     /**
-     * 将数据有效性上报（如果外层使用了 NTForm 则能够收集信息）
+     * 将数据有效性上报（如果外层使用了 VRNForm 则能够收集信息）
      * @param {string} value
      */
     validate(value) {
@@ -86,12 +87,12 @@ export default {
      */
     _verify(value, required, regexp) {
       // 没有正则
-      if(!(regexp instanceof RegExp)) {
+      if (!(regexp instanceof RegExp)) {
         // 根据是否必填和是否有值返回验证信息
         return required ? !!value : true
       }
       // 有正则
-      if(value) {
+      if (value) {
         // 有值则验证正则
         return regexp.test(value)
       } else {
@@ -105,13 +106,13 @@ export default {
      */
     getVal() {
       return this.value
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss">
-.nt-input {
+.vrn-input {
   &.invalid {
     .el-input__inner {
       border-color: red;
