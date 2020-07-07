@@ -1,3 +1,6 @@
+/* 引入antd样式 */
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
 }
@@ -5,6 +8,9 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.button-transform {
+  animation: button-spin infinite 4s linear;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -30,9 +36,25 @@
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    /* transform: rotate(0deg); */
+    margin-left: -100px;
   }
   to {
-    transform: rotate(360deg);
+    /* transform: rotate(360deg); */
+    margin-right: -100px;
+  }
+}
+@keyframes button-spin {
+  0% {
+    margin-left: -200px;
+    transform: rotate(0deg);
+  }
+  50% {
+    margin-right: -400px;
+    transform: rotate(720deg);
+  }
+  100% {
+    margin-left: -200px;
+    transform: rotate(deg);
   }
 }
