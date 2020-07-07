@@ -1,7 +1,7 @@
 <!--
  * @Author: Cphayim
  * @Date: 2019-09-26 10:18:12
- * @LastEditTime: 2019-10-08 09:11:53
+ * @LastEditTime: 2020-07-07 11:19:05
  * @Description: 路由切换过渡效果组件
  *
  * slots
@@ -110,6 +110,7 @@ export default {
 .slide-out-leave-active {
   opacity: 0.8;
   transform: translate3d(100%, 0, 0);
+  transition-delay: 0.05s;
 }
 
 .slide-in-enter {
@@ -120,5 +121,6 @@ export default {
 .slide-in-leave-active {
   opacity: 0.8;
   transform: translate3d(-100%, 0, 0);
+  transition-delay: 0.05s;
 }
 </style>
