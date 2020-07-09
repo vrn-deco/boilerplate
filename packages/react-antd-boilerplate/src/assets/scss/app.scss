@@ -1,6 +1,3 @@
-/* 引入antd样式 */
-@import '~antd/dist/antd.css';
-
 .App {
   text-align: center;
 }
@@ -55,6 +52,6 @@
   }
   100% {
     margin-left: -200px;
-    transform: rotate(deg);
+    transform: rotate(0deg);
   }
 }
