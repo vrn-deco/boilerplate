@@ -7,11 +7,23 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.4.1",
+    "axios": "^0.19.2",
+    "base-64": "^0.1.0",
+    "js-md5": "^0.7.3",
+    "moment": "^2.27.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-redux": "^7.2.0",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1"
   },
   "scripts": {
+    "dev": "npm run start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

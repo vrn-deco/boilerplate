@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  name: 'NTRadio',
+  name: 'VRNRadio',
   components: {},
   props: {
     data: {

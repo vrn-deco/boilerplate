@@ -12,9 +12,9 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Package</th>
+      <th>名称</th>
+      <th>类型</th>
+      <th>包</th>
     </tr>
   </thead>
   <tbody>
@@ -66,9 +66,9 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Package</th>
+      <th>名称</th>
+      <th>类型</th>
+      <th>包</th>
     </tr>
   </thead>
   <tbody>
@@ -92,9 +92,9 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Package</th>
+      <th>名称</th>
+      <th>类型</th>
+      <th>包</th>
     </tr>
   </thead>
   <tbody>
