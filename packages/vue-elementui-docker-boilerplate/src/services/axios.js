@@ -10,7 +10,7 @@ import axios from 'axios'
 import store from '@/store'
 import { authorizationFormat } from '@/utils'
 import config from '@/config'
-import router from '@/router'
+import router from '@/router/index1'
 
 const DEFAULT_OPTIONS = {
   timeout: 30000,

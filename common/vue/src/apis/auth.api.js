@@ -1,10 +1,9 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-01-03 18:29:42
- * @LastEditTime: 2020-06-15 11:02:04
+ * @LastEditTime: 2020-07-13 01:48:19
  * @Description:
  */
-import b64 from 'base-64'
 import Axios, { AxiosConfig } from '@/apis/services/axios'
 
 // 登录

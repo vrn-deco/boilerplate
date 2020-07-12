@@ -79,7 +79,7 @@ export default {
      * @returns {string | Array<string>}
      */
     _format(value, formatStr = 'YYYY-MM-DD') {
-      if(!Array.isArray(value)) {
+      if (!Array.isArray(value)) {
         return moment(value).format(formatStr)
       }
       return value.map(value => this._format(value))

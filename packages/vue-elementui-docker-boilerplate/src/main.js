@@ -15,7 +15,7 @@ import { registerDirectives } from '@/directives'
 import { registerFilters } from '@/filters'
 import { registerEventBus } from '@/utils/event-bus'
 
-import router from '@/router'
+import router from '@/router/index1'
 import store from '@/store'
 import App from '@/App.vue'
 

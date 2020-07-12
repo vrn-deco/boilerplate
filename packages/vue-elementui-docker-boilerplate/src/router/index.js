@@ -1,49 +1,25 @@
+/*
+ * @Author: benaozhi
+ * @Date: 2020-07-13 01:51:51
+ * @LastEditTime: 2020-07-13 01:51:53
+ * @Description:
+ */
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '@/views/web/home/home.vue'
-import demoRoutes from '@/views/demo/routes'
+import routes from './routes'
+
+import { registerBeforeGuard, registerAfterGuard } from './guards'
 
 Vue.use(Router)
 
-// 404页面
-const NotFoundPage = resolve => {
-  require.ensure(['@/views/system/pageUndefind.vue'], () => {
-    resolve(require('@/views/system/pageUndefind.vue'))
-  })
-}
-const BadPage = resolve => {
-  require.ensure(['@/views/system/pageBadGateway.vue'], () => {
-    resolve(require('@/views/system/pageBadGateway.vue'))
-  })
-}
-
 const router = new Router({
   base: process.env.BASE_URL,
-  routes: [
-    {
-      path: '*',
-      name: 'NotFound',
-      component: NotFoundPage,
-      meta: { title: '404' }
-    },
-    {
-      path: '/502',
-      name: 'Bad',
-      component: BadPage,
-      meta: { title: '502' }
-    },
-    {
-      path: '/',
-      redirect: '/home'
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: Home
-    },
-    ...demoRoutes
-  ]
+  routes
 })
+
+// 注册守卫
+registerBeforeGuard(router)
+registerAfterGuard(router)
 
 export default router

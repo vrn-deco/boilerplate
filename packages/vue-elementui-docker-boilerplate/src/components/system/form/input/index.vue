@@ -86,12 +86,12 @@ export default {
      */
     _verify(value, required, regexp) {
       // 没有正则
-      if(!(regexp instanceof RegExp)) {
+      if (!(regexp instanceof RegExp)) {
         // 根据是否必填和是否有值返回验证信息
         return required ? !!value : true
       }
       // 有正则
-      if(value) {
+      if (value) {
         // 有值则验证正则
         return regexp.test(value)
       } else {

@@ -12,4 +12,7 @@ export default {
 </script>
 
 <style lang="scss">
+.home{
+  font-size: r(2);
+}
 </style>
