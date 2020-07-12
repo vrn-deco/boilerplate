@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-12 11:02:38
+ * @LastEditTime: 2020-07-12 13:18:01
  * @Description: 全局路由跳转方式
  */
 

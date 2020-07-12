@@ -9,7 +9,7 @@ class Constant {
   static SET_ROUTE_NAME = 'SET_ROUTE_NAME'
 }
 
-class Action {
+export class Action {
   // 存储路由名称
   static setRouteName = (routeName) => ({ type: Constant.SET_ROUTE_NAME, payload: routeName })
 }
@@ -24,14 +24,10 @@ class Reducer {
   }
 }
 
-// 导出glabel仓库
-export class HomeStore {
-  createReducer() {
-    return (state = Reducer.initialState, action = {}) => {
-      const { type, payload } = action
-      return Reducer[type] ? Reducer[type](state, payload) : state
-    }
+// 导出homeStore仓库
+export function homeStore() {
+  return (state = Reducer.initialState, action = {}) => {
+    const { type, payload } = action
+    return Reducer[type] ? Reducer[type](state, payload) : state
   }
-
-  static action = Action
 }

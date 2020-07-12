@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-12 10:48:38
+ * @LastEditTime: 2020-07-12 13:35:01
  * @Description: glabelStore
  */
 
@@ -10,7 +10,7 @@ class Constant {
   static SET_TOKEN = 'SET_TOKEN'
 }
 
-class Action {
+export class Action {
   // 存储用户信息
   static setUserInfo = (userInfo) => ({ type: Constant.SET_USER_INFO, payload: userInfo })
   // 存储用户Token
@@ -33,13 +33,7 @@ class Reducer {
 }
 
 // 导出glabel仓库
-export class GlabelStore {
-    createReducer() {
-        return (state = Reducer.initialState, action = {}) => {
-            const { type, payload } = action
-            return Reducer[type] ? Reducer[type](state, payload) : state
-        }
-    }
-
-    static action = Action
+export function glabelStore(state = Reducer.initialState, action = {}) {
+  const { type, payload } = action
+  return Reducer[type] ? Reducer[type](state, payload) : state
 }
