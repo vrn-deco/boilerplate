@@ -33,12 +33,10 @@
 
 @keyframes App-logo-spin {
   from {
-    /* transform: rotate(0deg); */
-    margin-left: -100px;
+    transform: rotate(0deg);
   }
   to {
-    /* transform: rotate(360deg); */
-    margin-right: -100px;
+    transform: rotate(360deg);
   }
 }
 @keyframes button-spin {
