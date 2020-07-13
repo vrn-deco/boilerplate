@@ -1,14 +1,14 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-03-14 17:38:09
- * @LastEditTime: 2020-07-08 10:47:46
+ * @LastEditTime: 2020-07-13 15:32:27
  * @Description: 配置文件
  */
 
 const IS_DEV = process.env.NODE_ENV === 'development'
 
 // 开发环境地址
-const DEV_BASE_URL = 'http://58.210.169.163:19006'
+const DEV_BASE_URL = 'https://myvx.netintech.cn:4433/pc'
 // 生产环境地址，如果和后端合并部署留空''或 '/'，独立部署同上填协议+主机名+端口号
 const PROD_BASE_URL = '/'
 
@@ -46,7 +46,7 @@ export default {
     MAINTENANCE: 503, // 系统维护中
   },
   // 服务端返回 unauthorized 时跳转的路由地址（比如登录页），可选，如没有配置将抛出异常，可在 catch 中处理
-  UNAUTHORIZED_REDIRECT_PATH: '/login',
+  UNAUTHORIZED_REDIRECT_PATH: '/',
   /*
     end: 网络请求相关配置
   */

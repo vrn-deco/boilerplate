@@ -1,32 +1,37 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-12 13:18:01
+ * @LastEditTime: 2020-07-13 17:05:56
  * @Description: 全局路由跳转方式
  */
 
 import React, { Component } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+import config from '@/config'
 
-class RouterView extends Component {
+export const history = createBrowserHistory()
+
+export class RouterView extends Component {
   render() {
     return (
       <div>
-        <Switch>
-          {this.props.routeLists.map((item) => {
-            return (
-              <Route
-                exact={item.exact}
-                path={item.path}
-                component={item.component}
-                key={item.component}
-              />
-            )
-          })}
-        </Switch>
+        <Router history={history}>
+          <Switch>
+            {this.props.routeLists.map((item) => {
+              return (
+                <Route
+                  exact={item.exact}
+                  path={item.path}
+                  component={item.component}
+                  key={item.component}
+                />
+              )
+            })}
+            <Redirect from="/*" to={config.UNAUTHORIZED_REDIRECT_PATH} />
+          </Switch>
+        </Router>
       </div>
     )
   }
 }
-
-export default RouterView

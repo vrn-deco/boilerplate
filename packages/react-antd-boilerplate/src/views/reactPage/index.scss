@@ -29,6 +29,10 @@
 
 .App-link {
   color: #61dafb;
+  cursor: pointer;
+  &:hover {
+    color: #40a9ff;
+  }
 }
 
 @keyframes App-logo-spin {

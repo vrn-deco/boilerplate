@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-08-28 17:22:39
- * @LastEditTime: 2019-11-15 13:44:38
+ * @LastEditTime: 2020-07-13 13:55:01
  * @Description: create-react-app 配置重写
  */
 
@@ -15,7 +15,7 @@ function resolve(dir) {
 module.exports = override(
   // 配置路径别名
   addWebpackAlias({
-    '@': path.resolve(__dirname, 'src'),
+    '@': resolve('src'),
   }),
   // antd按需加载
   fixBabelImports('import', {

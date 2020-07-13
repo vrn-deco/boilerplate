@@ -1,9 +1,0 @@
-@function pxWRem($val) {
-    $basic: 16;
-    @return ($val / $basic) + rem;
-}
-
-@function pxHRem($val) {
-    $basic: 16;
-    @return ($val / $basic) + rem;
-}
