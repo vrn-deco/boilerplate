@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-12 10:56:48
+ * @LastEditTime: 2020-07-13 09:16:45
  * @Description: homeStore
  */
 
@@ -25,9 +25,7 @@ class Reducer {
 }
 
 // 导出homeStore仓库
-export function homeStore() {
-  return (state = Reducer.initialState, action = {}) => {
-    const { type, payload } = action
-    return Reducer[type] ? Reducer[type](state, payload) : state
-  }
+export const homeStore = (state = Reducer.initialState, action = {}) => {
+  const { type, payload } = action
+  return Reducer[type] ? Reducer[type](state, payload) : state
 }

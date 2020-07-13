@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-12 13:35:01
+ * @LastEditTime: 2020-07-13 09:16:01
  * @Description: glabelStore
  */
 
@@ -33,7 +33,7 @@ class Reducer {
 }
 
 // 导出glabel仓库
-export function glabelStore(state = Reducer.initialState, action = {}) {
+export const glabelStore = (state = Reducer.initialState, action = {}) => {
   const { type, payload } = action
   return Reducer[type] ? Reducer[type](state, payload) : state
 }
