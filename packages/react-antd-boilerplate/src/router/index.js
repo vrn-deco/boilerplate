@@ -1,14 +1,16 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-14 16:24:45
+ * @LastEditTime: 2020-07-14 18:41:35
  * @Description: 全局路由跳转方式
  */
 
 import React, { Component } from 'react'
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import config from '@/config'
+// import { connect } from 'react-redux'
+// import { routerActions } from 'connected-react-router'
 
 export const history = createBrowserHistory()
 
@@ -34,4 +36,4 @@ class RouterView extends Component {
   }
 }
 
-export default withRouter(RouterView)
+export default RouterView

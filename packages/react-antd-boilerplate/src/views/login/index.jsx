@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-07 08:51:44
- * @LastEditTime: 2020-07-14 17:57:59
+ * @LastEditTime: 2020-07-14 18:15:37
  * @Description: 登录页
  */
 
@@ -47,7 +47,7 @@ class Login extends Component {
     return (
       <div className="loginPage">
         <div className="login_wrap">
-          <h2 className="title">React-Antd-Boilerplate</h2>
+          <h2 className="title">{this.props.userInfo}</h2>
           <div className="login-content">
             <Form {...layout} onFinish={this.handleSubmit} className="login-from">
               <Form.Item

@@ -1,14 +1,15 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-08 09:47:16
- * @LastEditTime: 2020-07-14 15:25:53
+ * @LastEditTime: 2020-07-14 18:13:49
  * @Description: 自定义axios
  */
 
 import axios from 'axios'
 // import { authorizationFormat } from '@/utils/helpers'
 import config from '@/config'
-import { history } from '@/router'
+import { push } from 'connected-react-router'
+import store from '@/store'
 
 const DEFAULT_OPTIONS = {
   timeout: 3000,
@@ -43,16 +44,15 @@ Axios.interceptors.request.use(
 Axios.interceptors.response.use((response) => {
   const res = response.data
   const code = res[config.RESPONSE_CODE_FILED]
-  console.log(response.data, 'response.data')
   if (code === config.RESPONSE_CODE.OK) {
     // 成功，直接返回 data
-    history.replace(config.UNAUTHORIZED_REDIRECT_PATH)
+    store.dispatch(push(config.UNAUTHORIZED_REDIRECT_PATH))
     return res[config.RESPONSE_DATA_FILED]
   } else if (code === config.RESPONSE_CODE.UNAUTHORIZED) {
     // token 过期或未登录
     // 当 config.UNAUTHORIZED_REDIRECT_PATH 有设置时进行自动跳转到先导页
     if (config.UNAUTHORIZED_REDIRECT_PATH) {
-      history.replace(config.UNAUTHORIZED_REDIRECT_PATH)
+      store.dispatch(push(config.UNAUTHORIZED_REDIRECT_PATH))
     }
     // 抛出异常中断外部后续逻辑
     throw new Error(res[config.RESPONSE_MESSAGE_FILED])

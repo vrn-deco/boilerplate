@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-14 17:55:49
+ * @LastEditTime: 2020-07-14 18:03:43
  * @Description: react-antd-boilerplate先导页
  */
 
@@ -10,9 +10,6 @@ import { connect } from 'react-redux'
 import logo from '@/logo.svg'
 import { Button } from 'antd'
 import './index.scss'
-import store from '@/store'
-
-const storeState = store.getState()
 
 class ReactPage extends Component {
   constructor() {
