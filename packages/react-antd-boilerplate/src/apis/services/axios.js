@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-08 09:47:16
- * @LastEditTime: 2020-07-13 17:14:54
+ * @LastEditTime: 2020-07-14 11:29:51
  * @Description: 自定义axios
  */
 
@@ -46,13 +46,13 @@ Axios.interceptors.response.use((response) => {
   console.log(response.data, 'response.data')
   if (code === config.RESPONSE_CODE.OK) {
     // 成功，直接返回 data
-    // return res[config.RESPONSE_DATA_FILED]
     history.replace(config.UNAUTHORIZED_REDIRECT_PATH)
+    return res[config.RESPONSE_DATA_FILED]
   } else if (code === config.RESPONSE_CODE.UNAUTHORIZED) {
     // token 过期或未登录
     // 当 config.UNAUTHORIZED_REDIRECT_PATH 有设置时进行自动跳转到先导页
     if (config.UNAUTHORIZED_REDIRECT_PATH) {
-      window.location.replace(config.UNAUTHORIZED_REDIRECT_PATH)
+      history.replace(config.UNAUTHORIZED_REDIRECT_PATH)
     }
     // 抛出异常中断外部后续逻辑
     throw new Error(res[config.RESPONSE_MESSAGE_FILED])

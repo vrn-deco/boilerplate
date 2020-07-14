@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-13 13:50:26
+ * @LastEditTime: 2020-07-14 11:26:12
  * @Description: glabelStore
  */
 
@@ -19,15 +19,15 @@ class Action {
 
 class Reducer {
   static initialState = {
-    userInfo: null,
+    userInfo: 'VRN',
     token: null,
   };
 
-  [Constant.SET_USER_INFO](state, userInfo) {
+  static [Constant.SET_USER_INFO](state, userInfo) {
     return { ...state, userInfo }
   }
 
-  [Constant.SET_TOKEN](state, token) {
+  static [Constant.SET_TOKEN](state, token) {
     return { ...state, token }
   }
 }
@@ -36,6 +36,7 @@ export class GlabelStore {
   static createReducer() {
     return (state = Reducer.initialState, action = {}) => {
       const { type, payload } = action
+      console.log(Reducer[type] ? Reducer[type](state, payload) : state)
       return Reducer[type] ? Reducer[type](state, payload) : state
     }
   }
