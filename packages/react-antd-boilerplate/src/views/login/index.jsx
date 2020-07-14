@@ -1,15 +1,15 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-07 08:51:44
- * @LastEditTime: 2020-07-14 11:28:09
+ * @LastEditTime: 2020-07-14 17:57:59
  * @Description: 登录页
  */
 
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Form, Icon, Input, Button, Checkbox, message } from 'antd'
 import { authAPI } from '@/apis'
 import './index.scss'
-import store from '@/store'
 import { GlabelStore } from '../glabel.store'
 
 const layout = {
@@ -31,7 +31,7 @@ class Login extends Component {
       console.log(res)
       const { name } = res.data.user
       // 登录成功后的操作
-      store.dispatch(GlabelStore.action.setUserInfo(name))
+      this.props.setUserInfo(name)
       message.success({
         content: 'Welcome to system!',
         duration: 1,
@@ -43,6 +43,7 @@ class Login extends Component {
     })
   }
   render() {
+    console.log(this.props, 'login')
     return (
       <div className="loginPage">
         <div className="login_wrap">
@@ -85,4 +86,12 @@ class Login extends Component {
   }
 }
 
-export default Login
+const mapStateToProps = state => ({
+  userInfo: state.glabelStore.userInfo
+})
+
+const mapDispatchToProps = {
+  ...GlabelStore.action
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

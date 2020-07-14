@@ -1,22 +1,21 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-13 17:05:56
+ * @LastEditTime: 2020-07-14 16:24:45
  * @Description: 全局路由跳转方式
  */
 
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import config from '@/config'
 
 export const history = createBrowserHistory()
 
-export class RouterView extends Component {
+class RouterView extends Component {
   render() {
     return (
       <div>
-        <Router history={history}>
           <Switch>
             {this.props.routeLists.map((item) => {
               return (
@@ -30,8 +29,9 @@ export class RouterView extends Component {
             })}
             <Redirect from="/*" to={config.UNAUTHORIZED_REDIRECT_PATH} />
           </Switch>
-        </Router>
       </div>
     )
   }
 }
+
+export default withRouter(RouterView)

@@ -1,28 +1,26 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-07 17:02:40
- * @LastEditTime: 2020-07-14 11:32:38
+ * @LastEditTime: 2020-07-14 16:31:08
  * @Description: 主页面
  */
 
 import React, { Component } from 'react'
-import { Provider } from 'react-redux'
-import { RouterView } from './router'
+import RouterView, { history } from './router'
+import { BrowserRouter as Router } from 'react-router-dom'
 import routeLists from './views/root.routes'
-import store from './store'
 
 class App extends Component {
+  componentDidMount() {
+    console.log(this.context, 'app')
+  }
   render() {
     return (
-      <div>
-        <Provider store={store}>
-          <RouterView routeLists={routeLists}></RouterView>
-        </Provider>
-      </div>
+      <Router history={history}>
+        <RouterView routeLists={routeLists}></RouterView>
+      </Router>
     )
   }
 }
-
-
 
 export default App

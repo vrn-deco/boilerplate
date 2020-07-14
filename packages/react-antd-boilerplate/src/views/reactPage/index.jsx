@@ -1,11 +1,12 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-14 11:05:48
+ * @LastEditTime: 2020-07-14 17:55:49
  * @Description: react-antd-boilerplate先导页
  */
 
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import logo from '@/logo.svg'
 import { Button } from 'antd'
 import './index.scss'
@@ -23,14 +24,13 @@ class ReactPage extends Component {
     this.props.history.push('/login')
   }
   render() {
-    console.log(storeState)
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             <Button type="primary" size="large" shape="circle" className="button-transform">
-              { storeState.glabelStore.userInfo }
+              { this.props.userInfo }
             </Button>
           </p>
           <span className="App-link" onClick={this.jumpPage}>
@@ -42,4 +42,8 @@ class ReactPage extends Component {
   }
 }
 
-export default ReactPage
+const mapStateToProps = state => ({
+  userInfo: state.glabelStore.userInfo
+})
+
+export default connect(mapStateToProps)(ReactPage)
