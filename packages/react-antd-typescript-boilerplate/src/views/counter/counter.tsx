@@ -1,14 +1,7 @@
-/*
- * @Author: Cphayim
- * @Date: 2019-09-10 17:18:39
- * @LastEditTime: 2020-07-15 09:24:46
- * @Description: 计数器容器组件
- */
-
+import React from 'react'
 import Types from 'MyTypes'
 import { connect } from 'react-redux'
 
-import { FCCounter } from './fc-counter'
 import { CounterStore } from './counter.store'
 
 interface StateProps {
@@ -16,7 +9,6 @@ interface StateProps {
     count: number
   }
 }
-
 interface DispatchProps {
   readonly onIncrement: () => void
   readonly onDecrement: () => void
@@ -26,11 +18,30 @@ interface DispatchProps {
 const mapStateToProps: StateProps = (state) => ({
   count: state.counter.count,
 })
-
 const mapDispatchToProps: DispatchProps = {
   onIncrement: CounterStore.action.increment,
   onDecrement: CounterStore.action.decrement,
   onSet: CounterStore.action.set,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FCCounter)
+interface OwnProps {
+  label: string
+}
+type Props = ReturnType<StateProps> & DispatchProps & OwnProps
+
+class Counter extends React.Component<Props> {
+  render() {
+    const { label, count, onIncrement } = this.props
+    return (
+      <div>
+        <span>
+          {label}: {count}
+        </span>
+        <button type='button' onClick={onIncrement}>
+          {`Increment`}
+        </button>
+      </div>
+    )
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)

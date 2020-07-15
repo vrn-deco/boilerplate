@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "dev": "npm start",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "react-scripts"
   },
   "dependencies": {
     "antd": "^3.26.15",
@@ -19,9 +21,10 @@
     "react-helmet": "^5.2.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.1.1",
+    "react-scripts": "^3.4.1",
     "react-transition-group": "^4.3.0",
     "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "redux-observable": "^1.2.0",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.1",

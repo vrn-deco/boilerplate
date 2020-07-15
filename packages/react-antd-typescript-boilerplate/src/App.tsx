@@ -1,16 +1,17 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-08-28 17:22:39
- * @LastEditTime: 2019-09-17 15:25:33
+ * @LastEditTime: 2020-07-15 10:25:36
  * @Description: 入口组件
  */
 
 import React from 'react'
 import { Provider } from 'react-redux'
 
-import store from './store'
-import Counter from './views/counter'
-import { ErrorBoundary } from './components/ErrorBoundary'
+import { store } from '@/store'
+import { ErrorBoundary } from '@/components/ErrorBoundary'
+
+import Counter from '@/views/counter/counter'
 
 export default class App extends React.Component {
   render() {
