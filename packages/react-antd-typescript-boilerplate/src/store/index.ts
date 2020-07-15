@@ -1,28 +1,33 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-06 12:57:34
- * @LastEditTime: 2020-07-15 10:25:17
+ * @LastEditTime: 2020-07-15 12:42:35
  * @Description:
  */
 import { createStore, applyMiddleware } from 'redux'
-import { createBrowserHistory } from 'history'
+import thunk from 'redux-thunk'
+import { createLogger } from 'redux-logger'
 import { routerMiddleware as createRouterMiddleware } from 'connected-react-router'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import thunk from 'redux-thunk'
 
-import rootReducer from './root-reducer'
+import { history } from '@/router/history'
+
+import createReducer from './root-reducer'
 
 // browser history
-export const history = createBrowserHistory()
 const routerMiddleware = createRouterMiddleware(history)
 
 // configure middlewares
 const middlewares = [thunk, routerMiddleware]
+if (process.env.NODE_ENV !== 'production') {
+  const loggerMiddleware = createLogger()
+  middlewares.push(loggerMiddleware)
+}
+
 // compose enhancers
 const composeEnhancer = composeWithDevTools(applyMiddleware(...middlewares))
 
-// rehydrate state on app start
 const initialState = {}
+const reducer = createReducer(history)
 
-// create store
-export const store = createStore(rootReducer(history), initialState, composeEnhancer)
+export const store = createStore(reducer, initialState, composeEnhancer)

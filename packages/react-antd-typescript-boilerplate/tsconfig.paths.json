@@ -1,6 +1,6 @@
 /*
   create-react-app 会自动重置 tsconfig.json 中的一些选项
-  将会被重置但确实需要修改的选项单独写出来
+  所以将会被重置但确实需要修改的选项单独写出来
 */
 {
   "compilerOptions": {

@@ -31,8 +31,9 @@ const mapDispatchToProps: DispatchProps = {
 interface OwnProps {}
 type Props = ReturnType<StateProps> & DispatchProps & OwnProps
 
-class CounterIndexPage extends React.Component<Props> {
+class CounterRecordPage extends React.Component<Props> {
   state = {
+    a: 'abc',
     value: 0,
   }
 
@@ -44,32 +45,13 @@ class CounterIndexPage extends React.Component<Props> {
     }))
   }
 
-  navigateToRecord = () => {
-    this.props.push('/counter/record')
-  }
-
   render() {
     const { count, onIncrement, onDecrement, onSet } = this.props
     return (
       <CounterWrap>
-        <Count>{count}</Count>
-        <Row>
-          <CircularButton onClick={onIncrement} color="#4CAF50">
-            +1
-          </CircularButton>
-          <CircularButton onClick={onDecrement} color="#F44336">
-            -1
-          </CircularButton>
-        </Row>
-        <Row>
-          <TextFiled value={this.state.value} onChange={this.handleInputChange}></TextFiled>
-          <CircularButton onClick={() => onSet(this.state.value)}>SET</CircularButton>
-        </Row>
-        <Row>
-          <span onClick={this.navigateToRecord}>Record</span>
-        </Row>
+        <Count>Record</Count>
       </CounterWrap>
     )
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(CounterIndexPage)
+export default connect(mapStateToProps, mapDispatchToProps)(CounterRecordPage)

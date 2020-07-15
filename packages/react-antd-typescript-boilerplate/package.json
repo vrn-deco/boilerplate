@@ -1,14 +1,12 @@
 {
   "name": "react-ts-antd-boilerplate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "npm start",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject",
-    "lint": "react-scripts"
+    "test": "react-app-rewired test"
   },
   "dependencies": {
     "antd": "^3.26.15",
@@ -20,43 +18,40 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "react-redux": "^7.2.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.4.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
     "react-transition-group": "^4.3.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-observable": "^1.2.0",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.1",
-    "tslib": "^1.11.1",
     "typesafe-actions": "^4.4.2",
     "utility-types": "^3.10.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
     "@types/history": "^4.7.5",
-    "@types/jest": "24.0.18",
-    "@types/node": "12.7.2",
-    "@types/react": "16.9.2",
-    "@types/react-dom": "16.9.0",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.50",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.7",
-    "@types/redux": "^3.6.0",
-    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/redux-logger": "^3.0.8",
+    "@types/styled-components": "^5.1.1",
     "babel-plugin-import": "^1.13.0",
     "customize-cra": "^0.5.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.1",
-    "react-app-rewired": "^2.1.5",
-    "react-redux-typescript-scripts": "^1.6.2",
-    "tslint": "^5.20.1",
-    "tslint-react": "^4.2.0",
-    "typescript": "3.5.3"
+    "install": "^0.13.0",
+    "node-sass": "^4.14.1",
+    "npm": "^6.14.6",
+    "react-app-rewired": "^2.1.6",
+    "typescript": "^3.7.5"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "./node_modules/react-redux-typescript-scripts/eslint.js",
-      "./node_modules/react-redux-typescript-scripts/eslint-prettier.js"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [

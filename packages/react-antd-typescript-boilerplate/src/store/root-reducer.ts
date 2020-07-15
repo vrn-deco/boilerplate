@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-09-16 15:39:24
- * @LastEditTime: 2020-07-15 10:30:32
+ * @LastEditTime: 2020-07-15 12:19:20
  * @Description: root-reducer
  */
 
@@ -11,10 +11,10 @@ import { connectRouter } from 'connected-react-router'
 
 import { CounterStore } from '@/views/counter/counter.store'
 
-const rootReducer = (history: History) =>
+const createReducer = (history: History) =>
   combineReducers({
     router: connectRouter(history),
     counter: CounterStore.getReducer(),
   })
 
-export default rootReducer
+export default createReducer
