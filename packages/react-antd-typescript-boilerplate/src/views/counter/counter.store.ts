@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-13 10:55:12
- * @LastEditTime: 2020-07-15 09:22:19
+ * @LastEditTime: 2020-07-15 23:29:27
  * @Description: 示例 store，除 Store 类以外请不要导出其余部分（单一入口）
  */
 import { action, createReducer } from 'typesafe-actions'

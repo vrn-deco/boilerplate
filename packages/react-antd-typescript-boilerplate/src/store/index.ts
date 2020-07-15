@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-06 12:57:34
- * @LastEditTime: 2020-07-15 12:42:35
+ * @LastEditTime: 2020-07-16 00:27:08
  * @Description:
  */
 import { createStore, applyMiddleware } from 'redux'
@@ -10,7 +10,7 @@ import { createLogger } from 'redux-logger'
 import { routerMiddleware as createRouterMiddleware } from 'connected-react-router'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import { history } from '@/router/history'
+import { history } from '@/router'
 
 import createReducer from './root-reducer'
 

@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-14 15:52:34
- * @LastEditTime: 2020-07-15 15:38:17
+ * @LastEditTime: 2020-07-16 00:02:47
  * @Description: 应用入口
  */
 import React from 'react'
@@ -13,12 +13,7 @@ import '@/assets/scss/all.scss'
 
 import App from '@/App'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+ReactDOM.render(<App />, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

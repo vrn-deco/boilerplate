@@ -1,13 +1,13 @@
 import React from 'react'
-import Types from 'MyTypes'
 import { connect } from 'react-redux'
 import { push, Push } from 'connected-react-router'
 
 import { CounterStore } from './counter.store'
-import { Count, CounterWrap, Row, CircularButton, TextFiled } from './index.styled'
+import { Count, CounterWrap } from './index.styled'
+import { RootState } from '@/store/types'
 
 interface StateProps {
-  (state: Types.RootState): {
+  (state: RootState): {
     count: number
   }
 }
@@ -46,7 +46,7 @@ class CounterRecordPage extends React.Component<Props> {
   }
 
   render() {
-    const { count, onIncrement, onDecrement, onSet } = this.props
+    // const {} = this.props
     return (
       <CounterWrap>
         <Count>Record</Count>

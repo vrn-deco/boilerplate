@@ -1,13 +1,25 @@
+/*
+ * @Author: Cphayim
+ * @Date: 2020-07-15 11:06:21
+ * @LastEditTime: 2020-07-16 00:16:15
+ * @Description: 计数器页面
+ */
 import React from 'react'
-import Types from 'MyTypes'
 import { connect } from 'react-redux'
-import { push, Push } from 'connected-react-router'
 
 import { CounterStore } from './counter.store'
-import { Count, CounterWrap, Row, CircularButton, TextFiled } from './index.styled'
+import {
+  Count,
+  CounterWrap,
+  Row,
+  CircularButton,
+  TextFiled,
+} from './index.styled'
+import { RootState } from '@/store/types'
+import { RouteComponentProps } from 'react-router-dom'
 
 interface StateProps {
-  (state: Types.RootState): {
+  (state: RootState): {
     count: number
   }
 }
@@ -15,7 +27,6 @@ interface DispatchProps {
   readonly onIncrement: () => void
   readonly onDecrement: () => void
   readonly onSet: (num: number) => void
-  readonly push: Push
 }
 
 const mapStateToProps: StateProps = (state) => ({
@@ -25,11 +36,9 @@ const mapDispatchToProps: DispatchProps = {
   onIncrement: CounterStore.action.increment,
   onDecrement: CounterStore.action.decrement,
   onSet: CounterStore.action.set,
-  push: push,
 }
 
-interface OwnProps {}
-type Props = ReturnType<StateProps> & DispatchProps & OwnProps
+type Props = ReturnType<StateProps> & DispatchProps & RouteComponentProps
 
 class CounterIndexPage extends React.Component<Props> {
   state = {
@@ -45,7 +54,7 @@ class CounterIndexPage extends React.Component<Props> {
   }
 
   navigateToRecord = () => {
-    this.props.push('/counter/record')
+    this.props.history.push('/counter/record')
   }
 
   render() {
@@ -54,16 +63,21 @@ class CounterIndexPage extends React.Component<Props> {
       <CounterWrap>
         <Count>{count}</Count>
         <Row>
-          <CircularButton onClick={onIncrement} color="#4CAF50">
+          <CircularButton onClick={onIncrement} color='#4CAF50'>
             +1
           </CircularButton>
-          <CircularButton onClick={onDecrement} color="#F44336">
+          <CircularButton onClick={onDecrement} color='#F44336'>
             -1
           </CircularButton>
         </Row>
         <Row>
-          <TextFiled value={this.state.value} onChange={this.handleInputChange}></TextFiled>
-          <CircularButton onClick={() => onSet(this.state.value)}>SET</CircularButton>
+          <TextFiled
+            value={this.state.value}
+            onChange={this.handleInputChange}
+          ></TextFiled>
+          <CircularButton onClick={() => onSet(this.state.value)}>
+            SET
+          </CircularButton>
         </Row>
         <Row>
           <span onClick={this.navigateToRecord}>Record</span>
