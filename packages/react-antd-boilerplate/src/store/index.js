@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-09 14:18:03
- * @LastEditTime: 2020-07-14 10:25:55
+ * @LastEditTime: 2020-07-16 15:18:56
  * @Description: 创建store仓库
  */
 
@@ -9,10 +9,10 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { connectRouter, routerMiddleware as createRouterMiddleware } from 'connected-react-router'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { history } from '../router'
-import { GlabelStore } from '../views/glabel.store'
-import { HomeStore } from '../views/reactPage/index.store'
-import { LoginStore } from '../views/login/index.store'
+import { history } from '@/router/history'
+import { GlabelStore } from './glabel.store'
+import { HomeStore } from '@/views/reactPage/index.store'
+import { LoginStore } from '@/views/login/index.store'
 
 
 const routerMiddleware = createRouterMiddleware(history)

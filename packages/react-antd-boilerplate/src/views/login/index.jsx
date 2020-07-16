@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-07 08:51:44
- * @LastEditTime: 2020-07-14 18:15:37
+ * @LastEditTime: 2020-07-16 15:15:44
  * @Description: 登录页
  */
 
@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import { Form, Icon, Input, Button, Checkbox, message } from 'antd'
 import { authAPI } from '@/apis'
 import './index.scss'
-import { GlabelStore } from '../glabel.store'
+import { GlabelStore } from '@/store/glabel.store'
 
 const layout = {
   labelCol: { span: 8 },
@@ -20,7 +20,6 @@ const layout = {
 class Login extends Component {
   // 登录按钮
   handleSubmit = (e) => {
-    console.log('Received values of form: ', e)
     let config = {
       data: {
         username: e.username,
@@ -28,22 +27,17 @@ class Login extends Component {
       },
     }
     authAPI.login(config.data).then((res) => {
-      console.log(res)
       const { name } = res.data.user
       // 登录成功后的操作
       this.props.setUserInfo(name)
       message.success({
         content: 'Welcome to system!',
         duration: 1,
-        maxCount: 1,
-        // onClose: () => {
-        //   this.props.history.go(-1)
-        // },
+        maxCount: 1
       })
     })
   }
   render() {
-    console.log(this.props, 'login')
     return (
       <div className="loginPage">
         <div className="login_wrap">

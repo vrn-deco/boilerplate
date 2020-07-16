@@ -1,15 +1,17 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-08 09:47:16
- * @LastEditTime: 2020-07-14 18:13:49
+ * @LastEditTime: 2020-07-16 14:45:48
  * @Description: 自定义axios
  */
 
 import axios from 'axios'
 // import { authorizationFormat } from '@/utils/helpers'
-import config from '@/config'
+import configs from '@/config'
 import { push } from 'connected-react-router'
 import store from '@/store'
+
+const config = configs.SERVICES
 
 const DEFAULT_OPTIONS = {
   timeout: 3000,
@@ -24,13 +26,13 @@ const Axios = axios.create(DEFAULT_OPTIONS)
  * 请求拦截
  */
 Axios.interceptors.request.use(
-  (config) => {
+  (request) => {
     // 获取token
     const token = '0000'
-    if (token && !config.headers.Authorization) {
-      config.headers.Authorization = token
+    if (token && !request.headers.Authorization) {
+      request.headers.Authorization = token
     }
-    return config
+    return request
   },
   (error) => {
     const errorInfo = error.data.error ? error.data.error.message : error.data

@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-14 11:26:12
+ * @LastEditTime: 2020-07-16 14:56:41
  * @Description: glabelStore
  */
 
@@ -36,7 +36,6 @@ export class GlabelStore {
   static createReducer() {
     return (state = Reducer.initialState, action = {}) => {
       const { type, payload } = action
-      console.log(Reducer[type] ? Reducer[type](state, payload) : state)
       return Reducer[type] ? Reducer[type](state, payload) : state
     }
   }
