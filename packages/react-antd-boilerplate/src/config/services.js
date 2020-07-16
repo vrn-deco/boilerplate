@@ -1,14 +1,14 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-03-14 17:38:09
- * @LastEditTime: 2020-07-16 14:37:54
+ * @LastEditTime: 2020-07-16 16:01:18
  * @Description: 配置文件
  */
 
 const IS_DEV = process.env.NODE_ENV === 'development'
 
 // 开发环境地址
-const DEV_BASE_URL = 'https://myvx.netintech.cn:4433/pc'
+const DEV_BASE_URL = ''
 // 生产环境地址，如果和后端合并部署留空''或 '/'，独立部署同上填协议+主机名+端口号
 const PROD_BASE_URL = '/'
 
