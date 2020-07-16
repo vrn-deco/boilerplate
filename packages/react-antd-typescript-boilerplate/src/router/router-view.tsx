@@ -1,16 +1,15 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-15 12:12:42
- * @LastEditTime: 2020-07-16 00:32:24
+ * @LastEditTime: 2020-07-16 09:21:04
  * @Description: 路由视图组件
  */
 
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import { ConnectedRouter, push } from 'connected-react-router'
+import { ConnectedRouter } from 'connected-react-router'
 
 import { history } from './history'
-import { store } from '@/store'
 
 interface Props {
   routes: Array<{ path: string; component: any }>
@@ -25,10 +24,11 @@ export function RouterView({ routes }: Props) {
           <Route
             path={route.path}
             exact
-            render={(props) => {
-              // 将 history、location 对象传递给页面组件
-              return <route.component {...props} />
-            }}
+            // render={(props) => {
+            //   // 将 history、location 对象传递给页面组件
+            //   return <route.component {...props} />
+            // }}
+            component={route.component}
             key={route.path}
           />
         ))}
@@ -42,8 +42,3 @@ export function RouterView({ routes }: Props) {
     </ConnectedRouter>
   )
 }
-
-setTimeout(() => {
-  console.log('跳')
-  store.dispatch(push('/counter/record'))
-}, 2000)
