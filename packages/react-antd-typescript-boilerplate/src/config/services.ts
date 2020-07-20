@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-15 12:49:14
- * @LastEditTime: 2020-07-15 12:50:29
+ * @LastEditTime: 2020-07-17 13:12:21
  * @Description: 服务相关设置
  */
 const IS_DEV = process.env.NODE_ENV === 'development'
@@ -26,12 +26,15 @@ export const SERVICES = {
    * }
    * 类型的 json 对象
    */
-  // code 对应的字段名，上例就是 'code'
-  RESPONSE_CODE_FILED: 'code',
-  // message 对应的字段名，上例就是 'msg'
-  RESPONSE_MESSAGE_FILED: 'msg',
-  // data 对应的字段名，上例就是 'data'
-  RESPONSE_DATA_FILED: 'data',
+  /**
+   * TS 版本需要类型推断，无法使用动态字段
+   */
+  // // code 对应的字段名，上例就是 'code'
+  // RESPONSE_CODE_FILED: 'code',
+  // // message 对应的字段名，上例就是 'msg'
+  // RESPONSE_MESSAGE_FILED: 'msg',
+  // // data 对应的字段名，上例就是 'data'
+  // RESPONSE_DATA_FILED: 'data',
   // 几种特定需要前端处理的 code 值（将在 axios 基础服务中自动处理，其余将抛出异常，可在 catch 中处理）
   RESPONSE_CODE: {
     OK: 0, // ok

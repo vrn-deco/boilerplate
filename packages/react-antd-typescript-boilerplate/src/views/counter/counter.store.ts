@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-13 10:55:12
- * @LastEditTime: 2020-07-15 23:29:27
+ * @LastEditTime: 2020-07-17 17:25:48
  * @Description: 示例 store，除 Store 类以外请不要导出其余部分（单一入口）
  */
 import { action, createReducer } from 'typesafe-actions'
@@ -34,12 +34,17 @@ export class CounterStore {
   static readonly action = CounterAction
 
   static getReducer() {
-    return createReducer(initialState)
-      .handleAction(CounterConstant.INCREMENT, (state) => ({ ...state, count: state.count + 1 }))
-      .handleAction(CounterConstant.DECREMENT, (state) => ({ ...state, count: state.count - 1 }))
-      .handleAction(CounterConstant.SET, (state, { type, payload }) => ({
-        ...state,
-        count: payload,
-      }))
+    return (
+      createReducer(initialState)
+        // 处理自增
+        .handleAction(CounterConstant.INCREMENT, (state) => ({ ...state, count: state.count + 1 }))
+        // 处理自减
+        .handleAction(CounterConstant.DECREMENT, (state) => ({ ...state, count: state.count - 1 }))
+        // 处理指定数值
+        .handleAction(CounterConstant.SET, (state, { type, payload }) => ({
+          ...state,
+          count: payload,
+        }))
+    )
   }
 }
