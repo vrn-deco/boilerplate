@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-13 00:52:43
- * @LastEditTime: 2020-05-19 11:11:54
+ * @LastEditTime: 2020-07-19 16:22:19
  * @Description: 入口文件
  */
 
@@ -15,7 +15,7 @@ import { registerDirectives } from '@/directives'
 import { registerFilters } from '@/filters'
 import { registerEventBus } from '@/utils/event-bus'
 
-import router from '@/router/index1'
+import router from '@/router'
 import store from '@/store'
 import App from '@/App.vue'
 

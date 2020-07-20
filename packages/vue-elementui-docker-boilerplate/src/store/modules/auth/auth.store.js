@@ -1,16 +1,16 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-01-03 18:18:20
- * @LastEditTime: 2020-07-13 01:49:34
+ * @LastEditTime: 2020-07-19 16:35:10
  * @Description: 认证 store
  */
 import { VuexModule, Module, Action, Mutation } from 'vuex-module-decorators'
 
 import { authAPI } from '@/apis'
 import { UseLoading, SessionStorageItem } from '@/utils'
-import router from '@/router/index1'
+import router from '@/router'
 
-// 创建两个 storage 管理器
+// 创建 storage 管理器
 const tokenLSI = new SessionStorageItem({ fieldName: 'token' })
 
 @Module({ namespaced: true })

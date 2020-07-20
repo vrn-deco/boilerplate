@@ -1,16 +1,16 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-12 22:48:53
- * @LastEditTime: 2020-05-27 10:36:46
+ * @LastEditTime: 2020-07-19 19:44:35
  * @Description: 自定义 axios
  */
 
 import axios from 'axios'
 
-import store from '@/store'
-import { authorizationFormat } from '@/utils/helpers'
+import { requestInterceptors, requestInterceptorsError } from './request.interceptors'
+import { responseInterceptors } from './response.interceptors'
 import config from '@/config'
-import router from '@/router/index1'
+// import router from '@/router'
 
 const DEFAULT_OPTIONS = {
   timeout: 30000,
@@ -26,17 +26,10 @@ const Axios = axios.create(DEFAULT_OPTIONS)
  */
 Axios.interceptors.request.use(
   config => {
-    // 从 store 中获取 token
-    const token = store.getters['auth/token']
-    // token 存在且请求头中没有 Authorization 字段时添加
-    if (token && !config.headers.Authorization) {
-      config.headers.Authorization = authorizationFormat(token)
-    }
-    return config
+    requestInterceptors(config)
   },
   error => {
-    const errorInfo = error.data.error ? error.data.error.message : error.data
-    return Promise.reject(errorInfo)
+    requestInterceptorsError(error)
   },
 )
 
@@ -44,24 +37,7 @@ Axios.interceptors.request.use(
  * 响应时拦截
  */
 Axios.interceptors.response.use(response => {
-  const res = response.data
-  const code = res[config.RESPONSE_CODE_FILED]
-
-  if (code === config.RESPONSE_CODE.OK) {
-    // 成功，直接返回 data
-    return res[config.RESPONSE_DATA_FILED]
-  } else if (code === config.RESPONSE_CODE.UNAUTHORIZED) {
-    // token 过期或未登录
-    // 当 config.UNAUTHORIZED_REDIRECT_PATH 有设置时进行自动跳转到登录页
-    if (config.UNAUTHORIZED_REDIRECT_PATH) {
-      router.replace({ path: config.UNAUTHORIZED_REDIRECT_PATH })
-    }
-    // 抛出异常中断外部后续逻辑
-    throw new Error(res[config.RESPONSE_MESSAGE_FILED])
-  } else {
-    // 其它 code，抛出异常
-    throw new Error(res[config.RESPONSE_MESSAGE_FILED])
-  }
+  responseInterceptors(response)
 })
 
 export default Axios

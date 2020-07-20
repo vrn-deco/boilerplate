@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-12 22:48:53
- * @LastEditTime: 2020-03-14 16:30:12
+ * @LastEditTime: 2020-07-19 16:23:17
  * @Description: 自定义 axios
  */
 
@@ -10,7 +10,7 @@ import axios from 'axios'
 import store from '@/store'
 import { authorizationFormat } from '@/utils'
 import config from '@/config'
-import router from '@/router/index1'
+import router from '@/router'
 
 const DEFAULT_OPTIONS = {
   timeout: 30000,
