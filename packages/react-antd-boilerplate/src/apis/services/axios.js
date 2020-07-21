@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-08 09:47:16
- * @LastEditTime: 2020-07-16 14:45:48
+ * @LastEditTime: 2020-07-21 17:17:09
  * @Description: 自定义axios
  */
 
@@ -48,7 +48,6 @@ Axios.interceptors.response.use((response) => {
   const code = res[config.RESPONSE_CODE_FILED]
   if (code === config.RESPONSE_CODE.OK) {
     // 成功，直接返回 data
-    store.dispatch(push(config.UNAUTHORIZED_REDIRECT_PATH))
     return res[config.RESPONSE_DATA_FILED]
   } else if (code === config.RESPONSE_CODE.UNAUTHORIZED) {
     // token 过期或未登录
