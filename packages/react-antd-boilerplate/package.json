@@ -30,6 +30,7 @@
     "base-64": "^0.1.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.10.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",

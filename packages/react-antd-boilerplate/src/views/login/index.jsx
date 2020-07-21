@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-07 08:51:44
- * @LastEditTime: 2020-07-16 15:15:44
+ * @LastEditTime: 2020-07-21 14:26:41
  * @Description: 登录页
  */
 
@@ -11,6 +11,7 @@ import { Form, Icon, Input, Button, Checkbox, message } from 'antd'
 import { authAPI } from '@/apis'
 import './index.scss'
 import { GlabelStore } from '@/store/glabel.store'
+import { Debounce } from '@/utils/decorators'
 
 const layout = {
   labelCol: { span: 8 },
@@ -18,23 +19,28 @@ const layout = {
 }
 
 class Login extends Component {
-  // 登录按钮
-  handleSubmit = (e) => {
+  constructor() {
+    super()
+    this.state = {}
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  
+  @Debounce()
+  async handleSubmit(e) {
     let config = {
       data: {
         username: e.username,
         pwd: e.password,
       },
     }
-    authAPI.login(config.data).then((res) => {
-      const { name } = res.data.user
-      // 登录成功后的操作
-      this.props.setUserInfo(name)
-      message.success({
-        content: 'Welcome to system!',
-        duration: 1,
-        maxCount: 1
-      })
+    let res = await authAPI.login(config.data)
+    const { name } = res.data.user
+    // 登录成功后的操作
+    this.props.setUserInfo(name)
+    message.success({
+      content: 'Welcome to system!',
+      duration: 1,
+      maxCount: 1,
     })
   }
   render() {
@@ -80,12 +86,12 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  userInfo: state.glabelStore.userInfo
+const mapStateToProps = (state) => ({
+  userInfo: state.glabelStore.userInfo,
 })
 
 const mapDispatchToProps = {
-  ...GlabelStore.action
+  ...GlabelStore.action,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
