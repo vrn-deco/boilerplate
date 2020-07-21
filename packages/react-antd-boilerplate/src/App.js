@@ -1,36 +1,29 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-07 17:02:40
- * @LastEditTime: 2020-07-09 14:02:59
- * @Description:
+ * @LastEditTime: 2020-07-16 15:21:47
+ * @Description: 主页面
  */
 
-import React from 'react'
-import logo from './logo.svg'
-import { Button } from 'antd'
-import './assets/scss/app.scss'
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+import { ConnectedRouter } from 'connected-react-router'
+import RouterView from '@/router'
+import { history } from '@/router/history'
+import routeList from './views/root.routes'
+import store from '@/store'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <Button type="primary" size="large" shape="circle" className="button-transform">
-            VRN
-          </Button>
-        </p>
-        <a
-          className="App-link"
-          href="https://github.com/Cphayim/boilerplate/tree/dev_yugestrive/packages/react-antd-boilerplate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React-Antd-Boilerplate
-        </a>
-      </header>
-    </div>
-  )
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <RouterView routeList={routeList}></RouterView>
+        </ConnectedRouter>
+      </Provider>
+    )
+  }
 }
+
 
 export default App
