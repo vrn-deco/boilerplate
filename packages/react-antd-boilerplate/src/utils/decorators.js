@@ -1,9 +1,9 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-21 08:50:19
- * @LastEditTime: 2020-07-21 14:26:28
+ * @LastEditTime: 2020-07-21 17:27:49
  * @Description: 装饰器
- */ 
+ */
 
 // import { Toast } from 'vant'
 
@@ -31,19 +31,38 @@ export function UseLoading(message = '正在加载...') {
 
 /**
  * 防抖，防止触发多次点击，造成资源浪费
- * @param {Number} wait
+ * (在N秒内只能执行一次事件，若在N秒内再次进行触发，则会清除前一个事件，重新进行计算)
+ * @param {Number} delay
  */
-export function Debounce(wait = 1000) {
+export function Debounce(delay = 100) {
   let timeOut
   return (t, k, p) => {
     const fn = p.value
-    console.log('111111')
     p.value = function (...args) {
-      let _this = this
       if (timeOut) clearTimeout(timeOut)
       timeOut = setTimeout(() => {
-        fn.call(_this, ...args)
-      }, wait)
+        fn.call(this, ...args)
+      }, delay)
+    }
+  }
+}
+
+/**
+ * 节流，防止触发多次点击，造成资源浪费
+ * (连续触发事件在N秒内只执行一次函数，会起到稀释效果)
+ * @param {Number} delay
+ */
+export function Throttle(delay = 200) {
+  let timeOut
+  return (t, k, p) => {
+    const fn = p.value
+    p.value = function (...args) {
+      if (!timeOut) {
+        timeOut = setTimeout(() => {
+          timeOut = null
+          fn.apply(this, args)
+        }, delay)
+      }
     }
   }
 }

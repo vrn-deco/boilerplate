@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-07 08:51:44
- * @LastEditTime: 2020-07-21 14:26:41
+ * @LastEditTime: 2020-07-21 17:21:35
  * @Description: 登录页
  */
 
@@ -11,7 +11,7 @@ import { Form, Icon, Input, Button, Checkbox, message } from 'antd'
 import { authAPI } from '@/apis'
 import './index.scss'
 import { GlabelStore } from '@/store/glabel.store'
-import { Debounce } from '@/utils/decorators'
+import { Throttle, Debounce } from '@/utils/decorators'
 
 const layout = {
   labelCol: { span: 8 },
@@ -25,14 +25,16 @@ class Login extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   
-  @Debounce()
+  @Throttle(1000)
   async handleSubmit(e) {
+    console.log(1111, e)
     let config = {
       data: {
         username: e.username,
         pwd: e.password,
       },
     }
+    
     let res = await authAPI.login(config.data)
     const { name } = res.data.user
     // 登录成功后的操作
