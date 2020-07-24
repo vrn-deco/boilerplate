@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-07 08:51:44
- * @LastEditTime: 2020-07-24 15:59:07
+ * @LastEditTime: 2020-07-24 17:05:14
  * @Description: 登录页
  */
 
@@ -24,7 +24,7 @@ class Login extends Component {
     this.state = {}
   }
   
-  // @BindSelf()
+  @BindSelf()
   @Debounce(400)
   async handleSubmit(e) {
     message.success('防抖成功!')
