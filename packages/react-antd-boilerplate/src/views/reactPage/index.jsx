@@ -1,24 +1,33 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-21 13:48:58
+ * @LastEditTime: 2020-07-24 15:37:06
  * @Description: react-antd-boilerplate先导页
  */
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import logo from '@/logo.svg'
-import { Button } from 'antd'
+import { Button, message } from 'antd'
 import './index.scss'
+import { authAPI } from '@/apis'
+import { Debounce, BindSelf } from '@/utils/decorators'
+import { myHistory } from '@/store'
 
 class ReactPage extends Component {
-  constructor() {
-    super()
-    this.jumpPage = this.jumpPage.bind(this)
-  }
-
-  jumpPage() {
-    this.props.history.push('/login')
+  @BindSelf()
+  @Debounce()
+  async jumpPage() {
+    const data = await authAPI.getMock()
+    if (data) {
+      myHistory('/login')
+    } else {
+      message.success({
+        content: 'mock失败!',
+        duration: 1,
+        maxCount: 1,
+      })
+    }
   }
   render() {
     return (

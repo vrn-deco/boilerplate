@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-20 23:21:14
+ * @LastEditTime: 2020-07-22 10:57:58
  * @Description: glabelStore
  */
 
@@ -19,7 +19,7 @@ class Action {
 
 class Reducer {
   static initialState = {
-    userInfo: 'VRN',
+    userInfo: 'vrn',
     token: null,
   };
 
