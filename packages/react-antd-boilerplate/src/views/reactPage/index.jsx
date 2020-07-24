@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-24 15:37:06
+ * @LastEditTime: 2020-07-24 16:59:27
  * @Description: react-antd-boilerplate先导页
  */
 
@@ -14,13 +14,15 @@ import { authAPI } from '@/apis'
 import { Debounce, BindSelf } from '@/utils/decorators'
 import { myHistory } from '@/store'
 
+
 class ReactPage extends Component {
   @BindSelf()
   @Debounce()
   async jumpPage() {
     const data = await authAPI.getMock()
     if (data) {
-      myHistory('/login')
+      // myHistory('/login')
+      this.props.history.push('/login')
     } else {
       message.success({
         content: 'mock失败!',
@@ -29,6 +31,7 @@ class ReactPage extends Component {
       })
     }
   }
+
   render() {
     return (
       <div className="App">

@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-09 14:18:03
- * @LastEditTime: 2020-07-24 15:36:35
+ * @LastEditTime: 2020-07-24 15:46:01
  * @Description: 创建store仓库
  */
 
@@ -36,7 +36,7 @@ const composeEnhancer = composeWithDevTools(applyMiddleware(...middlewares))
 
 const store = createStore(reducer, {}, composeEnhancer)
 
-export const myHistory = (path) => {
+export const myHistory = path => {
   store.dispatch(push(path))
 }
 

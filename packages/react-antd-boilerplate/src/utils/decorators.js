@@ -1,11 +1,9 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-21 08:50:19
- * @LastEditTime: 2020-07-22 10:06:31
+ * @LastEditTime: 2020-07-24 17:00:39
  * @Description: 装饰器
  */
-
-// import { Toast } from 'vant'
 
 /**
  * 用于将this指向方法本身
@@ -13,8 +11,13 @@
 export function BindSelf() {
   return (t, k, p) => {
     const fn = p.value
-    if (typeof fn === 'function') {
-      p.value = fn.bind(t)
+    if (typeof fn !== 'function') {
+      throw new TypeError('只能绑定在方法上')
+    }
+    return {
+      get() {
+        return fn.bind(this)
+      },
     }
   }
 }

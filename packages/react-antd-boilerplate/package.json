@@ -12,12 +12,14 @@
   "dependencies": {
     "antd": "^4.4.1",
     "axios": "^0.19.2",
+    "base-64": "^0.1.0",
     "connected-react-router": "^6.8.0",
-    "js-md5": "^0.7.3",
     "history": "^4.10.1",
+    "js-md5": "^0.7.3",
     "moment": "^2.27.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
+    "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
@@ -25,9 +27,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.1.1",
-    "react": "^16.13.1",
-    "base-64": "^0.1.0"
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.10.5",
