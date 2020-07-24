@@ -36,6 +36,7 @@
     "@testing-library/user-event": "^7.2.1",
     "babel-plugin-import": "^1.13.0",
     "customize-cra": "^1.0.0",
+    "mockjs": "^1.1.0",
     "react-app-rewired": "^2.1.6"
   },
   "eslintConfig": {

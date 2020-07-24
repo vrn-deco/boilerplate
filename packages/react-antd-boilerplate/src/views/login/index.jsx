@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-07 08:51:44
- * @LastEditTime: 2020-07-21 17:21:35
+ * @LastEditTime: 2020-07-22 10:47:08
  * @Description: 登录页
  */
 
@@ -9,9 +9,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Form, Icon, Input, Button, Checkbox, message } from 'antd'
 import { authAPI } from '@/apis'
-import './index.scss'
+import loginStyles from './index.module.scss'
 import { GlabelStore } from '@/store/glabel.store'
-import { Throttle, Debounce } from '@/utils/decorators'
+import { Debounce, BindSelf } from '@/utils/decorators'
 
 const layout = {
   labelCol: { span: 8 },
@@ -22,12 +22,12 @@ class Login extends Component {
   constructor() {
     super()
     this.state = {}
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
   
-  @Throttle(1000)
+  @BindSelf()
+  @Debounce(400)
   async handleSubmit(e) {
-    console.log(1111, e)
+    message.success('防抖成功!')
     let config = {
       data: {
         username: e.username,
@@ -47,11 +47,11 @@ class Login extends Component {
   }
   render() {
     return (
-      <div className="loginPage">
-        <div className="login_wrap">
-          <h2 className="title">{this.props.userInfo}</h2>
-          <div className="login-content">
-            <Form {...layout} onFinish={this.handleSubmit} className="login-from">
+      <div className={loginStyles.loginPage}>
+        <div className={loginStyles.login_wrap}>
+          <h2 className={loginStyles.title}>{this.props.userInfo}</h2>
+          <div className={loginStyles.login_content}>
+            <Form {...layout} onFinish={this.handleSubmit} className={loginStyles.login_from}>
               <Form.Item
                 label="username"
                 name="username"
@@ -75,8 +75,8 @@ class Login extends Component {
               </Form.Item>
               <Form.Item>
                 <Checkbox>Remember me</Checkbox>
-                <span className="login-form-forgot">Forgot password</span>
-                <Button type="primary" htmlType="submit" className="login-form-button">
+                <span className={loginStyles.login_form_forgot}>Forgot password</span>
+                <Button type="primary" htmlType="submit" className={loginStyles.login_form_button}>
                   Log in
                 </Button>
               </Form.Item>

@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-08 09:48:04
- * @LastEditTime: 2020-07-13 15:09:11
+ * @LastEditTime: 2020-07-24 15:31:45
  * @Description: 定义接口
  */
 
@@ -16,6 +16,16 @@ export function login(data) {
     new AxiosConfig({
       url: '/login/login',
       method: 'POST',
+      data,
+    })
+  )
+}
+
+export function getMock(data) {
+  return Axios(
+    new AxiosConfig({
+      url: '/mock',
+      method: 'GET',
       data,
     })
   )

@@ -1,11 +1,23 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-21 08:50:19
- * @LastEditTime: 2020-07-21 17:27:49
+ * @LastEditTime: 2020-07-22 10:06:31
  * @Description: 装饰器
  */
 
 // import { Toast } from 'vant'
+
+/**
+ * 用于将this指向方法本身
+ */
+export function BindSelf() {
+  return (t, k, p) => {
+    const fn = p.value
+    if (typeof fn === 'function') {
+      p.value = fn.bind(t)
+    }
+  }
+}
 
 /**
  * 用于装饰一个异步函数，在函数执行过程中打开 Toast.loading
