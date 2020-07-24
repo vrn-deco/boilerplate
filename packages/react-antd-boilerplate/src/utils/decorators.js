@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-21 08:50:19
- * @LastEditTime: 2020-07-24 17:00:39
+ * @LastEditTime: 2020-07-24 17:24:17
  * @Description: 装饰器
  */
 
@@ -77,6 +77,24 @@ export function Throttle(delay = 200) {
           timeOut = null
           fn.apply(this, args)
         }, delay)
+      }
+    }
+  }
+}
+
+export function Lock() {
+  return (t, k, p) => {
+    let locked = false
+    const fn = p.value
+    p.value = async function (...args) {
+      if (locked) return
+      try {
+        locked = true
+        await fn.call(this, ...args)
+      } catch (error) {
+        console.err(error)
+      } finally {
+        locked = false
       }
     }
   }
