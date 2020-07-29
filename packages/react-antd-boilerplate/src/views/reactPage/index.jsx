@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-24 17:26:31
+ * @LastEditTime: 2020-07-29 14:37:51
  * @Description: react-antd-boilerplate先导页
  */
 
@@ -19,7 +19,12 @@ class ReactPage extends Component {
   async jumpPage() {
     const data = await authAPI.getMock()
     if (data) {
-      this.props.history.push('/login')
+      this.props.history.push({
+        pathname: '/login',
+        state: {
+          data
+        }
+      })
     } else {
       message.success({
         content: 'mock失败!',
