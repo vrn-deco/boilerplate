@@ -1,12 +1,13 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-29 15:12:15
- * @LastEditTime: 2020-07-29 15:18:35
+ * @LastEditTime: 2020-07-31 14:03:28
  * @Description: 响应拦截处理
  */
 
 import config from '@/config'
-import { myHistory } from '@/store'
+import store from '@/store'
+import { push } from 'connected-react-router'
 
 const service = config.SERVICES
 
@@ -21,7 +22,7 @@ export const registerResponseInterceptor = (Axios) => {
       // token 过期或未登录
       // 当 config.UNAUTHORIZED_REDIRECT_PATH 有设置时进行自动跳转到先导页
       if (service.UNAUTHORIZED_REDIRECT_PATH) {
-        myHistory(service.UNAUTHORIZED_REDIRECT_PATH)
+        store.dispatch(push(service.UNAUTHORIZED_REDIRECT_PATH))
       }
       // 抛出异常中断外部后续逻辑
       throw new Error(res[service.RESPONSE_MESSAGE_FILED])

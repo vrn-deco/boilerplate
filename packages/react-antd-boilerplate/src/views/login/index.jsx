@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-07 08:51:44
- * @LastEditTime: 2020-07-29 14:22:27
+ * @LastEditTime: 2020-07-31 12:39:04
  * @Description: 登录页
  */
 
@@ -46,7 +46,7 @@ class Login extends Component {
     })
   }
   render() {
-    console.log(this.props.location.state, 'this.props.location.state')
+    console.log(this.props, 'this.props.userInfo')
     return (
       <div className={loginStyles.loginPage}>
         <div className={loginStyles.login_wrap}>
