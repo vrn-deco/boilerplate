@@ -1,40 +1,25 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-29 14:37:51
+ * @LastEditTime: 2020-07-31 13:55:08
  * @Description: react-antd-boilerplate先导页
  */
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import logo from '@/logo.svg'
-import { Button, message } from 'antd'
+import { Button } from 'antd'
 import './index.scss'
-import { authAPI } from '@/apis'
 import { Debounce, BindSelf, Lock } from '@/utils/decorators'
+import { GlabelStore } from '@/store/glabel.store.js'
 
 class ReactPage extends Component {
   @BindSelf()
   @Debounce()
-  async jumpPage() {
-    const data = await authAPI.getMock()
-    if (data) {
-      this.props.history.push({
-        pathname: '/login',
-        state: {
-          data
-        }
-      })
-    } else {
-      message.success({
-        content: 'mock失败!',
-        duration: 1,
-        maxCount: 1,
-      })
-    }
+  jumpPage() {
+    this.props.fetchUser()
   }
 
-  
   @BindSelf()
   @Lock()
   async handleClick() {
@@ -51,6 +36,7 @@ class ReactPage extends Component {
   }
 
   render() {
+    console.log(this.props, 'this.props')
     return (
       <div className="App">
         <header className="App-header">
@@ -79,4 +65,8 @@ const mapStateToProps = (state) => ({
   userInfo: state.glabelStore.userInfo,
 })
 
-export default connect(mapStateToProps)(ReactPage)
+const mapDispatchToProps = (dispatch) => ({
+  fetchUser: (...arg) => dispatch(GlabelStore.action.fetchUser(...arg)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReactPage)

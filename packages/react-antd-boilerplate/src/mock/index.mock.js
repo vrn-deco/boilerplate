@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-24 15:15:34
- * @LastEditTime: 2020-07-24 15:29:49
+ * @LastEditTime: 2020-07-30 13:22:38
  * @Description: mockjs
  */
 
@@ -11,7 +11,7 @@ const data = Mock.mock('/mock', {
   code: 0,
   msg: '请求成功',
   data: {
-    'userinfo|4': [
+    'userInfo|4': [
       {
         //生成四个如下格式的数据
         'id|+1': 1, //数字从1开始，后续依次加1

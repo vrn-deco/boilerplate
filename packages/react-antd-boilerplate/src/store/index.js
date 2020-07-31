@@ -1,13 +1,13 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-09 14:18:03
- * @LastEditTime: 2020-07-24 15:46:01
+ * @LastEditTime: 2020-07-31 13:14:06
  * @Description: 创建store仓库
  */
 
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import { connectRouter, routerMiddleware as createRouterMiddleware, push } from 'connected-react-router'
+import { connectRouter, routerMiddleware as createRouterMiddleware } from 'connected-react-router'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { history } from '@/router/history'
 import { GlabelStore } from './glabel.store'
@@ -35,9 +35,5 @@ const reducer = combineReducers(moudleReducer)
 const composeEnhancer = composeWithDevTools(applyMiddleware(...middlewares))
 
 const store = createStore(reducer, {}, composeEnhancer)
-
-export const myHistory = path => {
-  store.dispatch(push(path))
-}
 
 export default store
