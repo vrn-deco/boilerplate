@@ -1,14 +1,17 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-08 09:47:16
- * @LastEditTime: 2020-07-09 08:54:21
+ * @LastEditTime: 2020-07-16 14:45:48
  * @Description: 自定义axios
  */
 
 import axios from 'axios'
+// import { authorizationFormat } from '@/utils/helpers'
+import configs from '@/config'
+import { push } from 'connected-react-router'
+import store from '@/store'
 
-import { authorizationFormat } from '@/utils/helpers'
-import config from '@/config'
+const config = configs.SERVICES
 
 const DEFAULT_OPTIONS = {
   timeout: 3000,
@@ -23,13 +26,13 @@ const Axios = axios.create(DEFAULT_OPTIONS)
  * 请求拦截
  */
 Axios.interceptors.request.use(
-  (config) => {
+  (request) => {
     // 获取token
     const token = '0000'
-    if (token && !config.headers.Authorization) {
-      config.headers.Authorization = authorizationFormat(token)
+    if (token && !request.headers.Authorization) {
+      request.headers.Authorization = token
     }
-    return config
+    return request
   },
   (error) => {
     const errorInfo = error.data.error ? error.data.error.message : error.data
@@ -43,15 +46,15 @@ Axios.interceptors.request.use(
 Axios.interceptors.response.use((response) => {
   const res = response.data
   const code = res[config.RESPONSE_CODE_FILED]
-
   if (code === config.RESPONSE_CODE.OK) {
     // 成功，直接返回 data
+    store.dispatch(push(config.UNAUTHORIZED_REDIRECT_PATH))
     return res[config.RESPONSE_DATA_FILED]
   } else if (code === config.RESPONSE_CODE.UNAUTHORIZED) {
     // token 过期或未登录
-    // 当 config.UNAUTHORIZED_REDIRECT_PATH 有设置时进行自动跳转到登录页
+    // 当 config.UNAUTHORIZED_REDIRECT_PATH 有设置时进行自动跳转到先导页
     if (config.UNAUTHORIZED_REDIRECT_PATH) {
-      //   router.replace({ path: config.UNAUTHORIZED_REDIRECT_PATH });
+      store.dispatch(push(config.UNAUTHORIZED_REDIRECT_PATH))
     }
     // 抛出异常中断外部后续逻辑
     throw new Error(res[config.RESPONSE_MESSAGE_FILED])
