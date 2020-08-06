@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-08 09:48:04
- * @LastEditTime: 2020-07-31 14:10:53
+ * @LastEditTime: 2020-08-05 11:13:54
  * @Description: 定义接口
  */
 
@@ -22,7 +22,7 @@ export function login(data) {
 export function getMock(data) {
   return strictFetch({
     url: '/mock',
-    method: 'GET',
+    method: 'POST',
     data,
   })
 }

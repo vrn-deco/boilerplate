@@ -1,12 +1,13 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-31 13:55:36
+ * @LastEditTime: 2020-08-05 11:18:26
  * @Description: glabelStore
  */
 
-// import { authAPI } from '@/apis'
+import { authAPI } from '@/apis'
 import { history } from '@/router/history'
+
 
 class Constant {
   static SET_USER_INFO = 'SET_USER_INFO'
@@ -21,9 +22,9 @@ export class Action {
 
   fetchUser = (data) => {
     return async (dispatch) => {
-      // const { userInfo } = await authAPI.getMock(data)
-      // dispatch(this.setUserInfo(userInfo[0].name))
-      // dispatch(this.setToken(userInfo[0].id))
+      const { userInfo } = await authAPI.getMock(data)
+      dispatch(this.setUserInfo(userInfo[0].name))
+      dispatch(this.setToken(userInfo[0].id))
       history.push('/login')
     }
   }
@@ -36,7 +37,6 @@ class Reducer {
   }
 
   static [Constant.SET_USER_INFO](state, userInfo) {
-    console.log(state, userInfo, 'state, userInfo')
     return { ...state, userInfo }
   }
 

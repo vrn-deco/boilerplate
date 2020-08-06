@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-21 08:59:25
- * @LastEditTime: 2020-07-21 09:28:22
+ * @LastEditTime: 2020-08-05 10:40:08
  * @Description: 常用正则
  */
 
@@ -78,7 +78,7 @@ export const validateCarNum = (val, callback) => {
   const reg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/
   const isCPH = reg.test(val)
   if (!isCPH) {
-    callback('请输入正确的车牌号')
+    callback(new Error('请输入正确的车牌号'))
   } else {
     callback()
   }
