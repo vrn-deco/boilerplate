@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-07-31 13:55:08
+ * @LastEditTime: 2020-08-05 11:19:17
  * @Description: react-antd-boilerplate先导页
  */
 
@@ -17,7 +17,7 @@ class ReactPage extends Component {
   @BindSelf()
   @Debounce()
   jumpPage() {
-    this.props.fetchUser()
+    this.props.fetchUser({ type: 'haha' })
   }
 
   @BindSelf()
@@ -36,7 +36,6 @@ class ReactPage extends Component {
   }
 
   render() {
-    console.log(this.props, 'this.props')
     return (
       <div className="App">
         <header className="App-header">
