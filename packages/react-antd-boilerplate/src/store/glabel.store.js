@@ -1,13 +1,13 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-08-05 11:18:26
+ * @LastEditTime: 2020-08-07 17:08:26
  * @Description: glabelStore
  */
 
 import { authAPI } from '@/apis'
 import { history } from '@/router/history'
-
+import { Auth } from '@/utils/auth'
 
 class Constant {
   static SET_USER_INFO = 'SET_USER_INFO'
@@ -33,7 +33,7 @@ export class Action {
 class Reducer {
   static initialState = {
     userInfo: 'vrn',
-    token: null,
+    token: Auth.token,
   }
 
   static [Constant.SET_USER_INFO](state, userInfo) {
@@ -41,6 +41,7 @@ class Reducer {
   }
 
   static [Constant.SET_TOKEN](state, token) {
+    Auth.setToken(token)
     return { ...state, token }
   }
 }
