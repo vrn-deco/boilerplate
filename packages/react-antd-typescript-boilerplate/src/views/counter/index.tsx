@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-15 11:06:21
- * @LastEditTime: 2020-07-17 14:37:54
+ * @LastEditTime: 2020-07-21 16:47:45
  * @Description: 计数器页面
  */
 import React from 'react'
@@ -14,9 +14,10 @@ import {
   Row,
   CircularButton,
   TextFiled,
-} from './index.styled'
+} from './style/couter'
 import { RootState } from '@/store/types'
 import { RouteComponentProps } from 'react-router-dom'
+import { BindSelf } from '@/utils/decorators'
 
 interface StateProps {
   (state: RootState): {
@@ -45,7 +46,8 @@ class CounterIndexPage extends React.Component<Props> {
     value: 0,
   }
 
-  handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  @BindSelf()
+  handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     const value = Number(event.target.value)
     if (isNaN(value)) return
     this.setState((state) => ({
@@ -53,7 +55,8 @@ class CounterIndexPage extends React.Component<Props> {
     }))
   }
 
-  navigateToRecord = () => {
+  @BindSelf()
+  navigateToRecord() {
     this.props.history.push('/counter/record')
   }
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { push, Push } from 'connected-react-router'
 
 import { CounterStore } from './counter.store'
-import { Count, CounterWrap } from './index.styled'
+import { Count, CounterWrap } from './style/couter'
 import { RootState } from '@/store/types'
 
 interface StateProps {
@@ -48,9 +48,11 @@ class CounterRecordPage extends React.Component<Props> {
   render() {
     // const {} = this.props
     return (
-      <CounterWrap>
-        <Count>Record</Count>
-      </CounterWrap>
+      <div className="counter-record-page">
+        <CounterWrap>
+          <Count>Record</Count>
+        </CounterWrap>
+      </div>
     )
   }
 }

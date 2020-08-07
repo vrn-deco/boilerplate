@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-15 15:45:05
- * @LastEditTime: 2020-07-15 17:22:26
+ * @LastEditTime: 2020-07-20 22:20:46
  * @Description: 计数器样式组件
  */
 import styled from 'styled-components'
@@ -44,7 +44,7 @@ export const Row = styled.div`
 `
 
 export const TextFiled = styled.input`
-width:200px;
+  width: 200px;
   margin: 0 20px;
   border: 2px solid #ddd;
   font-size: 40px;
