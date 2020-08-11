@@ -1,13 +1,16 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-08-07 17:08:26
+ * @LastEditTime: 2020-08-11 16:56:20
  * @Description: glabelStore
  */
 
 import { authAPI } from '@/apis'
 import { history } from '@/router/history'
-import { Auth } from '@/utils/auth'
+import { LocalStorageItem } from '@/utils/storage'
+
+// 创建token的localStorage存储
+const tokenLSI = new LocalStorageItem({ fieldName: 'token' })
 
 class Constant {
   static SET_USER_INFO = 'SET_USER_INFO'
@@ -33,7 +36,7 @@ export class Action {
 class Reducer {
   static initialState = {
     userInfo: 'vrn',
-    token: Auth.token,
+    token: tokenLSI.get(),
   }
 
   static [Constant.SET_USER_INFO](state, userInfo) {
@@ -41,7 +44,7 @@ class Reducer {
   }
 
   static [Constant.SET_TOKEN](state, token) {
-    Auth.setToken(token)
+    tokenLSI.set(token)
     return { ...state, token }
   }
 }
