@@ -38,8 +38,12 @@
 # 浏览器端 React 相关样板
 - title: React
   boilerplates:
+    - title: Redux + AntDesign
+      key: react-antd-boilerplate
+      tags:
+        - PC Web
     - title: <typescript> Redux + AntDesign
-      key: react-redux-antd-boilerplate
+      key: react-antd-typescript-boilerplate
       tags:
         - PC Web
 

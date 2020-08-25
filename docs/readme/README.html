@@ -1,0 +1,32 @@
+<h1>{{ pkg.name }}</h1>
+<p>{{pkg.description}}</p>
+
+{% for tag in tags %}
+<a href="{{ tag.linkUrl }}">
+  <img src="{{ tag.imgUrl }}" alt="{{ tag.label }}"/>
+</a>
+{% endfor %}
+
+{% for category in resource %}
+<h3>{{ category.title }}</h3>
+<table>
+  <thead>
+    <tr>
+      <th>{{ strings[lang].boilerplateTable.name }}</th>
+      <th>{{ strings[lang].boilerplateTable.type }}</th>
+      <th>{{ strings[lang].boilerplateTable.package }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for boilerplate in category.boilerplates %}
+    <tr>
+      <td>{{ boilerplate.title }}</td>
+      <td>{{ boilerplate.tags | join(', ') }}</td>
+      <td>
+        <a href="{{ './' + boilerplate.key }}">{{ boilerplate.key }}</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endfor %}

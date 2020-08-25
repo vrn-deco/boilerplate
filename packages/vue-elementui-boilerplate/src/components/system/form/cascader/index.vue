@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'NTCascader',
+  name: 'VRNCascader',
   components: {},
   props: {
     data: {
