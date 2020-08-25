@@ -1,10 +1,10 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-21 08:50:19
- * @LastEditTime: 2020-07-29 14:13:42
+ * @LastEditTime: 2020-08-25 10:25:53
  * @Description: 装饰器
  */
-
+import { message as Toast } from 'antd'
 /**
  * 用于将this指向方法本身
  */
@@ -27,23 +27,30 @@ export function BindSelf() {
  * 遇到错误会将 err.message 使用 Toast 反馈给用户
  * @param {*} opt
  */
-export function UseLoading(message = '正在加载...') {
+export function UseLoading(loadingMessage = '正在加载...', successMessage = '') {
   return (t, k, p) => {
     const fn = p.value
-    p.value = async function (...args) {
-      // const t = Toast.loading({ message, duration: -1 })
+    if (typeof fn !== 'function') {
+      throw new TypeError(`${fn} is not a method`)
+    }
+    p.value = async function(...args) {
+      loadingMessage && Toast.loading({ content: loadingMessage, duration: 0 })
       try {
         const result = await fn.call(this, ...args)
-        // t.clear()
+        loadingMessage && Toast.destroy()
+        successMessage && Toast.success(successMessage)
         return result
       } catch (err) {
-        // process.env.NODE_ENV === 'devlopment' && console.error(err)
-        // Toast({ message: err.message })
+        loadingMessage && Toast.destroy()
+        process.env.NODE_ENV === 'development' && console.error(err.message)
+        if (err.message === 'Network Error') {
+          err.message = '网络异常，服务无响应'
+        }
+        Toast.error({ content: err.message || '未知异常', duration: 5 /* 持续 5 秒 */ })
       }
     }
   }
 }
-
 /**
  * 防抖，防止触发多次点击，造成资源浪费
  * (在N秒内只能执行一次事件，若在N秒内再次进行触发，则会清除前一个事件，重新进行计算)
