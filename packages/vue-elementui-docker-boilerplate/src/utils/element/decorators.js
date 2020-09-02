@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-10-05 01:37:01
- * @LastEditTime: 2020-07-13 01:35:20
+ * @LastEditTime: 2020-08-03 21:26:13
  * @Description: 装饰器
  */
 import { Loading, Message } from 'element-ui'
@@ -27,9 +27,10 @@ export function UseLoading(message = '正在加载...') {
         return result
       } catch (err) {
         process.env.NODE_ENV === 'devlopment' && console.error(err)
+        t.close()
         Message({
           showClose: true,
-          message: '错了哦，这是一条错误消息',
+          message: err.message || '未知异常',
           type: 'error'
         })
       }

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Axios, { AxiosConfig } from '@/services/axios'
+import Axios, { AxiosConfig } from '@/apis/services/axios'
 
 export default {
   name: 'AxiosTestPage',

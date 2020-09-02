@@ -1,11 +1,12 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-13 00:52:43
- * @LastEditTime: 2020-07-19 16:22:19
+ * @LastEditTime: 2020-08-03 21:40:01
  * @Description: 入口文件
  */
 
 import Vue from 'vue'
+import config from '@/config'
 
 // 导入所有全局样式文件（保证所有全局样式在组件样式之前，需要在 App.vue 之前导入）
 import '@/assets/scss'
@@ -18,6 +19,11 @@ import { registerEventBus } from '@/utils/event-bus'
 import router from '@/router'
 import store from '@/store'
 import App from '@/App.vue'
+
+// 是否启用Mock数据
+if (config.IS_DEV && config.openMock) {
+  require('../mock')
+}
 
 Vue.config.productionTip = false
 

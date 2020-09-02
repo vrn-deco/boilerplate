@@ -1,13 +1,13 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-12 22:48:53
- * @LastEditTime: 2020-07-19 19:44:35
+ * @LastEditTime: 2020-09-03 01:53:01
  * @Description: 自定义 axios
  */
 
 import axios from 'axios'
 
-import { requestInterceptors, requestInterceptorsError } from './request.interceptors'
+import { requestInterceptors } from './request.interceptors'
 import { responseInterceptors } from './response.interceptors'
 import config from '@/config'
 // import router from '@/router'
@@ -24,21 +24,12 @@ const Axios = axios.create(DEFAULT_OPTIONS)
 /**
  * 请求时的拦截
  */
-Axios.interceptors.request.use(
-  config => {
-    requestInterceptors(config)
-  },
-  error => {
-    requestInterceptorsError(error)
-  },
-)
+requestInterceptors(axios)
 
 /**
  * 响应时拦截
  */
-Axios.interceptors.response.use(response => {
-  responseInterceptors(response)
-})
+responseInterceptors(axios)
 
 export default Axios
 
