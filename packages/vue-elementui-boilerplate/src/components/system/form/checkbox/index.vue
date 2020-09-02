@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  name: 'NTCheckbox',
+  name: 'VRNCheckbox',
   components: {},
   props: {
     data: {

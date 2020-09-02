@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  name: 'NTSelect',
+  name: 'VRNSelect',
   components: {},
   props: {
     data: {

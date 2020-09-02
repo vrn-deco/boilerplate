@@ -29,7 +29,7 @@
 <script>
 import moment from 'moment'
 export default {
-  name: 'NTDatePicker',
+  name: 'VRNDatePicker',
   components: {},
   props: {
     data: {
