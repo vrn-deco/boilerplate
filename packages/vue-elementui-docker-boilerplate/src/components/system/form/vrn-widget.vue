@@ -19,44 +19,44 @@
       <!-- 自动注入表单控件区 -->
       <template>
         <!-- Input 输入框 -->
-        <NTInput
+        <VRNInput
           v-if="InputData.type === widgetData.data.type"
           :data="widgetData.data"
           @change="handleChange"
           @validity="handleValidity"
         />
         <!-- Radio 单选框 -->
-        <NTRadio
+        <VRNRadio
           v-else-if="RadioData.type === widgetData.data.type"
           :data="widgetData.data"
           @change="handleChange"
         />
         <!-- Radio 单选框 -->
-        <NTRadio
+        <VRNRadio
           v-else-if="RadioData.type === widgetData.data.type"
           :data="widgetData.data"
           @change="handleChange"
         />
         <!-- Checkbox 复选框 -->
-        <NTCheckbox
+        <VRNCheckbox
           v-else-if="CheckboxData.type === widgetData.data.type"
           :data="widgetData.data"
           @change="handleChange"
         />
         <!-- Cascader 级联选择器 -->
-        <NTSelect
+        <VRNSelect
           v-else-if="SelectData.type === widgetData.data.type"
           :data="widgetData.data"
           @change="handleChange"
         />
         <!-- Cascader 级联选择器 -->
-        <NTCascader
+        <VRNCascader
           v-else-if="CascaderData.type === widgetData.data.type"
           :data="widgetData.data"
           @change="handleChange"
         />
         <!-- DatePicker 日期选择器 -->
-        <NTDatePicker
+        <VRNDatePicker
           v-else-if="DatePickerData.type === widgetData.data.type"
           :data="widgetData.data"
           @change="handleChange"
@@ -82,17 +82,17 @@ import {
   CascaderData,
   DatePickerData
 } from './struct-data'
-import { NTInput, NTRadio, NTCheckbox, NTSelect, NTCascader, NTDatePicker } from './controls'
+import { VRNInput, VRNRadio, VRNCheckbox, VRNSelect, VRNCascader, VRNDatePicker } from './controls'
 
 export default {
   name: 'NTWidget',
   components: {
-    NTInput,
-    NTRadio,
-    NTCheckbox,
-    NTCascader,
-    NTSelect,
-    NTDatePicker
+    VRNInput,
+    VRNRadio,
+    VRNCheckbox,
+    VRNSelect,
+    VRNCascader,
+    VRNDatePicker
   },
   props: {
     // 表单控件装饰数据
