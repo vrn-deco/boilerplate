@@ -1,7 +1,7 @@
 /*
  * @Author: yugeStrive
  * @Date: 2020-07-12 10:22:30
- * @LastEditTime: 2020-08-11 16:56:20
+ * @LastEditTime: 2020-09-04 17:17:27
  * @Description: glabelStore
  */
 
@@ -25,9 +25,9 @@ export class Action {
 
   fetchUser = (data) => {
     return async (dispatch) => {
-      const { userInfo } = await authAPI.getMock(data)
-      dispatch(this.setUserInfo(userInfo[0].name))
-      dispatch(this.setToken(userInfo[0].id))
+      const res = await authAPI.getMock(data)
+      dispatch(this.setUserInfo(res.data.userInfo[0].name))
+      dispatch(this.setToken(res.data.userInfo[0].id))
       history.push('/login')
     }
   }
