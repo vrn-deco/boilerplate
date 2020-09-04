@@ -69,14 +69,14 @@
       <td>Redux + AntDesign</td>
       <td>PC Web</td>
       <td>
-        <a href="./react-antd-boilerplate">react-antd-boilerplate</a>
+        <a href="./react-redux-antd-boilerplate">react-redux-antd-boilerplate</a>
       </td>
     </tr>
     <tr>
       <td>&lt;typescript&gt; Redux + AntDesign</td>
       <td>PC Web</td>
       <td>
-        <a href="./react-antd-typescript-boilerplate">react-antd-typescript-boilerplate</a>
+        <a href="./react-redux-antd-typescript-boilerplate">react-redux-antd-typescript-boilerplate</a>
       </td>
     </tr>
   </tbody>

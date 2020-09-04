@@ -35,11 +35,11 @@
 - title: React
   boilerplates:
     - title: Redux + AntDesign
-      key: react-antd-boilerplate
+      key: react-redux-antd-boilerplate
       tags:
         - PC Web
     - title: <typescript> Redux + AntDesign
-      key: react-antd-typescript-boilerplate
+      key: react-redux-antd-typescript-boilerplate
       tags:
         - PC Web
 
