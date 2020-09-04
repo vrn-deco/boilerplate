@@ -1,7 +1,7 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-06-18 16:03:23
- * @LastEditTime: 2020-06-18 18:05:56
+ * @LastEditTime: 2020-09-04 17:05:07
  * @Description:
  */
 import { Notification } from 'element-ui'
@@ -51,6 +51,9 @@ export class Prompt {
       onClick,
       offset
     })
+  }
+  static success(opt) {
+    Notification.success(opt)
   }
   static warning(opt) {
     Notification.warning(opt)
