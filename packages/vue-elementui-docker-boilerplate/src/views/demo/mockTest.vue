@@ -1,7 +1,7 @@
 <!--
  * @Author: benaozhi
  * @Date: 2020-07-30 16:17:36
- * @LastEditTime: 2020-07-30 17:10:51
+ * @LastEditTime: 2020-09-04 14:53:04
  * @Description:
 -->
 <template>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Axios, { AxiosConfig } from '@/apis/services/axios'
+import Axios, { AxiosConfig } from '@/apis/http/strict-axios'
 function userInfo() {
   return Axios(
     new AxiosConfig({

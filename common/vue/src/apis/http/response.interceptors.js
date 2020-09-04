@@ -1,13 +1,18 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-07-19 19:25:44
- * @LastEditTime: 2020-09-03 01:33:17
+ * @LastEditTime: 2020-09-04 14:55:33
  * @Description:
  */
 import config from '@/config'
 import router from '@/router'
 
-export function normal(response) {
+export const responseInterceptors = Axios => {
+  // 这里注册你设置的返回方法
+  Axios.interceptors.response.use(normal)
+}
+
+function normal(response) {
   const res = response.data
   const code = res[config.RESPONSE_CODE_FILED]
   if (code === config.RESPONSE_CODE.OK) {

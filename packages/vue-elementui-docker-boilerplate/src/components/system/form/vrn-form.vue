@@ -99,7 +99,7 @@ export default {
       try {
         newStructData[rowIndex][colIndex] = widgetData
       } catch (error) {
-        console.warn(`NTForm: 接收到了无效的索引 (row -> ${rowIndex}, col -> ${colIndex})`)
+        console.warn(`VRNForm: 接收到了无效的索引 (row -> ${rowIndex}, col -> ${colIndex})`)
       }
       return newStructData
     },

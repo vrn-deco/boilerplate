@@ -9,7 +9,7 @@
  * @param {number} props.rowIndex
  -->
 <template>
-  <div v-if="widgetData.data" class="nt-widget">
+  <div v-if="widgetData.data" class="VRN-widget">
     <!-- 左侧标签文字 -->
     <div class="label">{{widgetData.title}}</div>
     <!-- END:左侧标签文字 -->
@@ -85,7 +85,7 @@ import {
 import { VRNInput, VRNRadio, VRNCheckbox, VRNSelect, VRNCascader, VRNDatePicker } from './controls'
 
 export default {
-  name: 'NTWidget',
+  name: 'VRNWidget',
   components: {
     VRNInput,
     VRNRadio,
@@ -100,12 +100,12 @@ export default {
       type: Object,
       required: true
     },
-    // NTForm 遍历产生的行索引
+    // VRNForm 遍历产生的行索引
     rowIndex: {
       type: Number,
       required: true
     },
-    // NTForm 遍历产生的列索引
+    // VRNForm 遍历产生的列索引
     colIndex: {
       type: Number,
       required: true
@@ -150,7 +150,7 @@ export default {
 
 <style lang="scss">
 $height: 40px;
-.nt-widget {
+.VRN-widget {
   display: flex;
   width: 100%;
   /* height: 100%; */

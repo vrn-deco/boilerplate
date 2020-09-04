@@ -1,37 +1,10 @@
 /*
- * @Author: Cphayim
- * @Date: 2019-05-12 22:48:53
- * @LastEditTime: 2020-09-03 01:53:01
- * @Description: 自定义 axios
+ * @Author: benaozhi
+ * @Date: 2020-09-04 14:49:35
+ * @LastEditTime: 2020-09-04 14:49:52
+ * @Description:
  */
-
-import axios from 'axios'
-
-import { requestInterceptors } from './request.interceptors'
-import { responseInterceptors } from './response.interceptors'
 import config from '@/config'
-// import router from '@/router'
-
-const DEFAULT_OPTIONS = {
-  timeout: 30000,
-  responseType: 'json',
-  withCredentials: false, // 是否允许带 cookie
-  headers: { 'Content-Type': 'application/json;charset=utf-8' },
-}
-
-const Axios = axios.create(DEFAULT_OPTIONS)
-
-/**
- * 请求时的拦截
- */
-requestInterceptors(axios)
-
-/**
- * 响应时拦截
- */
-responseInterceptors(axios)
-
-export default Axios
 
 export class AxiosConfig {
   /**
