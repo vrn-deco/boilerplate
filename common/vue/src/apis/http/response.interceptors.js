@@ -1,7 +1,7 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-07-19 19:25:44
- * @LastEditTime: 2020-09-04 14:55:33
+ * @LastEditTime: 2020-09-04 15:49:33
  * @Description:
  */
 import config from '@/config'
@@ -16,8 +16,8 @@ function normal(response) {
   const res = response.data
   const code = res[config.RESPONSE_CODE_FILED]
   if (code === config.RESPONSE_CODE.OK) {
-    // 成功，直接返回 data
-    return res[config.RESPONSE_DATA_FILED]
+    // 成功，直接返回数据
+    return res
   } else if (code === config.RESPONSE_CODE.UNAUTHORIZED) {
     // token 过期或未登录
     // 当 config.UNAUTHORIZED_REDIRECT_PATH 有设置时进行自动跳转到登录页

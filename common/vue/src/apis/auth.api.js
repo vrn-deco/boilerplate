@@ -1,7 +1,7 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-01-03 18:29:42
- * @LastEditTime: 2020-09-04 14:51:32
+ * @LastEditTime: 2020-09-04 15:11:39
  * @Description:
  */
 import Axios, { AxiosConfig } from '@/apis/http/strict-axios'

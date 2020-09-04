@@ -1,13 +1,13 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-07-30 18:48:35
- * @LastEditTime: 2020-08-03 18:52:18
+ * @LastEditTime: 2020-09-04 15:52:12
  * @Description:
  */
 import { VuexModule, Module, Action, Mutation } from 'vuex-module-decorators'
 
 import { authAPI } from '@/apis'
-import { UseLoading, SessionStorageItem } from '@/utils'
+import { UseLoading, SessionStorageItem, filterData } from '@/utils'
 import router from '@/router'
 
 // 创建 storage 管理器
@@ -40,7 +40,7 @@ export default class LoginStore extends VuexModule {
   @UseLoading('正在登录...')
   async login({ user, pass }) {
     // 登录并保存 token
-    const userInfo = await authAPI.login({ username: user, password: pass })
+    const userInfo = filterData(await authAPI.login({ username: user, password: pass }))
     this.context.commit('setToken', userInfo.token)
   }
   // 退出登录
