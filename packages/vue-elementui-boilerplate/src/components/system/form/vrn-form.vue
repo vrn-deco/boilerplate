@@ -13,7 +13,7 @@
     <div class="row" v-for="(rowData, rowIndex) in structData" :key="rowIndex">
       <!-- 遍历列 -->
       <div class="col" v-for="(widgetData, colIndex) in rowData" :key="colIndex">
-        <NTWidget
+        <VrnWidget
           :widgetData="widgetData"
           :rowIndex="rowIndex"
           :colIndex="colIndex"
@@ -29,13 +29,13 @@
 
 <script>
 import { flatStructData } from './utils.js'
-import NTWidget from '@/components/system/form/nt-widget.vue'
+import VrnWidget from '@/components/system/form/vrn-widget.vue'
 
 export default {
   // 组件名
-  name: 'NTForm',
+  name: 'VrnForm',
   components: {
-    NTWidget
+    VrnWidget
   },
   model: {
     prop: 'structData',
@@ -99,7 +99,7 @@ export default {
       try {
         newStructData[rowIndex][colIndex] = widgetData
       } catch (error) {
-        console.warn(`NTForm: 接收到了无效的索引 (row -> ${rowIndex}, col -> ${colIndex})`)
+        console.warn(`VRNForm: 接收到了无效的索引 (row -> ${rowIndex}, col -> ${colIndex})`)
       }
       return newStructData
     },

@@ -1,0 +1,13 @@
+/*
+ * @Author: benaozhi
+ * @Date: 2020-05-19 14:26:23
+ * @LastEditTime: 2020-05-19 11:27:29
+ * @Description: scss 功能函数（已自动导入，可直接在组件中使用）
+ */
+@function val($val) {
+  @return ($val / 2) + px;
+}
+
+@function r($val) {
+  @return $val + rem;
+}

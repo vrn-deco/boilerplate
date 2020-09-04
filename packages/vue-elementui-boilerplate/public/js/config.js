@@ -19,5 +19,5 @@
     }
   }
   var g = typeof window ? window : global
-  g.NT_CONFIG = config
+  g.VRN_CONFIG = config
 })();

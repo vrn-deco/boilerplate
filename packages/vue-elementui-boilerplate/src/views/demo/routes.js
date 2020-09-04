@@ -1,5 +1,6 @@
 import AxiosTest from './AxiosTest.vue'
 import FormTest from './FormTest.vue'
+import mockTest from './mockTest.vue'
 
 export default [
   {
@@ -11,5 +12,10 @@ export default [
     path: '/form',
     name: 'formtest',
     component: FormTest
+  },
+  {
+    path: '/mock',
+    name: 'mock',
+    component: mockTest
   }
 ]
