@@ -1,20 +1,20 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-14 00:04:01
- * @LastEditTime: 2019-07-23 16:24:42
+ * @LastEditTime: 2020-09-03 02:16:24
  * @Description: 表单控件相关配置类
  */
 
 import { ControlData } from './base'
 
 /**
- * NTForm 接收的包含 WidgetData 的二维数组
+ * VRNForm 接收的包含 WidgetData 的二维数组
  * export type StructData = Array<Array<WidgetData>>
  */
 
 /**
  * 表单装饰数据配置类
- * @use NTWiget
+ * @use VRNWiget
  */
 export class WidgetData {
   /**
@@ -39,7 +39,7 @@ export class WidgetData {
 /**
  * Input 输入框控件配置类
  * @extends ControlData
- * @use NTInput
+ * @use VRNInput
  */
 export class InputData extends ControlData {
   static type = 'input'
@@ -73,7 +73,7 @@ export class InputData extends ControlData {
  * 配置的信息将传递给 el-radio-group
  * options 内的数据传递给 el-radio 或 el-radio-button
  * @extends ControlData
- * @use NTRadio
+ * @use VRNRadio
  */
 export class RadioData extends ControlData {
   static type = 'radio'
@@ -128,7 +128,7 @@ export class RadioOption {
  * 配置的信息将传递给 el-checkbox-group
  * options 内的数据传递给 el-checkbox 或 el-checkbox-button
  * @extends ControlData
- * @use NTCheckbox
+ * @use VRNCheckbox
  */
 export class CheckboxData extends ControlData {
   static type = 'checkbox'
@@ -186,7 +186,7 @@ export class CheckboxOption {
 /**
  * Select 选择器控件配置类
  * @extends ControlData
- * @use NTSelect
+ * @use VRNSelect
  */
 export class SelectData extends ControlData {
   static type = 'select'
@@ -254,7 +254,7 @@ export class SelectOption {
 /**
  * Cascader 级联选择器控件配置类
  * @extends ControlData
- * @use NTCascader
+ * @use VRNCascader
  */
 export class CascaderData extends ControlData {
   static type = 'cascader'
@@ -323,7 +323,7 @@ export class CascaderOption {
 /**
  * DatePicker 日期选择器控件配置类
  * @extend ControlData
- * @use NTDatePicker
+ * @use VRNDatePicker
  */
 export class DatePickerData extends ControlData {
   static type = 'date-picker'

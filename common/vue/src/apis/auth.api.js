@@ -1,10 +1,10 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-01-03 18:29:42
- * @LastEditTime: 2020-07-07 11:00:01
+ * @LastEditTime: 2020-09-04 15:11:39
  * @Description:
  */
-import Axios, { AxiosConfig } from '@/apis/services/axios'
+import Axios, { AxiosConfig } from '@/apis/http/strict-axios'
 
 // 登录
 export function login({ username, password }) {
