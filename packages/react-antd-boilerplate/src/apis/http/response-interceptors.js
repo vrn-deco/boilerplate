@@ -1,7 +1,7 @@
 /*
  * @Autor: yugeStrive
  * @Date: 2020-07-29 15:12:15
- * @LastEditTime: 2020-09-04 17:17:42
+ * @LastEditTime: 2020-09-04 17:32:18
  * @Description: 响应拦截处理
  */
 
@@ -24,7 +24,7 @@ export const registerResponseInterceptor = (Axios) => {
       // 抛出异常中断外部后续逻辑
       throw new Error(res[service.RESPONSE_MESSAGE_FILED])
     } else {
-      // 其它 code，抛出异常
+      // 包含ResponseCode.OK和其它具体业务 code，全部当做成功放行
       return res
     }
   })
