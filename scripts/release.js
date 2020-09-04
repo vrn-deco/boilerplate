@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2020-07-06 12:24:34
+ * @LastEditTime: 2020-09-04 23:17:46
  * @Description: 一键发布脚本
  */
 
@@ -112,15 +112,4 @@ function genReleaseYaml() {
   })
   writeFileSync(RELEASE_YML_FILE, YAML.stringify(releaseMap))
   writeFileSync(RELEASE_JSON_FILE, JSON.stringify(releaseMap, null, 2))
-}
-
-/**
- * 生成团队信息文件
- */
-function genTeamYaml() {
-  if (existsSync(join(ROOT_DIR, 'data', 'team.yml'))) {
-    copyFileSync(join(ROOT_DIR, 'data', 'team.yml'), join(RELEASE_DIR, 'team.yml'))
-  } else {
-    Logger.info(`team.yml 不存在，跳过操作`)
-  }
 }
