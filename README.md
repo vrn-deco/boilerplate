@@ -47,13 +47,6 @@
       </td>
     </tr>
     <tr>
-      <td>&lt;dockerify&gt; ElementUI</td>
-      <td>PC Web</td>
-      <td>
-        <a href="./vue-elementui-docker-boilerplate">vue-elementui-docker-boilerplate</a>
-      </td>
-    </tr>
-    <tr>
       <td>&lt;dockerify&gt; VantUI</td>
       <td>Mobile Web</td>
       <td>

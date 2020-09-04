@@ -26,10 +26,6 @@
       key: uniapp-boilerplate
       tags:
         - Wechat MP
-    - title: <dockerify> ElementUI
-      key: vue-elementui-docker-boilerplate
-      tags:
-        - PC Web
     - title: <dockerify> VantUI
       key: vue-vantui-docker-boilerplate
       tags:

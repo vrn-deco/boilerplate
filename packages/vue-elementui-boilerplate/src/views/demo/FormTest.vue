@@ -1,6 +1,6 @@
 <template>
   <div class="form-test-page">
-    <NTForm v-model="structData" ref="my-form" />
+    <VRNForm v-model="structData" ref="my-form" />
     <div class="bot">
       <el-button type="primary" @click="handleClick">点击获取表单值Map</el-button>
     </div>
@@ -9,7 +9,7 @@
 
 <script>
 import {
-  NTForm,
+  VRNForm,
   WidgetData,
   InputData,
   RadioData,
@@ -26,7 +26,7 @@ import {
 export default {
   name: 'FormTestPage',
   components: {
-    NTForm
+    VRNForm
   },
   props: {},
   data() {
