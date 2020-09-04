@@ -1,11 +1,10 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-01-03 18:29:42
- * @LastEditTime: 2020-06-15 11:02:04
+ * @LastEditTime: 2020-09-04 15:11:39
  * @Description:
  */
-import b64 from 'base-64'
-import Axios, { AxiosConfig } from '@/apis/services/axios'
+import Axios, { AxiosConfig } from '@/apis/http/strict-axios'
 
 // 登录
 export function login({ username, password }) {

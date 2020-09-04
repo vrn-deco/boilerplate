@@ -1,0 +1,33 @@
+*{
+  padding: 0;
+  margin: 0;
+  // 页面不可复制
+  // -webkit-user-select:none;
+  // -moz-user-select:none;
+  // -ms-user-select:none;
+  // user-select:none;
+}
+
+html,body {
+  height: 100%;
+}
+
+input{-webkit-user-select:auto;}
+
+@media all and (max-width: 1960px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media all and (max-width: 1450px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 1370px) {
+  html {
+    font-size: 14px;
+  }
+}

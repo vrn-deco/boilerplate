@@ -1,11 +1,14 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-03-14 17:38:09
- * @LastEditTime: 2020-05-27 09:10:53
+ * @LastEditTime: 2020-08-03 17:38:41
  * @Description: 配置文件
  */
-
+import { RESPONSE_CODE, RESPONSE_CODE_FILED, RESPONSE_MESSAGE_FILED, RESPONSE_DATA_FILED } from './restful'
 const IS_DEV = process.env.NODE_ENV === 'development'
+
+// 是否使用mock数据（仅在开发环境中有用）
+const openMock = true
 
 // 开发环境地址
 const DEV_BASE_URL = 'http://58.210.169.163:19006'
@@ -13,8 +16,11 @@ const DEV_BASE_URL = 'http://58.210.169.163:19006'
 const PROD_BASE_URL = '/'
 
 export default {
+  PROJECT_NAME: 'VRN',
   // 是否是开发环境
   IS_DEV,
+  // 是否打开mock数据
+  openMock,
   // vconsole 插件开关，设置为 true 也仅在开发环境下生效（PC端项目请忽略）
   VCONSOLE_ENABLE: true,
 
@@ -22,7 +28,7 @@ export default {
     start: 网络请求相关配置
   */
   // 协议+主机名+端口号
-  BASE_URL: IS_DEV ? DEV_BASE_URL : PROD_BASE_URL,
+  BASE_URL: IS_DEV ? (openMock ? '/' : DEV_BASE_URL) : PROD_BASE_URL,
   /**
    * 这里假设假设你的服务端返回的 response body 为
    * {
@@ -33,18 +39,13 @@ export default {
    * 类型的 json 对象
    */
   // code 对应的字段名，上例就是 'code'
-  RESPONSE_CODE_FILED: 'code',
+  RESPONSE_CODE_FILED,
   // message 对应的字段名，上例就是 'msg'
-  RESPONSE_MESSAGE_FILED: 'msg',
+  RESPONSE_MESSAGE_FILED,
   // data 对应的字段名，上例就是 'data'
-  RESPONSE_DATA_FILED: 'data',
+  RESPONSE_DATA_FILED,
   // 几种特定需要前端处理的 code 值（将在 axios 基础服务中自动处理，其余将抛出异常，可在 catch 中处理）
-  RESPONSE_CODE: {
-    OK: 0, // ok
-    UNAUTHORIZED: 401, // token 过期
-    SERVER_ERROR: 500, // 服务端错误
-    MAINTENANCE: 503, // 系统维护中
-  },
+  RESPONSE_CODE,
   // 服务端返回 unauthorized 时跳转的路由地址（比如登录页），可选，如没有配置将抛出异常，可在 catch 中处理
   UNAUTHORIZED_REDIRECT_PATH: '/login',
   /*

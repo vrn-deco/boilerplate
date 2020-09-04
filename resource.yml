@@ -26,10 +26,6 @@
       key: uniapp-boilerplate
       tags:
         - Wechat MP
-    - title: <dockerify> ElementUI
-      key: vue-elementui-docker-boilerplate
-      tags:
-        - PC Web
     - title: <dockerify> VantUI
       key: vue-vantui-docker-boilerplate
       tags:
@@ -38,8 +34,12 @@
 # 浏览器端 React 相关样板
 - title: React
   boilerplates:
-    - title: <typescript> Redux + AntDesign
+    - title: Redux + AntDesign
       key: react-redux-antd-boilerplate
+      tags:
+        - PC Web
+    - title: <typescript> Redux + AntDesign
+      key: react-redux-antd-typescript-boilerplate
       tags:
         - PC Web
 

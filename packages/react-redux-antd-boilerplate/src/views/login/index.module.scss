@@ -1,0 +1,43 @@
+$color: #000000;
+
+.loginPage {
+  color: $color;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../../assets/images/loginBack.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  .login_wrap {
+    position: absolute;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    background-color: rgba(255, 255, 255, 0.192);
+    border-radius: 0.3rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -38%);
+    .title {
+      width: 100%;
+      height: 8vh;
+      line-height: 8vh;
+      text-align: center;
+      font-size: 3vmin;
+      font-weight: 800;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .login_content {
+      box-sizing: border-box;
+      padding: 2vh 7vh;
+    }
+    .login_form {
+      max-width: 300px;
+    }
+    .login_form_forgot {
+      float: right;
+    }
+    .login_form_button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}
