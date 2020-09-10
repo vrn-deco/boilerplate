@@ -22,35 +22,35 @@
       <td>ElementUI</td>
       <td>PC Web</td>
       <td>
-        <a href="./vue-elementui-boilerplate">vue-elementui-boilerplate</a>
+        <a href="./packages/vue-elementui-boilerplate">vue-elementui-boilerplate</a>
       </td>
     </tr>
     <tr>
       <td>VantUI</td>
       <td>Mobile Web</td>
       <td>
-        <a href="./vue-vantui-boilerplate">vue-vantui-boilerplate</a>
+        <a href="./packages/vue-vantui-boilerplate">vue-vantui-boilerplate</a>
       </td>
     </tr>
     <tr>
       <td>VantUI + H5Plus</td>
       <td>Mobile HybridApp</td>
       <td>
-        <a href="./vue-vantui-h5plus-boilerplate">vue-vantui-h5plus-boilerplate</a>
+        <a href="./packages/vue-vantui-h5plus-boilerplate">vue-vantui-h5plus-boilerplate</a>
       </td>
     </tr>
     <tr>
       <td>UniApp</td>
       <td>Wechat MP</td>
       <td>
-        <a href="./uniapp-boilerplate">uniapp-boilerplate</a>
+        <a href="./packages/uniapp-boilerplate">uniapp-boilerplate</a>
       </td>
     </tr>
     <tr>
       <td>&lt;dockerify&gt; VantUI</td>
       <td>Mobile Web</td>
       <td>
-        <a href="./vue-vantui-docker-boilerplate">vue-vantui-docker-boilerplate</a>
+        <a href="./packages/vue-vantui-docker-boilerplate">vue-vantui-docker-boilerplate</a>
       </td>
     </tr>
   </tbody>
@@ -69,14 +69,14 @@
       <td>Redux + AntDesign</td>
       <td>PC Web</td>
       <td>
-        <a href="./react-redux-antd-boilerplate">react-redux-antd-boilerplate</a>
+        <a href="./packages/react-redux-antd-boilerplate">react-redux-antd-boilerplate</a>
       </td>
     </tr>
     <tr>
       <td>&lt;typescript&gt; Redux + AntDesign</td>
       <td>PC Web</td>
       <td>
-        <a href="./react-redux-antd-typescript-boilerplate">react-redux-antd-typescript-boilerplate</a>
+        <a href="./packages/react-redux-antd-typescript-boilerplate">react-redux-antd-typescript-boilerplate</a>
       </td>
     </tr>
   </tbody>
@@ -95,21 +95,21 @@
       <td>Express</td>
       <td>REST API, Server Render</td>
       <td>
-        <a href="./server-express-boilerplate">server-express-boilerplate</a>
+        <a href="./packages/server-express-boilerplate">server-express-boilerplate</a>
       </td>
     </tr>
     <tr>
       <td>Express + Mock.js</td>
       <td>REST API, Mock.js Server</td>
       <td>
-        <a href="./server-express-mock-boilerplate">server-express-mock-boilerplate</a>
+        <a href="./packages/server-express-mock-boilerplate">server-express-mock-boilerplate</a>
       </td>
     </tr>
     <tr>
       <td>&lt;dockerify / typescript&gt; Nest + TypeORM</td>
       <td>REST API, GraphyQL, MicroService</td>
       <td>
-        <a href="./server-nest-boilerplate">server-nest-boilerplate</a>
+        <a href="./packages/server-nest-boilerplate">server-nest-boilerplate</a>
       </td>
     </tr>
   </tbody>

@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2020-09-04 23:17:46
+ * @LastEditTime: 2020-09-10 19:27:59
  * @Description: 一键发布脚本
  */
 
@@ -79,7 +79,6 @@ if (result) {
   Logger.success('发布文件包创建成功')
   Logger.info('开始生成 yml 文件')
   genReleaseYaml()
-  genTeamYaml()
   Logger.success(`写入文件: ${RELEASE_YML_FILE}`)
 }
 
