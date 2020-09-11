@@ -1,12 +1,11 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-07-19 19:25:44
- * @LastEditTime: 2020-09-04 17:07:13
+ * @LastEditTime: 2020-09-11 14:02:31
  * @Description:
  */
 import config from '@/config'
 import router from '@/router'
-import { Prompt } from '@/util'
 
 export const responseInterceptors = Axios => {
   // 这里注册你设置的返回方法
@@ -25,14 +24,12 @@ function normal(response) {
     if (config.UNAUTHORIZED_REDIRECT_PATH) {
       router.replace({ path: config.UNAUTHORIZED_REDIRECT_PATH })
     }
-    Prompt.error(res[config.RESPONSE_MESSAGE_FILED])
     // 抛出异常中断外部后续逻辑
     throw new Error(res[config.RESPONSE_MESSAGE_FILED])
   } else {
     // 方式一，其他code，直接放行
     return res
     // 方式二，其它 code，抛出异常
-    // Prompt.error(res[config.RESPONSE_MESSAGE_FILED])
     // throw new Error(res[config.RESPONSE_MESSAGE_FILED])
   }
 }
