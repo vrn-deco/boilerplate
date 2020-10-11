@@ -1,31 +1,44 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-01-03 18:29:42
- * @LastEditTime: 2020-09-04 15:11:39
+ * @LastEditTime: 2020-10-11 21:03:42
  * @Description:
  */
-import Axios, { AxiosConfig } from '@/apis/http/strict-axios'
+import { strictAxios } from './http/strict-axios'
+import { unstrictAxios } from './http/unstrict-axios'
 
 // 登录
-export function login({ username, password }) {
-  return Axios(
-    new AxiosConfig({
-      url: '/auth/login',
-      method: 'POST',
-      data: {
-        username,
-        password,
-      },
-    }),
-  )
+export async function login({ username, password }) {
+  return strictAxios({
+    url: '/auth/login',
+    method: 'POST',
+    data: {
+      username,
+      password,
+    },
+  })
 }
 
 // 获取用户信息
-export function userInfo() {
-  return Axios(
-    new AxiosConfig({
-      url: '/auth/info',
-      method: 'POST',
-    }),
-  )
+export async function userInfo() {
+  return strictAxios({
+    url: '/auth/info',
+    method: 'POST',
+  })
+}
+
+/**
+ * 如果请求第三方接口使用 unstrictAxios 避免进入拦截器逻辑
+ */
+export async function outerInfo() {
+  const response = await unstrictAxios({
+    baseURL: 'https://abc.com',
+    url: '/xxx',
+    method: 'GET',
+    params: {
+      query1: 'aaa',
+      query2: 'bbb',
+    },
+  })
+  return response
 }

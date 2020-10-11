@@ -1,18 +1,17 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-07-19 19:25:44
- * @LastEditTime: 2020-09-11 14:02:31
- * @Description:
+ * @LastEditTime: 2020-10-11 18:28:34
+ * @Description: 响应拦截器
  */
 import config from '@/config'
 import router from '@/router'
 
-export const responseInterceptors = Axios => {
-  // 这里注册你设置的返回方法
-  Axios.interceptors.response.use(normal)
+export const registerResponseInterceptors = axiosInstance => {
+  axiosInstance.interceptors.response.use(validateCode)
 }
 
-function normal(response) {
+function validateCode(response) {
   const res = response.data
   const code = res[config.RESPONSE_CODE_FILED]
   if (code === config.RESPONSE_CODE.OK) {
