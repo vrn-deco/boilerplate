@@ -1,7 +1,7 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-01-03 18:29:42
- * @LastEditTime: 2020-10-11 21:03:42
+ * @LastEditTime: 2020-10-12 14:24:13
  * @Description:
  */
 import { strictAxios } from './http/strict-axios'
@@ -31,7 +31,7 @@ export async function userInfo() {
  * 如果请求第三方接口使用 unstrictAxios 避免进入拦截器逻辑
  */
 export async function outerInfo() {
-  const response = await unstrictAxios({
+  return unstrictAxios({
     baseURL: 'https://abc.com',
     url: '/xxx',
     method: 'GET',
@@ -40,5 +40,4 @@ export async function outerInfo() {
       query2: 'bbb',
     },
   })
-  return response
 }
