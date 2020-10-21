@@ -1,11 +1,12 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-07-27 23:42:53
- * @LastEditTime: 2020-08-03 21:34:20
+ * @LastEditTime: 2020-10-21 14:54:08
  * @Description:
  */
 import Mock from 'mockjs'
-// 使用webpack的require.context()遍历所有mock文件
+
+// 使用 webpack 的 require.context() 遍历所有mock文件
 const files = require.context('.', true, /\.mock\.js$/)
 Mock.setup({
   timeout: '200-600'

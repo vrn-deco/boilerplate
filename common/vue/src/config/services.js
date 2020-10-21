@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-15 12:49:14
- * @LastEditTime: 2020-10-21 10:19:17
+ * @LastEditTime: 2020-10-21 14:55:27
  * @Description: 服务相关设置
  */
 import { ENVS } from './envs'
@@ -18,6 +18,8 @@ export const SERVICES = {
   /*
     start: 网络请求相关配置
   */
+  // 是否启用 mock
+  MOCK_ENABLE,
   // 协议+主机名+端口号
   BASE_URL: ENVS.IS_DEV ? (MOCK_ENABLE ? '/' : DEV_BASE_URL) : PROD_BASE_URL,
   /**

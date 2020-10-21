@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-13 00:52:43
- * @LastEditTime: 2020-08-03 21:40:01
+ * @LastEditTime: 2020-10-21 14:55:36
  * @Description: 入口文件
  */
 
@@ -21,7 +21,7 @@ import store from '@/store'
 import App from '@/App.vue'
 
 // 是否启用Mock数据
-if (config.IS_DEV && config.openMock) {
+if (config.ENVS.IS_DEV && config.SERVICES.MOCK_ENABLE) {
   require('../mock')
 }
 

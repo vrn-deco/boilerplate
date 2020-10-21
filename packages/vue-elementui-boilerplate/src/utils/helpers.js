@@ -7,3 +7,8 @@
  * 例子:
  * export const abslyByArr = arr => arr.map(value => Math.abs(value))
  */
+
+// token 格式化
+export function authorizationFormat(token) {
+  return `Bearer ${token}`
+}
