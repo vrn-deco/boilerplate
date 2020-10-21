@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-10-05 01:37:01
- * @LastEditTime: 2020-08-03 21:26:13
+ * @LastEditTime: 2020-10-21 14:58:51
  * @Description: 装饰器
  */
 import { Loading, Message } from 'element-ui'
@@ -19,20 +19,21 @@ export function UseLoading(message = '正在加载...') {
         lock: true,
         text: message,
         spinner: 'el-icon-loading',
-        background: 'rgba(0, 0, 0, 0.7)'
+        background: 'rgba(0, 0, 0, 0.7)',
       })
       try {
         const result = await fn.call(this, ...args)
-        t.close()
         return result
       } catch (err) {
+        console.error(err)
         process.env.NODE_ENV === 'devlopment' && console.error(err)
-        t.close()
         Message({
           showClose: true,
           message: err.message || '未知异常',
-          type: 'error'
+          type: 'error',
         })
+      } finally {
+        t.close()
       }
     }
   }

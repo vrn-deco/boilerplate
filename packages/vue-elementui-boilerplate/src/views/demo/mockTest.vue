@@ -1,7 +1,7 @@
 <!--
  * @Author: benaozhi
  * @Date: 2020-07-30 16:17:36
- * @LastEditTime: 2020-10-21 10:24:39
+ * @LastEditTime: 2020-10-21 15:33:31
  * @Description:
 -->
 <template>
@@ -13,7 +13,7 @@
 <script>
 import { strictFetch } from '@/apis/http'
 function userInfo() {
-  return Axios({
+  return strictFetch({
     url: '/parameter/query',
     method: 'GET',
   })
