@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Axios, { AxiosConfig } from '@/apis/http/strict-axios'
+import { strictFetch } from '@/apis/http'
 
 export default {
   name: 'AxiosTestPage',
@@ -19,22 +19,19 @@ export default {
   computed: {},
   methods: {
     async fetch1() {
-      const res = await Axios(
-        new AxiosConfig({
-          method: 'POST',
-          url: '/login/setSuccess',
-          data: {
-            id: 3
-          }
-        })
-      )
+      const res = await strictFetch({
+        method: 'POST',
+        url: '/login/setSuccess',
+        data: {
+          id: 3,
+        },
+      })
       console.log(res)
     },
     async fetch2() {},
-    async fetch3() {}
-  }
+    async fetch3() {},
+  },
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

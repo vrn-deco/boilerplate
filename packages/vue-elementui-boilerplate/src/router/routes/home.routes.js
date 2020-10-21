@@ -1,10 +1,10 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-07-13 01:52:30
- * @LastEditTime: 2020-08-04 12:01:04
+ * @LastEditTime: 2020-10-21 10:58:21
  * @Description:
  */
-import { home } from '@/views/web/home'
+import { home } from '@/views/home'
 
 export default [
   {

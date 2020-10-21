@@ -1,7 +1,7 @@
 <!--
  * @Author: benaozhi
  * @Date: 2020-07-30 16:17:36
- * @LastEditTime: 2020-09-04 14:53:04
+ * @LastEditTime: 2020-10-21 10:24:39
  * @Description:
 -->
 <template>
@@ -11,14 +11,12 @@
 </template>
 
 <script>
-import Axios, { AxiosConfig } from '@/apis/http/strict-axios'
+import { strictFetch } from '@/apis/http'
 function userInfo() {
-  return Axios(
-    new AxiosConfig({
-      url: '/parameter/query',
-      method: 'GET',
-    }),
-  )
+  return Axios({
+    url: '/parameter/query',
+    method: 'GET',
+  })
 }
 export default {
   name: '',
@@ -32,10 +30,9 @@ export default {
     async test1() {
       const res = await userInfo()
       console.log(res)
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
