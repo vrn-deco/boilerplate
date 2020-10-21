@@ -1,7 +1,7 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-07-13 01:51:51
- * @LastEditTime: 2020-07-13 01:51:53
+ * @LastEditTime: 2020-10-21 09:56:40
  * @Description:
  */
 import Vue from 'vue'
@@ -15,6 +15,7 @@ Vue.use(Router)
 
 const router = new Router({
   base: process.env.BASE_URL,
+  mode: 'hash',
   routes
 })
 

@@ -1,17 +1,18 @@
 /*
  * @Author: benaozhi
  * @Date: 2020-01-03 18:18:20
- * @LastEditTime: 2020-07-19 16:35:10
+ * @LastEditTime: 2020-10-21 14:23:02
  * @Description: 认证 store
  */
 import { VuexModule, Module, Action, Mutation } from 'vuex-module-decorators'
 
 import { authAPI } from '@/apis'
-import { UseLoading, SessionStorageItem } from '@/utils'
 import router from '@/router'
+import { UseLoading } from '@/utils/decorators'
+import { LocalStorageItem } from '@/utils/storage'
 
 // 创建 storage 管理器
-const tokenLSI = new SessionStorageItem({ fieldName: 'token' })
+const tokenLSI = new LocalStorageItem({ fieldName: 'token' })
 
 @Module({ namespaced: true })
 export default class AuthModule extends VuexModule {
@@ -26,7 +27,6 @@ export default class AuthModule extends VuexModule {
   setToken(token) {
     this._token = token
     tokenLSI.set(token)
-    router.replace({ path: '/system' })
   }
 
   @Mutation
@@ -36,12 +36,13 @@ export default class AuthModule extends VuexModule {
   }
 
   // 登录
-  @Action({ rawError: true })
+  @Action()
   @UseLoading('正在登录...')
-  async login() {
+  async login({ username, password }) {
     // 登录并保存 token
-    const userInfo = await authAPI.login({})
+    const userInfo = await authAPI.login({ username, password })
     this.context.commit('setToken', userInfo.token)
+    router.replace({ path: '/' })
   }
   // 退出登录
   @Action()

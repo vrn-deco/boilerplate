@@ -1,7 +1,7 @@
 <!--
  * @Author: benaozhi
  * @Date: 2020-07-30 18:32:36
- * @LastEditTime: 2020-08-19 18:08:16
+ * @LastEditTime: 2020-10-21 14:06:19
  * @Description:
 -->
 <template>
@@ -25,8 +25,9 @@
 
 <script>
 import config from '@/config'
+
 export default {
-  name: '',
+  name: 'LoginPage',
   components: {},
   props: {},
   data() {
@@ -51,7 +52,7 @@ export default {
     onSubmit() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
-          this.$store.dispatch('loginStore/login', this.formInline)
+          this.$store.dispatch('auth/login', this.formInline)
         } else {
           return false
         }

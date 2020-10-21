@@ -1,8 +1,4 @@
 class StorageItem {
-  /**
-   * params fieldName <String> localStorageName
-   * params jsonify <Boolean> Whether to use jsonify method
-   */
   constructor({ fieldName, jsonify = false }) {
     this.fieldName = fieldName
     this.jsonify = jsonify
