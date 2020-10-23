@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-07 14:05:22
- * @LastEditTime: 2020-07-07 16:31:49
+ * @LastEditTime: 2020-10-23 16:19:46
  * @Description: 渲染 readme
  */
 
@@ -19,8 +19,8 @@ const strings = {
 const tags = [
   {
     label: 'build state',
-    imgUrl: 'https://travis-ci.org/Cphayim/boilerplate.svg',
-    linkUrl: 'https://travis-ci.org/Cphayim/boilerplate',
+    imgUrl: 'https://api.travis-ci.org/vrn-deco/vrn-boilerplate.svg',
+    linkUrl: 'https://travis-ci.org/github/vrn-deco/vrn-boilerplate',
   },
   {
     label: 'node.js version',
