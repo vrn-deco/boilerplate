@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-05-12 22:48:53
- * @LastEditTime: 2020-10-21 09:49:17
+ * @LastEditTime: 2020-11-02 17:23:08
  * @Description: 严格的 axios 实例，用于请求自己的服务端（能够返回固定格式的）
  */
 
@@ -13,7 +13,7 @@ import { registerRequestInterceptors } from './request.interceptors'
 import { registerResponseInterceptors } from './response.interceptors'
 
 const DEFAULT_OPTIONS = {
-  baseUrl: config.BASE_URL,
+  baseURL: config.SERVICES.BASE_URL,
   timeout: 30000,
   responseType: 'json',
   withCredentials: false, // 是否允许带 cookie
