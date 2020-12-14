@@ -46,13 +46,6 @@
         <a href="./packages/uniapp-boilerplate">uniapp-boilerplate</a>
       </td>
     </tr>
-    <tr>
-      <td>&lt;dockerify&gt; VantUI</td>
-      <td>Mobile Web</td>
-      <td>
-        <a href="./packages/vue-vantui-docker-boilerplate">vue-vantui-docker-boilerplate</a>
-      </td>
-    </tr>
   </tbody>
 </table>
 <h3>React</h3>

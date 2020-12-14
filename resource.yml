@@ -26,10 +26,6 @@
       key: uniapp-boilerplate
       tags:
         - Wechat MP
-    - title: <dockerify> VantUI
-      key: vue-vantui-docker-boilerplate
-      tags:
-        - Mobile Web
 
 # 浏览器端 React 相关样板
 - title: React
