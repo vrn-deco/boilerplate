@@ -2,11 +2,16 @@
 ###
  # @Author: Cphayim
  # @Date: 2020-12-15 10:28:23
- # @LastEditTime: 2020-12-15 14:16:46
+ # @LastEditTime: 2020-12-15 17:17:19
  # @Description: CI 部署脚本
 ###
 
 set -e
+
+if [ ! $BOILERPLATE_DEPLOY_DIR ] || [ ! $VRN_REMOTE_SERVER_NGINX_CONF_DIR ]; then
+  echo "环境变量丢失：BOILERPLATE_DEPLOY_DIR, VRN_REMOTE_SERVER_NGINX_CONF_DIR"
+  exit 1
+fi
 
 ssh vrn "
   set -e
@@ -17,7 +22,7 @@ ssh vrn "
 "
 
 echo "正在将 release 目录下的文件递归上传"
-rsync -a --progress --delete 'release/' vrn:$BOILERPLATE_DEPLOY_DIR
+rsync -a --progress 'release/' vrn:$BOILERPLATE_DEPLOY_DIR
 echo '文件部署完毕'
 
 
