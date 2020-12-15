@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - 'master'
-  pull_request:
-    branches:
-      - 'master'
+  # 仅合并完成才执行构建和部署
+  # pull_request:
+  #   branches:
+  #     - 'master'
 
 jobs:
   build:
