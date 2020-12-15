@@ -1,8 +1,10 @@
 <h1>{{ pkg.name }}</h1>
 <p>{{pkg.description}}</p>
-
-{% for tag in tags %}<a href="{{ tag.linkUrl }}"><img src="{{ tag.imgUrl }}" alt="{{ tag.label }}"/></a>{% endfor %}
-
+{% for tag in tags %}
+<a style="display: inline-block; padding-right: 20px;" href="{{ tag.linkUrl }}">
+  <img src="{{ tag.imgUrl }}" alt="{{ tag.label }}"/>
+</a>
+{% endfor %}
 {% for category in resource %}
 <h3>{{ category.title }}</h3>
 <table>

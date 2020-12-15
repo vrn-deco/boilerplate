@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-07-07 14:05:22
- * @LastEditTime: 2020-12-15 14:08:58
+ * @LastEditTime: 2020-12-15 15:23:58
  * @Description: 渲染 readme
  */
 
@@ -23,11 +23,11 @@ const tags = [
     imgUrl: 'https://github.com/vrn-deco/vrn-boilerplate/workflows/Build%20and%20Deploy/badge.svg',
     linkUrl: 'href: javascript;',
   },
-  {
-    label: 'node.js version',
-    imgUrl: 'https://img.shields.io/badge/node.js-10+-green.svg',
-    linkUrl: 'https://nodejs.org/',
-  },
+  // {
+  //   label: 'node.js version',
+  //   imgUrl: 'https://img.shields.io/badge/node.js-10+-green.svg',
+  //   linkUrl: 'https://nodejs.org/',
+  // },
 ]
 
 export function render({ pkg, resource, lang = 'en' }) {
