@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 09:21:54
- * @LastEditTime: 2020-07-06 12:25:37
+ * @LastEditTime: 2020-12-15 15:04:51
  * @Description: 一键部署脚本
  */
 
@@ -10,13 +10,24 @@ import sh from 'shelljs'
 import { Logger } from '@naughty/logger'
 import {
   RELEASE_DIR,
-  SSH_PRIVATE_KEY,
-  SERVER_SIDE_USER,
-  SERVER_SIDE_IP,
-  SERVER_SIDE_RELEASE_DIR,
-  SERVER_SIDE_NGINX_CONF_DIR,
   NGINX_CONF,
 } from './config'
+
+// 服务端目录与配置
+const SERVER_SIDE_USER = getArgByEnvOrBlock('VRN_REMOTE_SERVER_USER')
+const SERVER_SIDE_IP = getArgByEnvOrBlock('VRN_REMOTE_SERVER_ADDRESS')
+const SERVER_SIDE_RELEASE_DIR = getArgByEnvOrBlock('VRN_REMOTE_SERVER_RELEASE_DIR')
+const SERVER_SIDE_NGINX_CONF_DIR = getArgByEnvOrBlock('VRN_REMOTE_SERVER_NGINX_CONF_DIR')
+
+// 本地私钥
+const LOCAL_PRIVATE_KEY = join(ROOT_DIR, 'keys', 'boilerplate_rsa')
+
+const SSH_PRIVATE_KEY = genSSHPrivateKey({
+  envKey: 'VRN_REMOTE_SERVER_SSH_PRIVATE_KEY',
+  localKeyFile: LOCAL_PRIVATE_KEY,
+  rootDir: ROOT_DIR,
+})
+
 
 /**
  * ?将模板包和配置文件上传到服务器对应目录
