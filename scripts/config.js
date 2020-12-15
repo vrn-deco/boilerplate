@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-07-01 01:00:20
- * @LastEditTime: 2020-07-06 12:27:49
+ * @LastEditTime: 2020-12-14 16:37:27
  * @Description: 配置文件
  */
 
@@ -60,14 +60,19 @@ export const IGNORES = [
 ]
 
 // 服务端目录与配置
-export const SERVER_SIDE_USER = getArgByEnvOrBlock('SERVER_SIDE_USER')
-export const SERVER_SIDE_IP = getArgByEnvOrBlock('SERVER_SIDE_IP')
-export const SERVER_SIDE_RELEASE_DIR = getArgByEnvOrBlock('SERVER_SIDE_RELEASE_DIR')
-export const SERVER_SIDE_NGINX_CONF_DIR = getArgByEnvOrBlock('SERVER_SIDE_NGINX_CONF_DIR')
+export const SERVER_SIDE_USER = getArgByEnvOrBlock('VRN_REMOTE_SERVER_USER')
+export const SERVER_SIDE_IP = getArgByEnvOrBlock('VRN_REMOTE_SERVER_ADDRESS')
+export const SERVER_SIDE_RELEASE_DIR = getArgByEnvOrBlock('VRN_REMOTE_SERVER_RELEASE_DIR')
+export const SERVER_SIDE_NGINX_CONF_DIR = getArgByEnvOrBlock('VRN_REMOTE_SERVER_NGINX_CONF_DIR')
 
-// 连接私钥
+// 本地私钥
 const LOCAL_PRIVATE_KEY = join(ROOT_DIR, 'keys', 'boilerplate_rsa')
-export const SSH_PRIVATE_KEY = genSSHPrivateKey({ localKeyFile: LOCAL_PRIVATE_KEY, rootDir: ROOT_DIR })
+
+export const SSH_PRIVATE_KEY = genSSHPrivateKey({
+  envKey: 'VRN_REMOTE_SERVER_SSH_PRIVATE_KEY',
+  localKeyFile: LOCAL_PRIVATE_KEY,
+  rootDir: ROOT_DIR,
+})
 
 // 发布用资源对象
 const RESOURCE_FILE = join(ROOT_DIR, 'resource.yml')

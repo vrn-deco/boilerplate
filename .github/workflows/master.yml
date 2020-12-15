@@ -1,0 +1,49 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.VRN_REMOTE_SERVER_SSH_PRIVATE_KEY }}
+          name: vrn_rsa
+          known_hosts: ${{ secrets.VRN_REMOTE_SERVER_SSH_KNOWN_HOSTS }}
+          config: ${{ secrets.VRN_REMOTE_SERVER_SSH_CONFIG }}
+
+      - name: Install Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Testing
+        run: npm run test
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        run: npm run deploy:ci
+        env:
+          VRN_REMOTE_SERVER_NGINX_CONF_DIR: ${{ secrets.VRN_REMOTE_SERVER_NGINX_CONF_DIR }}
+          BOILERPLATE_DEPLOY_DIR: ${{ secrets.BOILERPLATE_DEPLOY_DIR }}

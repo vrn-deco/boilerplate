@@ -4,9 +4,11 @@
   "description": "🔧🔨🔩 Full stack engineering boilerplate.",
   "main": "index.js",
   "scripts": {
-    "release": "cy-node scripts/release.js && cy-node scripts/readme.js",
-    "deploy": "cy-node scripts/deploy.js",
+    "build": "cy-node scripts/build.js",
     "test": "cy-node scripts/test.js",
+    "doc": "cy-node scripts/readme.js",
+    "deploy": "cy-node scripts/deploy.js",
+    "deploy:ci": "./scripts/ci-deploy.sh",
     "commit": "git add . && git-cz"
   },
   "private": true,
@@ -41,7 +43,8 @@
     "@types/node": "^12.0.10"
   },
   "gitHooks": {
-    "commit-msg": "commitlint -e --config commitlint.config.js"
+    "commit-msg": "commitlint -e --config commitlint.config.js",
+    "pre-commit": "npm run doc && git add README*.md"
   },
   "config": {
     "commitizen": {

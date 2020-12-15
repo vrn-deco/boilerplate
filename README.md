@@ -1,8 +1,8 @@
 <h1>boilerplate</h1>
 <p>🔧🔨🔩 Full stack engineering boilerplate.</p>
 
-<a href="https://travis-ci.org/github/vrn-deco/vrn-boilerplate">
-  <img src="https://api.travis-ci.org/vrn-deco/vrn-boilerplate.svg" alt="build state"/>
+<a href="href: javascript;">
+  <img src="https://github.com/vrn-deco/vrn-boilerplate/workflows/Build%20and%20Deploy/badge.svg" alt="build state"/>
 </a>
 <a href="https://nodejs.org/">
   <img src="https://img.shields.io/badge/node.js-10+-green.svg" alt="node.js version"/>
