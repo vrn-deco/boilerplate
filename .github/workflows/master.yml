@@ -41,7 +41,7 @@ jobs:
         run: npm run test
 
       - name: Build
-        run: npm run build
+        run: ls release && npm run build
 
       - name: Deploy
         run: npm run deploy:ci
