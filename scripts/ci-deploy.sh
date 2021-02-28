@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 ###
- # @Author: Cphayim
- # @Date: 2020-12-15 10:28:23
- # @LastEditTime: 2020-12-15 17:17:19
- # @Description: CI 部署脚本
+# @Author: Cphayim
+# @Date: 2020-12-15 10:28:23
+# @LastEditTime: 2021-03-01 01:34:02
+# @Description: CI 部署脚本
 ###
 
 set -e
@@ -21,10 +21,11 @@ ssh vrn "
   fi
 "
 
+ls release
+
 echo "正在将 release 目录下的文件递归上传"
 rsync -a --progress 'release/' vrn:$BOILERPLATE_DEPLOY_DIR
 echo '文件部署完毕'
-
 
 echo "上传 nginx 配置文件"
 rsync -a --progress 'boilerplate.conf' vrn:$VRN_REMOTE_SERVER_NGINX_CONF_DIR
