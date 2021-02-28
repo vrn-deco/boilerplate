@@ -2,7 +2,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-06-28 16:28:26
- * @LastEditTime: 2020-09-10 19:27:59
+ * @LastEditTime: 2021-03-01 01:44:49
  * @Description: 一键发布脚本
  */
 
@@ -62,7 +62,7 @@ const result = sh.ls(PKG_DIR).every((pkgName) => {
       # -h 打包软链指向的文件而不是软链文件
       tar ${ignoreArgs} -cvzhPf ${output} ${pkgName}
     `,
-    { silent: true, shell: '/bin/zsh' }
+    { silent: false }
   )
 
   if (code) {
