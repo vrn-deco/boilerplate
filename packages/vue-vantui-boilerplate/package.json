@@ -11,7 +11,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "base-64": "^0.1.0",
     "core-js": "^2.6.11",
     "debounce": "^1.2.0",
