@@ -39,8 +39,11 @@ jobs:
       - name: Testing
         run: npm run test
 
-      - name: Build and Deploy
-        run: npm run build && npm run deploy:ci
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        run: npm run deploy:ci
         env:
           VRN_REMOTE_SERVER_NGINX_CONF_DIR: ${{ secrets.VRN_REMOTE_SERVER_NGINX_CONF_DIR }}
           BOILERPLATE_DEPLOY_DIR: ${{ secrets.BOILERPLATE_DEPLOY_DIR }}
