@@ -6,7 +6,7 @@ module.exports = {
   },
   extends: ['plugin:vue/essential', '@vue/standard'],
   rules: {
-    'space-before-function-paren': ['error', 'never'],
+    'space-before-function-paren': 'off',
     semi: ['error', 'never'],
     'keyword-spacing': [
       'error',
@@ -19,7 +19,8 @@ module.exports = {
       },
     ],
     'comma-dangle': [0, 'always-multiline'],
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    // 'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-console': 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
   parserOptions: {
@@ -30,7 +31,6 @@ module.exports = {
   },
   globals: {
     // 暴露全局变量
-    NT_CONFIG: true,
     plus: true,
   },
 }

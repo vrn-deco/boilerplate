@@ -28,7 +28,6 @@ export function UseLoading(message = '正在加载...') {
   }
 }
 
-
 /**
  * 防抖，防止触发多次点击，造成资源浪费
  * (在N秒内只能执行一次事件，若在N秒内再次进行触发，则会清除前一个事件，重新进行计算)
@@ -38,7 +37,7 @@ export function Debounce(delay = 100) {
   let timeOut
   return (t, k, p) => {
     const fn = p.value
-    p.value = function (...args) {
+    p.value = function(...args) {
       if (timeOut) clearTimeout(timeOut)
       timeOut = setTimeout(() => {
         fn.call(this, ...args)
@@ -56,7 +55,7 @@ export function Throttle(delay = 200) {
   let timeOut
   return (t, k, p) => {
     const fn = p.value
-    p.value = function (...args) {
+    p.value = function(...args) {
       if (!timeOut) {
         timeOut = setTimeout(() => {
           timeOut = null
@@ -75,7 +74,7 @@ export function Lock() {
   return (t, k, p) => {
     let locked = false
     const fn = p.value
-    p.value = async function (...args) {
+    p.value = async function(...args) {
       if (locked) return
       try {
         locked = true

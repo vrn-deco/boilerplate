@@ -1,10 +1,15 @@
 /*
  * @Author: Cphayim
  * @Date: 2019-10-05 01:37:01
- * @LastEditTime: 2020-12-14 09:19:16
+ * @LastEditTime: 2021-03-12 14:30:35
  * @Description: 装饰器
  */
 import { Toast } from 'vant'
+
+/**
+ * 生命周期标记
+ */
+export function lifeCycle() {}
 
 /**
  * 用于装饰一个异步函数，在函数执行过程中打开 Toast.loading
@@ -84,6 +89,33 @@ export function Lock() {
       } finally {
         locked = false
       }
+    }
+  }
+}
+
+/**
+ * 下拉刷新处理函数包装器
+ * @param
+ */
+export function Refresh({ field = 'isLoading', minDuration = 500 } = {}) {
+  return (t, k, p) => {
+    const fn = p.value
+    return {
+      get() {
+        return async (...args) => {
+          const startTime = Date.now()
+          await fn.call(this, ...args)
+          const endTime = Date.now()
+          const duration = endTime - startTime
+          if (duration >= minDuration) {
+            this[field] = false
+          } else {
+            setTimeout(() => {
+              this[field] = false
+            }, minDuration - duration)
+          }
+        }
+      },
     }
   }
 }
