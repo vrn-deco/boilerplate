@@ -1,24 +1,24 @@
 {
   "name": "boilerplate",
-  "version": "0.1.2",
+  "version": "1.2.0",
   "description": "🔧🔨🔩 Full stack engineering boilerplate.",
-  "main": "index.js",
+  "keywords": [],
+  "author": "Cphayim",
+  "license": "MIT",
   "scripts": {
     "build": "cy-node scripts/build.js",
     "test": "cy-node scripts/test.js",
     "doc": "cy-node scripts/readme.js",
     "deploy": "cy-node scripts/deploy.js",
     "deploy:ci": "./scripts/ci-deploy.sh",
-    "commit": "git add . && git-cz"
+    "commit": "git add . && git-cz",
+    "ts:build": "ts-node src/build.ts"
   },
   "private": true,
   "repository": {
     "type": "git",
     "url": "git+ssh://git@gitlab.com/Cphayim/bolierplate.git"
   },
-  "keywords": [],
-  "author": "Cphayim",
-  "license": "ISC",
   "bugs": {
     "url": "https://gitlab.com/Cphayim/bolierplate/issues"
   },
@@ -29,7 +29,7 @@
     "@naughty/cy-node": "^1.0.12",
     "@naughty/logger": "^1.0.1",
     "commitizen": "^4.1.2",
-    "compressing": "^1.4.0",
+    "compressing": "^1.5.1",
     "cz-conventional-changelog": "^3.2.0",
     "dotenv": "^8.0.0",
     "nunjucks": "^3.2.1",
@@ -40,7 +40,10 @@
     "yorkie": "^2.0.0"
   },
   "devDependencies": {
-    "@types/node": "^12.0.10"
+    "@types/node": "^12.20.7",
+    "@types/shelljs": "^0.8.8",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
   },
   "gitHooks": {
     "commit-msg": "commitlint -e --config commitlint.config.js",
