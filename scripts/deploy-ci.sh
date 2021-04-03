@@ -25,10 +25,6 @@ echo "正在将 release 目录下的文件递归上传"
 rsync -a --progress 'release/' vrn:$BOILERPLATE_DEPLOY_DIR
 echo '文件部署完毕'
 
-echo "上传 nginx 配置文件"
-rsync -a --progress 'boilerplate.conf' vrn:$VRN_REMOTE_SERVER_NGINX_CONF_DIR
-echo "nginx 配置文件上传完毕"
-
 echo "正在重载 nginx 服务"
 ssh vrn "
   set -e
