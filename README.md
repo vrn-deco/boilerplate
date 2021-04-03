@@ -127,3 +127,9 @@
 
 
 <!-- /resource inject -->
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2019-present, VRN-DECO
