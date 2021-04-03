@@ -25,7 +25,5 @@ yarn-error.log*
 /release
 /keys
 
-flutter_*
-
 /*.local
-/.env*
+env.local
