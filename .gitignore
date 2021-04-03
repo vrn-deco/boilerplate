@@ -28,4 +28,4 @@ yarn-error.log*
 flutter_*
 
 /*.local
-/.env*
+env.local

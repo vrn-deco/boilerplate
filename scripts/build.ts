@@ -10,9 +10,8 @@ import sh from 'shelljs'
 import { Logger } from '@naughty/logger'
 
 import { resource } from './resource'
-import { PKG_DIR, RELEASE_DIR, RESOURCE_JSON_FILE, TGZ_EXT } from './config'
-import { Boilerplate, Resource } from './types'
-import { tgzCompress, traverseBoilerplate } from './utils'
+import { NGINX_CONF_FILE, RELEASE_DIR, RESOURCE_JSON_FILE, ROOT_DIR, TGZ_EXT } from './config'
+import { makeNginxConf, tgzCompress, traverseBoilerplate } from './utils'
 
 /**
  * 任务说明：
@@ -44,9 +43,15 @@ traverseBoilerplate(resource, async (boilerplate, fullPath) => {
     Logger.error(`${boilerplate.key} 打包失败: ${stderr}`)
     return false
   }
-  Logger.success(`${boilerplate.key} -> ${output}`)
+  Logger.success(`${boilerplate.key} -> ${path.relative(ROOT_DIR, output)}`)
 })
 
 Logger.info('创建 resource.json 文件')
 fs.writeFileSync(RESOURCE_JSON_FILE, JSON.stringify(resource, null, 2))
-Logger.success(`resource -> ${RESOURCE_JSON_FILE}`)
+Logger.success(`resource -> ${path.relative(ROOT_DIR, RESOURCE_JSON_FILE)}`)
+
+Logger.info('创建 boilerplate.conf 文件')
+makeNginxConf()
+Logger.success(path.relative(ROOT_DIR, NGINX_CONF_FILE))
+
+Logger.info('完成 Build 任务')

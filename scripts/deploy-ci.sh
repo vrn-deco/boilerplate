@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 ###
 # @Author: Cphayim
-# @Date: 2020-12-15 10:28:23
-# @LastEditTime: 2021-03-01 01:34:02
 # @Description: CI 部署脚本
 ###
 
@@ -34,6 +32,7 @@ echo "nginx 配置文件上传完毕"
 echo "正在重载 nginx 服务"
 ssh vrn "
   set -e
+  mv $BOILERPLATE_DEPLOY_DIR/boilerplate.conf $VRN_REMOTE_SERVER_NGINX_CONF_DIR
   systemctl reload nginx
 "
 echo "部署成功"

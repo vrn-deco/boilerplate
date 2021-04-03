@@ -1,18 +1,17 @@
 {
-  "name": "boilerplate",
+  "name": "@vrn/boilerplate",
   "version": "1.2.0",
   "description": "🔧🔨🔩 Full stack engineering boilerplate.",
   "keywords": [],
   "author": "Cphayim",
   "license": "MIT",
   "scripts": {
-    "build": "cy-node scripts/build.js",
-    "test": "cy-node scripts/test.js",
-    "doc": "cy-node scripts/readme.js",
-    "deploy": "cy-node scripts/deploy.js",
-    "deploy:ci": "./scripts/ci-deploy.sh",
-    "commit": "git add . && git-cz",
-    "ts:build": "ts-node src/build.ts"
+    "build": "ts-node scripts/build.ts",
+    "test": "exit 0;",
+    "doc": "ts-node scripts/readme.ts",
+    "deploy": "ts-node scripts/deploy.ts",
+    "deploy:ci": "./scripts/deploy-ci.sh",
+    "commit": "git add . && git-cz"
   },
   "private": true,
   "repository": {
@@ -28,22 +27,20 @@
     "@commitlint/config-conventional": "^9.0.1",
     "@naughty/cy-node": "^1.0.12",
     "@naughty/logger": "^1.0.1",
+    "@types/node": "^12.20.7",
+    "@types/shelljs": "^0.8.8",
     "commitizen": "^4.1.2",
     "compressing": "^1.5.1",
     "cz-conventional-changelog": "^3.2.0",
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.2.0",
     "nunjucks": "^3.2.1",
     "shelljs": "^0.8.4",
+    "ts-node": "^9.1.1",
     "turndown": "^6.0.0",
+    "typescript": "^4.2.3",
     "yaml": "^1.6.0",
     "yargs": "^13.2.4",
     "yorkie": "^2.0.0"
-  },
-  "devDependencies": {
-    "@types/node": "^12.20.7",
-    "@types/shelljs": "^0.8.8",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.3"
   },
   "gitHooks": {
     "commit-msg": "commitlint -e --config commitlint.config.js",
@@ -53,5 +50,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "devDependencies": {
+    "@types/nunjucks": "^3.1.4"
   }
 }

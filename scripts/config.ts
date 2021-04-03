@@ -5,6 +5,7 @@
  */
 
 import path from 'path'
+import dotenv from 'dotenv'
 
 // 基本目录路径
 export const ROOT_DIR = path.join(__dirname, '..')
@@ -17,6 +18,10 @@ export const NGINX_CONF_FILE = path.join(RELEASE_DIR, 'boilerplate.conf')
 
 // 打包后的文件后缀
 export const TGZ_EXT = '.tgz'
+
+// 载入环境变量
+const envFiles = ['.env', '.env.local']
+envFiles.forEach((item) => dotenv.config({ path: path.join(ROOT_DIR, item) }))
 
 // 打包时忽略的文件列表
 export const IGNORE_LIST: string[] = [
