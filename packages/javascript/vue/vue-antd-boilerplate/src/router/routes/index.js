@@ -36,8 +36,12 @@ export const asyncRoutes = [
       ...systemRoutes, // 系统管理
     ],
   },
+  // 兜底
   {
     path: '*',
     redirect: exceptionRoutes[0].path, // 404
+    meta: {
+      skipPermission: true,
+    },
   },
 ]

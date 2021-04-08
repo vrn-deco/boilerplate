@@ -43,7 +43,7 @@ async function handleLogined(to, from, next) {
     // 生成可访问路由
     const accessedRoutes = await store.dispatch('permission/generateRoutes', resources)
     if (accessedRoutes && accessedRoutes.length) {
-      router.addRoutes(accessedRoutes)
+      accessedRoutes.forEach(route => router.addRoute(route))
 
       // 带有 redirect 重定向时，登录自动重定向到该地址
       const redirect = decodeURIComponent(from.query.redirect || to.path)
