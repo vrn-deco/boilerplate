@@ -3,7 +3,7 @@
  * @Date: 2021-04-01 13:30:34
  * @Description: 资源配置
  */
-import { Resource } from './types'
+import { PackageType, Resource } from './types'
 
 export const resource: Resource = [
   {
@@ -19,18 +19,28 @@ export const resource: Resource = [
             key: 'vue-elementui-boilerplate',
             version: '2.1.0',
             tags: ['PC Web'],
+            packageType: PackageType.NPM,
+          },
+          {
+            label: 'AntDesign',
+            key: 'vue-antd-boilerplate',
+            version: '1.0.0',
+            tags: ['PC Web'],
+            packageType: PackageType.NPM,
           },
           {
             label: 'VantUI',
             key: 'vue-vantui-boilerplate',
             version: '2.2.10',
             tags: ['Mobile Web'],
+            packageType: PackageType.NPM,
           },
           {
             label: 'VantUI + H5Plus',
             key: 'vue-vantui-h5plus-boilerplate',
             version: '2.2.10',
             tags: ['Mobile HybridApp'],
+            packageType: PackageType.NPM,
           },
         ],
       },
@@ -43,6 +53,7 @@ export const resource: Resource = [
             key: 'react-redux-antd-boilerplate',
             version: '0.0.1',
             tags: ['PC Web'],
+            packageType: PackageType.NPM,
           },
           {
             label: 'Redux + AntDesign',
@@ -50,6 +61,7 @@ export const resource: Resource = [
             version: '0.0.1',
             flag: '<typescript>',
             tags: ['PC Web'],
+            packageType: PackageType.NPM,
           },
         ],
       },
@@ -62,12 +74,14 @@ export const resource: Resource = [
             key: 'server-express-boilerplate',
             version: '0.0.1',
             tags: ['REST API', 'Server Render'],
+            packageType: PackageType.NPM,
           },
           {
             label: 'Express + Mock.js',
             key: 'server-express-mock-boilerplate',
             version: '0.0.1',
             tags: ['REST API', 'Mock.js Server'],
+            packageType: PackageType.NPM,
           },
         ],
       },
@@ -81,6 +95,7 @@ export const resource: Resource = [
             version: '0.0.1',
             flag: '<docker / typescript>',
             tags: ['REST API', 'GraphyQL', 'MicroService'],
+            packageType: PackageType.NPM,
           },
         ],
       },
