@@ -28,6 +28,13 @@
       </td>
     </tr>
     <tr>
+      <td>AntDesign</td>
+      <td>PC Web</td>
+      <td>
+        <a href="./javascript/vue/vue-antd-boilerplate">vue-antd-boilerplate</a>
+      </td>
+    </tr>
+    <tr>
       <td>VantUI</td>
       <td>Mobile Web</td>
       <td>

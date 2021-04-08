@@ -1,0 +1,62 @@
+[
+  {
+    "name": "系统管理",
+    "url": "System",
+    "type": 2,
+    "icon": "database",
+    "sort": 99,
+    "remark": "",
+    "enabled": 0,
+    "parentId": 0,
+    "resourceId": 34,
+    "parentName": null
+  },
+  {
+    "name": "用户管理",
+    "url": "SystemUserManage",
+    "type": 2,
+    "icon": "#",
+    "sort": 1,
+    "remark": "",
+    "enabled": 0,
+    "parentId": 34,
+    "resourceId": 35,
+    "parentName": "系统管理"
+  },
+  {
+    "name": "资源配置",
+    "url": "SystemResourceManage",
+    "type": 2,
+    "icon": "#",
+    "sort": 2,
+    "remark": "",
+    "enabled": 0,
+    "parentId": 34,
+    "resourceId": 36,
+    "parentName": "系统管理"
+  },
+  {
+    "name": "仪表盘",
+    "url": "Dashboard",
+    "type": 2,
+    "icon": "dashboard",
+    "sort": 1,
+    "remark": "",
+    "enabled": 0,
+    "parentId": 0,
+    "resourceId": 37,
+    "parentName": null
+  },
+  {
+    "name": "工作台",
+    "url": "DashboardWorkPlace",
+    "type": 2,
+    "icon": "#",
+    "sort": 1,
+    "remark": "",
+    "enabled": 0,
+    "parentId": 37,
+    "resourceId": 38,
+    "parentName": "仪表盘"
+  }
+]
