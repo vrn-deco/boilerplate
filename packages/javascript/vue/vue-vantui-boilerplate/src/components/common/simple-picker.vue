@@ -1,7 +1,7 @@
 <!--
  * @Author: Cphayim
  * @Date: 2019-10-06 23:43:17
- * @LastEditTime: 2019-10-14 09:34:08
+ * @LastEditTime: 2021-04-23 11:00:06
  * @Description: 简单的 Picker 组件
  *
  * props
@@ -9,6 +9,7 @@
  * - placeholder: string ['请选择'] 占位符
  * - options: Array<string | number> 选项
  * - value: string | number 显示在表单上的值
+ * - extraCondition: Boolean 需要额外条件判断时的开关
  *
  * emits
  * - change(payload) 当下拉选项值被改变时触发
@@ -23,11 +24,12 @@
     <van-field
       readonly
       :is-link="!disabled"
-      center
+      input-align="right"
       :label="label"
       :value="value"
+      :disabled="disabled"
       :placeholder="placeholder"
-      @click="!disabled && (showPicker = true)"
+      @click="!disabled && handleClick()"
     />
     <van-popup v-model="showPicker" position="bottom">
       <van-picker
@@ -64,6 +66,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    extraCondition: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -72,6 +78,17 @@ export default {
   },
   computed: {},
   methods: {
+    handleClick() {
+      if (this.extraCondition) {
+        this.$emit('handleExtraCondition', (pass) => {
+          if (pass) {
+            this.showPicker = true
+          }
+        })
+      } else {
+        this.showPicker = true
+      }
+    },
     onConfirm(value, index) {
       this.showPicker = false
       this.$emit('change', { value, index })
@@ -80,5 +97,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
