@@ -7,7 +7,8 @@
   "workspaces": [
     "javascript/*",
     "typescript/*",
-    "python/*"
+    "python/*",
+    "dart/*"
   ],
   "scripts": {
     "boot": "lerna bootstrap",
@@ -18,7 +19,7 @@
     "commit": "git-cz",
     "prepare": "husky install",
     "prettier": "prettier --write .",
-    "lint": "eslint --fix \"**/*.ts\""
+    "lint": "eslint --fix \"**/*.js\""
   },
   "config": {
     "commitizen": {
@@ -26,7 +27,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,json}": [
+    "*.{js,ts,json},!boilerplate/**/*": [
       "prettier --write",
       "eslint --fix"
     ]
