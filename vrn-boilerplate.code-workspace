@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "✨ vrn-boilerplate",
+      "path": "."
+    },
+    {
+      "name": "⚙️ vue-vant",
+      "path": "javascript/vue-vant"
+    },
+    {
+      "name": "⚙️ vue-vant-h5plus",
+      "path": "javascript/vue-vant-h5plus"
+    }
+  ],
+  "settings": {}
+}

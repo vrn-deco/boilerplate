@@ -1,0 +1,20 @@
+{
+  "name": "@vrn-deco/boilerplate-javascript-vue-vant-h5plus",
+  "version": "0.0.0",
+  "description": "boilerplate-javascript-vue-vant-h5plus",
+  "author": "Cphayim <i@cphayim.me>",
+  "homepage": "https://github.com/vrn-deco/vrn-boilerplate#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrn-deco/vrn-boilerplate.git",
+    "directory": "javascript/vue-vant-h5plus"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/vrn-deco/vrn-boilerplate/issues"
+  }
+}

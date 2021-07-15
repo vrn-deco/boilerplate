@@ -1,0 +1,6 @@
+node_modules
+coverage
+dist
+
+# 忽略模板中的内容
+boilerplate
