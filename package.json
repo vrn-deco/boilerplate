@@ -11,10 +11,6 @@
     "dart/*"
   ],
   "scripts": {
-    "boot": "lerna bootstrap",
-    "clean": "lerna clean --yes",
-    "release:git": "lerna version",
-    "release:npm": "lerna publish from-package",
     "test": "exit 0;",
     "commit": "git-cz",
     "prepare": "husky install",

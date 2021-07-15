@@ -1,10 +1,13 @@
 {
   "name": "@vrn-deco/boilerplate-javascript-vue-vant",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "boilerplate-javascript-vue-vant",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/vrn-boilerplate#readme",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "repository": {
     "type": "git",
