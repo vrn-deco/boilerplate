@@ -1,0 +1,93 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "模板名"
+    },
+    "desc": {
+      "type": "string",
+      "title": "描述"
+    },
+    "package": {
+      "type": "string",
+      "title": "NPM 包名"
+    },
+    "language": {
+      "type": "string",
+      "title": "编程语言"
+    },
+    "techStack": {
+      "type": "string",
+      "title": "技术栈"
+    },
+    "preset": {
+      "type": "string",
+      "title": "预设包名",
+      "description": "包含初始化、安装、清理阶段任务的预设脚本包"
+    },
+    "init": {
+      "type": "object",
+      "properties": {
+        "scriptType": {
+          "type": "string",
+          "title": "脚本类型",
+          "description": "自定义初始化脚本类型",
+          "default": "js",
+          "pattern": "",
+          "enum": ["sh", "js", "py"],
+          "enumDesc": "初始化脚本类型"
+        },
+        "scriptFile": {
+          "type": "string",
+          "title": "脚本文件",
+          "description": "自定义初始化脚本文件，必须位于包根目录"
+        }
+      },
+      "title": "初始化器配置",
+      "required": ["scriptType", "scriptFile"]
+    },
+    "install": {
+      "type": "object",
+      "properties": {
+        "scriptType": {
+          "type": "string",
+          "title": "脚本类型",
+          "description": "自定义安装脚本类型"
+        },
+        "scriptFile": {
+          "type": "string",
+          "title": "脚本文件",
+          "description": "自定义安装脚本文件，必须位于包根目录"
+        }
+      },
+      "title": "安装器配置",
+      "required": ["scriptType", "scriptFile"]
+    },
+    "clean": {
+      "type": "object",
+      "properties": {
+        "scriptType": {
+          "type": "string",
+          "title": "脚本类型",
+          "description": "自定义清理脚本类型"
+        },
+        "scriptFile": {
+          "type": "string",
+          "title": "脚本文件",
+          "description": "自定义清理脚本文件，必须位于包根目录"
+        }
+      },
+      "title": "清理器配置",
+      "required": ["scriptType", "scriptFile"]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "标签"
+    }
+  },
+  "required": ["name", "package", "language", "techStack", "preset"]
+}
