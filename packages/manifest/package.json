@@ -1,0 +1,43 @@
+{
+  "name": "@vrn-deco/boilerplate-manifest",
+  "version": "1.0.0",
+  "description": "boilerplate manifest",
+  "author": "Cphayim <i@cphayim.me>",
+  "homepage": "https://github.com/vrn-deco/vrn-boilerplate#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrn-deco/vrn-boilerplate.git",
+    "directory": "packages/manifest"
+  },
+  "scripts": {
+    "clear": "rm -rf lib coverage tsconfig.tsbuildinfo",
+    "dev": "tsc -b . -w",
+    "build": "tsc",
+    "gen": "node lib/generator.js",
+    "prepublish": "yarn clear && yarn build && yarn gen"
+  },
+  "bugs": {
+    "url": "https://github.com/vrn-deco/vrn-boilerplate/issues"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.12",
+    "@types/node": "^16.3.2",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@ombro/logger": "^1.1.3",
+    "@vrn-deco/protocol-boilerplate": "^1.0.0",
+    "fs-extra": "^10.0.0"
+  }
+}
