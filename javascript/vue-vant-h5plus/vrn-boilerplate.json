@@ -1,0 +1,9 @@
+{
+  "$schema": "http://boilerplate.vrndeco.cn/boilerplate.schema.json",
+  "name": "Vue VantUI H5Plus",
+  "package": "@vrn-deco/boilerplate-javascript-vue-vant-h5plus",
+  "language": "JavaScript",
+  "techStack": "vue+vant+h5plus",
+  "preset": "@vrn-deco/preset-boilerplate-npm",
+  "tags": []
+}

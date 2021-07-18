@@ -5,6 +5,14 @@
       "path": "."
     },
     {
+      "name": "🧁 manifest",
+      "path": "packages/manifest"
+    },
+    {
+      "name": "🧁 protocol",
+      "path": "packages/protocol"
+    },
+    {
       "name": "📦 vue-vant",
       "path": "javascript/vue-vant"
     },

@@ -5,6 +5,7 @@
   "author": "Cphayim <i@cphayim.me>",
   "repository": "git@github.com:vrn-deco/vrn-cli.git",
   "workspaces": [
+    "packages/*",
     "javascript/*",
     "typescript/*",
     "python/*",
@@ -15,7 +16,7 @@
     "commit": "git-cz",
     "prepare": "husky install",
     "prettier": "prettier --write .",
-    "lint": "eslint --fix \"**/*.js\""
+    "lint": "eslint --fix \"**/*.{js,ts}\""
   },
   "config": {
     "commitizen": {
