@@ -1,13 +1,13 @@
 /*
  * @Author: Cphayim
  * @Date: 2021-07-18 03:11:32
- * @Description: 验证器
+ * @Description: validator
  */
 import path from 'path'
 import fs from 'fs-extra'
 import Ajv from 'ajv'
 
-import { VRNBoilerplateConfig } from './type'
+import { VRNBoilerplateConfig } from './types'
 
 const boilerplateSchama = fs.readJSONSync(
   path.resolve(__dirname, '..', 'vrn-boilerplate.schema.json'),

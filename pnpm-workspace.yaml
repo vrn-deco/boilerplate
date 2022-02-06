@@ -1,0 +1,5 @@
+packages:
+  - 'protocol'
+  - 'manifest'
+  - 'presets/*'
+  - 'packages/*/*'

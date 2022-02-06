@@ -1,8 +1,9 @@
 /*
  * @Author: Cphayim
  * @Date: 2021-07-18 03:09:00
- * @Description: 类型
+ * @Description: types
  */
+
 export type Manifest = Lang[]
 
 export type Lang = {
