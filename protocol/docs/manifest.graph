@@ -1,0 +1,9 @@
+
+[protocol-pkg]{label: "@vrn-deco/boilerplate-protocol"}
+[manifest-package]{size: 2,7;label: "manifest package"; origin: protocol-pkg; offset: 0,2;}
+
+[protocol-pkg] -  ->  [manifest-package]
+
+[boi-packages...]{size: 1,1; origin: manifest-package; offset: 0,2;} -> [manifest-package]
+
+[manifest-package] -> [external services]

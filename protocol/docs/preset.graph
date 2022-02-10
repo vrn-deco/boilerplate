@@ -1,0 +1,6 @@
+[protocol-pkg]{label: "@vrn-deco/boilerplate-protocol";}
+[preset-pkg]{label: "preset-packages";size: 2,4;}
+
+[protocol-pkg] -> [preset-pkg]{origin: protocol-pkg; offset: 2,-1;}
+[preset-pkg] -> [ command line call ]
+[preset-pkg] -> [ API call ]

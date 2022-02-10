@@ -4,6 +4,8 @@
  * @Description: types
  */
 
+// ----------------------------------------------------------------------------
+
 export type Manifest = Lang[]
 
 export type Lang = {
@@ -19,6 +21,8 @@ export type Boilerplate = {
   tags?: string[]
 }
 
+// ----------------------------------------------------------------------------
+
 export type VRNBoilerplateConfig = {
   name: string
   desc?: string
@@ -33,6 +37,21 @@ export type VRNBoilerplateConfig = {
 }
 
 export type CustomScript = {
-  scriptType: 'js' | 'py' | 'sh'
+  scriptType: CustomScriptType
   scriptFile: string
 }
+
+export type CustomScriptType = 'js' | 'py' | 'sh'
+
+// ----------------------------------------------------------------------------
+
+export type PresetOptions = {
+  targetDir: string
+  boiPackageDir: string
+  name: string
+  version: string
+  author: string
+  packageManager: 'npm' | 'yarn' | 'pnpm'
+}
+
+export type PresetRunner = (opts: Partial<PresetOptions>) => Promise<void>

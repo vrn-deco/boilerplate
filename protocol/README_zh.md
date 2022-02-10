@@ -2,17 +2,17 @@
 
 [![npm package](https://badgen.net/npm/v/@vrn-deco/boilerplate-protocol)](https://www.npmjs.com/package/@vrn-deco/boilerplate-protocol)
 
-English | [中文](./README_zh.md)
+[English](./README.md) | 中文
 
-> This package is mainly for type definitions and interface definitions, which are used to standardize related implementation packages.
+> 该包主要为类型定义和接口定义，用于规范相关的实现包
 
-## Specification
+## 规范
 
-`@vrn-deco/boilerplate-protocol` v1 defines `manifest`, `preset`, `boi-package` related types and function interfaces，see `src/types.ts`
+`@vrn-deco/boilerplate-protocol` v1 版本定义了 `manifest`、`preset`、`boi-package` 相关的类型和函数接口，查看 `src/types.ts`
 
 ### Manifest
 
-The `Manifest` type is defined and exported in the package
+包中定义并导出了 `Manifest` 类型
 
 ```
 +--------------------------------+
@@ -30,17 +30,15 @@ The `Manifest` type is defined and exported in the package
 +--------------------------------+
 ```
 
-`manifest-package` should implement:
+`manifest-package` 应实现：
 
-- Gather information about `boi-packages` that need to be listed
+- 收集需要列出的 `boi-packages` 的信息
+- 整理为符合 `Manifest` 接口的数据
+- 提供获取这份数据的方式，以便外部服务调用
 
-- Organized into data conforming to the `Manifest` interface
+### Preset
 
-- Provide a way to obtain this data for external service calls
-
-### Presets
-
-The package defines and exports the `PresetRunner` functional interface and the `PresetOptions` type
+包中定义并导出了 `PresetRunner` 函数接口和 `PresetOptions` 类型
 
 ```
                                        +-----------------+     +-------------------+
@@ -54,24 +52,19 @@ The package defines and exports the `PresetRunner` functional interface and the 
                                        +-----------------+     +-------------------+
 ```
 
-`preset-package` should implement:
+`preset-package` 应实现：
 
-- A function `runner` implementing the `PresetRunner` interface
+- 实现 PresetRunner 接口的函数 `runner`
+- 解析并验证 `PresetOptions`
+- 读取 `boi-package` 中的配置文件
+- 实现自己的预置处理逻辑
+  - `initHandler`、`installHandler`、`cleanHandler`
+  - 当配置文件中存在自定义脚本时执行自定义脚本覆盖原本的流程
+- `runner`支持 API 调用和命令行调用两种方式
 
-- Parse and validate `PresetOptions`
+### Boilerplate package
 
-- read configuration files in `boi-package`
-
-- Implement your own preset processing logic
-
-  - `initHandler`, `installHandler`, `cleanHandler`
-  - When a custom script exists in the configuration file of `boi-package`, execute the custom script to override the original process
-
-- `runner` supports API calls and command line calls
-
-### Boilerplate packages
-
-The package defines and exports the `VRNBoilerplateConfig` type, which, like `vrn-boilerplate.schema.json`, is used to describe the field types in the `boi-package` configuration file `vrn-boilerplate.json`
+包中定义并导出了 `VRNBoilerplateConfig` 类型，它与 `vrn-boilerplate.schema.json` 一样都是用来描述 `boi-package` 的配置文件 `vrn-boilerplate.json` 中的字段类型
 
 ```
 +--------------------------------+     +-----------------+
@@ -88,28 +81,32 @@ The package defines and exports the `VRNBoilerplateConfig` type, which, like `vr
                                        +-----------------+     +-------------------+
 ```
 
-`preset-package` should implement:
+`preset-package` 应实现：
 
-- Create configuration file `vrn-boilerplate.json` based on `vrn-boilerplate.schema.json`
-- Store `boilerplate` related files
-- Install your own `boilerplate` using the `preset-package` specified in `vrn-boilerplate.json`
-  - Returns a wrapper function `wrapRunner` of `preset-package -> runner`
-  - This wrapper function references itself as `boiPackageDir`
-- `wrapRunner` supports API calls and command line calls
+- 根据 `vrn-boilerplate.schema.json` 创建配置文件 `vrn-boilerplate.json`
 
-## Install
+- 存放 `boilerplate` 相关文件
+
+- 使用 `vrn-boilerplate.json` 所指定的 `preset-package`来安装自己的 `boilerplate`
+
+  - 返回一个 `preset-package -> runner` 的包装函数 `wrapRunner`
+  - 这个包装函数引用了自身作为 `boiPackageDir`
+
+- `wrapRunner`支持 API 调用和命令行调用两种方式
+
+## 安装
 
 ```sh
 $ npm install @vrn-deco/boilerplate-protocol@^1.0.0
 ```
 
-Please use the constrained version when installing to avoid breaking changes introduced by subsequent `major` versions
+请在安装时使用约束版本，避免后续的 `major` 版本引入破坏性变更
 
-e.g. `^1.0.0` or `~1.0.0`
+例如 `^1.0.0` 或 `~1.0.0`
 
-## Usage
+## 使用
 
-types:
+类型
 
 ```typescript
 import type {
@@ -124,7 +121,7 @@ import type {
 } from '@vrn-deco/boilerplate-protocol'
 ```
 
-verify `vrn-boilerplate.json`:
+验证 `vrn-boilerplate.json`
 
 ```typescript
 import fs from 'fs'

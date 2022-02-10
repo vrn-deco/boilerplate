@@ -1,0 +1,9 @@
+[protocol-pkg]{label: "@vrn-deco/boilerplate-protocol";}
+[boi-pkg]{label: "boi-packages";size:2,7;}
+[preset-pkg]{label: "preset-packages";}
+
+
+[protocol-pkg]{origin: vrn-boilerplate.json; offset: 0,-2;} -> [vrn-boilerplate.json]{origin: boi-pkg; offset: -2,0;} -> [boi-pkg]
+[preset-pkg] -> [boi-pkg]
+[boi-pkg]-> [ API call ]
+[boi-pkg] -> [command line call]
