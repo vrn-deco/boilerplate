@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-javascript-vue-vant",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "boilerplate-javascript-vue-vant",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/vrn-boilerplate#readme",
@@ -19,5 +19,8 @@
   },
   "bugs": {
     "url": "https://github.com/vrn-deco/vrn-boilerplate/issues"
+  },
+  "dependencies": {
+    "@vrn-deco/boilerplate-preset-npm": "workspace:0.0.3"
   }
 }

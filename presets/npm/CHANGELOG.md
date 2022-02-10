@@ -1,22 +1,15 @@
-# @vrn-deco/boilerplate-manifest
+# @vrn-deco/boilerplate-preset-npm
 
-## 1.0.6
+## 0.0.3
 
 ### Patch Changes
 
-- a55fcef: change compiled output dir
 - Updated dependencies [a55fcef]
   - @vrn-deco/boilerplate-protocol@1.1.1
 
-## 1.0.5
+## 0.0.2
 
 ### Patch Changes
 
 - Updated dependencies
   - @vrn-deco/boilerplate-protocol@1.1.0
-
-## 1.0.4
-
-### Patch Changes
-
-- Structural adjustment and optimization
