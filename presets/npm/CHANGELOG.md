@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-preset-npm
 
+## 1.0.0
+
+### Major Changes
+
+- 1238ae4: implement an installer for installing the npm managed boi-package
+
 ## 0.0.3
 
 ### Patch Changes

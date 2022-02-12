@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-preset-npm",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "boilerplate preset npm package installer",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/vrn-boilerplate#readme",
