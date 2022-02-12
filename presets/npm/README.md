@@ -6,8 +6,6 @@ English | [中文](./README_zh.md)
 
 This package is an implementation of `@vrn-deco/boilerplate-protocol` v1 `PresetRunner` to automate the installation of `boilerplate` managed by `npm`
 
-[toc]
-
 ## How to use?
 
 Support both command line and API calls

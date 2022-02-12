@@ -103,7 +103,7 @@ boilerplate-package
   - `scriptType`: `js|py|sh` 脚本类型
   - `scriptFile`: `string` 脚本文件
 - `install`: `object` 可选，自定义安装器
-  - 该字段存在时，将使用自定义脚本替换 `preset` 中的 ` installHandler`
+  - 该字段存在时，将使用自定义脚本替换 `preset` 中的 `installHandler`
   - `scriptType`: `js|py|sh` 脚本类型
   - `scriptFile`: `string` 脚本文件
 - `clean`: `object` 可选，自定义清理器

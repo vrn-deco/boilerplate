@@ -6,8 +6,6 @@
 
 该包是对 `@vrn-deco/boilerplate-protocol` v1 `PresetRunner` 的实现，用于自动化安装 `{{FOLDER_NAME}}` 管理的 `boilerplate`
 
-[toc]
-
 ## 如何使用？
 
 支持命令行和 API 调用两种方式使用
