@@ -15,12 +15,14 @@
     "clean": "esno scripts/clean.ts --build --deps",
     "clean:build": "esno scripts/clean.ts --build",
     "clean:deps": "esno scripts/clean.ts --deps",
+    "build": "esno scripts/build.ts",
+    "gen:manifest": "esno scripts/gen.ts --manifest",
+    "new:boi": "esno scripts/new.ts --boilerplate",
+    "new:preset": "esno scripts/new.ts --preset",
     "test": "exit 0;",
     "lint": "scripts/lint.sh",
     "format": "scripts/format.sh",
-    "commit": "git add . && cz",
-    "build": "esno scripts/build.ts",
-    "gen:manifest": "pnpm gen --filter @vrn-deco/boilerplate-manifest"
+    "commit": "git add . && cz"
   },
   "config": {
     "commitizen": {
@@ -41,6 +43,7 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@ombro/logger": "^1.5.0",
+    "@types/inquirer": "^8.2.0",
     "@types/node": "^16.11.22",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
@@ -51,6 +54,7 @@
     "esno": "^0.14.0",
     "execa": "^5.1.1",
     "husky": "^6.0.0",
+    "inquirer": "^8.2.0",
     "lint-staged": "^11.2.6",
     "prettier": "2.3.0",
     "rimraf": "^3.0.2",
