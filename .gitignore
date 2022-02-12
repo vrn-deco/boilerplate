@@ -5,4 +5,5 @@ tsconfig.tsbuildinfo
 
 node_modules/
 lib/
+dist/
 tmp/
