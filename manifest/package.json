@@ -30,7 +30,7 @@
     "url": "https://github.com/vrn-deco/vrn-boilerplate/issues"
   },
   "dependencies": {
-    "@vrn-deco/boilerplate-protocol": "workspace:1.1.1",
+    "@vrn-deco/boilerplate-protocol": "workspace:*",
     "fs-extra": "^10.0.0"
   },
   "devDependencies": {

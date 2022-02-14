@@ -1,6 +1,7 @@
-/*
- * @Author: Cphayim
- * @Date: 2021-07-16 00:38:48
- * @Description:
- */
-throw new Error(`This package cannot be called. Please use @vrn-deco/cli`)
+const { runner } = require('@vrn-deco/boilerplate-preset-npm')
+
+module.exports = (opts) => runner({ ...opts, boiPackageDir: __dirname })
+
+if (require.main === module) {
+  runner({ boiPackageDir: __dirname })
+}

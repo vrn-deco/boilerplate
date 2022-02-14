@@ -4,6 +4,6 @@
   "package": "@vrn-deco/boilerplate-javascript-vue-vant-h5plus",
   "language": "JavaScript",
   "techStack": "vue+vant+h5plus",
-  "preset": "@vrn-deco/preset-boilerplate-npm",
+  "preset": "@vrn-deco/boilerplate-preset-npm",
   "tags": []
 }
