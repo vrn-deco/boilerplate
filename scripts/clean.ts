@@ -14,7 +14,7 @@ export function cleanDeps() {
 
 export function cleanBuild() {
   logger.startLoading('Cleaning build...')
-  execa.commandSync('pnpm -r exec -- rimraf lib coverage tsconfig.tsbuildinfo', {
+  execa.commandSync('pnpm -r exec -- rimraf dist coverage tsconfig.tsbuildinfo', {
     stdio: 'inherit',
     cwd: path.resolve(__dirname, '../'),
   })
