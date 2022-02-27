@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "boilerplate-javascript-vue-vant",
   "author": "Cphayim <i@cphayim.me>",
-  "homepage": "https://github.com/vrn-deco/vrn-boilerplate#readme",
+  "homepage": "https://github.com/vrn-deco/boilerplate#readme",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -12,14 +12,14 @@
   "bin": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vrn-deco/vrn-boilerplate.git",
+    "url": "git+https://github.com/vrn-deco/boilerplate.git",
     "directory": "javascript/vue-vant"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/vrn-deco/vrn-boilerplate/issues"
+    "url": "https://github.com/vrn-deco/boilerplate/issues"
   },
   "dependencies": {
     "@vrn-deco/boilerplate-preset-npm": "workspace:*"
