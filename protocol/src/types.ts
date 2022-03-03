@@ -34,7 +34,7 @@ export type VRNBoilerplateConfig = {
   init?: CustomScript
   install?: CustomScript
   clean?: CustomScript
-  tag?: string[]
+  tags?: string[]
   sort?: number
 }
 
