@@ -19,6 +19,7 @@ export type Boilerplate = {
   package: string
   version: string
   tags?: string[]
+  sort?: number
 }
 
 // ----------------------------------------------------------------------------
