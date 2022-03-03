@@ -29,15 +29,6 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "lint-staged": {
-    "*.{js,json}": [
-      "prettier --write"
-    ],
-    "*.ts": [
-      "eslint",
-      "prettier --write --parser typescript"
-    ]
-  },
   "devDependencies": {
     "@changesets/cli": "^2.20.0",
     "@commitlint/cli": "^12.1.4",
