@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/@vrn-deco/boilerplate-protocol/vrn-boilerplate.schema.json",
+  "name": "Vue2 VantUI",
+  "package": "@vrn-deco/boilerplate-javascript-vue2-vant",
+  "language": "JavaScript",
+  "techStack": "vue+vant",
+  "preset": "@vrn-deco/boilerplate-preset-npm",
+  "tags": [],
+  "sort": 31
+}
