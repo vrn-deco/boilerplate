@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-protocol
 
+## 1.1.2
+
+### Patch Changes
+
+- Add an optional sort option to indicate the order of the boilerplate in the manifest
+
 ## 1.1.1
 
 ### Patch Changes

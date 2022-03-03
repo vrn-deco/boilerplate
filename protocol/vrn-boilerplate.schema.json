@@ -87,6 +87,10 @@
         "type": "string"
       },
       "title": "标签"
+    },
+    "sort": {
+      "type": "number",
+      "title": "排序，越小越靠前"
     }
   },
   "required": ["name", "package", "language", "techStack", "preset"]
