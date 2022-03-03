@@ -7,7 +7,8 @@ importers:
       '@changesets/cli': ^2.20.0
       '@commitlint/cli': ^12.1.4
       '@commitlint/config-conventional': ^12.1.4
-      '@ombro/logger': ^1.5.0
+      '@ombro/logger': ^1.5.5
+      '@ombro/ts-config': ^1.3.0
       '@types/inquirer': ^8.2.0
       '@types/node': ^16.11.22
       '@typescript-eslint/eslint-plugin': ^5.10.2
@@ -28,13 +29,14 @@ importers:
       '@changesets/cli': 2.20.0
       '@commitlint/cli': 12.1.4
       '@commitlint/config-conventional': 12.1.4
-      '@ombro/logger': 1.5.0
+      '@ombro/logger': 1.5.5
+      '@ombro/ts-config': 1.3.0
       '@types/inquirer': 8.2.0
       '@types/node': 16.11.22
       '@typescript-eslint/eslint-plugin': 5.10.2_2595c2126aec4d4b6e944b931dabb4c2
       '@typescript-eslint/parser': 5.10.2_eslint@8.8.0+typescript@4.5.5
-      commitizen: 4.2.4_@types+node@16.11.22
-      cz-conventional-changelog: 3.3.0_@types+node@16.11.22
+      commitizen: 4.2.4
+      cz-conventional-changelog: 3.3.0
       eslint: 8.8.0
       eslint-config-prettier: 8.3.0_eslint@8.8.0
       esno: 0.14.0_typescript@4.5.5
@@ -48,24 +50,38 @@ importers:
 
   manifest:
     specifiers:
-      '@ombro/logger': ^1.5.0
+      '@ombro/logger': ^1.5.5
       '@types/fs-extra': ^9.0.13
+      '@vrn-deco/boilerplate-javascript-vue2-vant': workspace:*
+      '@vrn-deco/boilerplate-javascript-vue2-vant-h5plus': workspace:*
       '@vrn-deco/boilerplate-protocol': workspace:*
+      '@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus': workspace:*
+      execa: ^5.1.1
       fs-extra: ^10.0.0
     dependencies:
-      '@vrn-deco/boilerplate-protocol': link:../protocol
       fs-extra: 10.0.0
     devDependencies:
-      '@ombro/logger': 1.5.0
+      '@ombro/logger': 1.5.5
       '@types/fs-extra': 9.0.13
+      '@vrn-deco/boilerplate-javascript-vue2-vant': link:../packages/javascript/vue2-vant
+      '@vrn-deco/boilerplate-javascript-vue2-vant-h5plus': link:../packages/javascript/vue2-vant-h5plus
+      '@vrn-deco/boilerplate-protocol': link:../protocol
+      '@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus': link:../packages/typescript/vue3-varlet-h5plus
+      execa: 5.1.1
 
-  packages/javascript/vue-vant:
+  packages/javascript/vue2-vant:
     specifiers:
       '@vrn-deco/boilerplate-preset-npm': workspace:*
     dependencies:
       '@vrn-deco/boilerplate-preset-npm': link:../../../presets/npm
 
-  packages/javascript/vue-vant-h5plus:
+  packages/javascript/vue2-vant-h5plus:
+    specifiers:
+      '@vrn-deco/boilerplate-preset-npm': workspace:*
+    dependencies:
+      '@vrn-deco/boilerplate-preset-npm': link:../../../presets/npm
+
+  packages/typescript/vue3-varlet-h5plus:
     specifiers:
       '@vrn-deco/boilerplate-preset-npm': workspace:*
     dependencies:
@@ -73,7 +89,7 @@ importers:
 
   presets/npm:
     specifiers:
-      '@ombro/logger': ^1.5.0
+      '@ombro/logger': ^1.5.5
       '@types/fs-extra': ^9.0.13
       '@types/minimist': ^1.2.2
       '@vrn-deco/boilerplate-protocol': workspace:*
@@ -81,7 +97,7 @@ importers:
       fs-extra: ^10.0.0
       minimist: ^1.2.5
     dependencies:
-      '@ombro/logger': 1.5.0
+      '@ombro/logger': 1.5.5
       '@vrn-deco/boilerplate-protocol': link:../../protocol
       execa: 5.1.1
       fs-extra: 10.0.0
@@ -324,11 +340,11 @@ packages:
       conventional-changelog-conventionalcommits: 4.6.3
     dev: true
 
-  /@commitlint/config-validator/16.1.0:
-    resolution: {integrity: sha512-2cHeZPNTuf1JWbMqyA46MkExor5HMSgv8JrdmzEakUbJHUreh35/wN00FJf57qGs134exQW2thiSQ1IJUsVx2Q==}
+  /@commitlint/config-validator/16.2.1:
+    resolution: {integrity: sha512-hogSe0WGg7CKmp4IfNbdNES3Rq3UEI4XRPB8JL4EPgo/ORq5nrGTVzxJh78omibNuB8Ho4501Czb1Er1MoDWpw==}
     engines: {node: '>=v12'}
     dependencies:
-      '@commitlint/types': 16.0.0
+      '@commitlint/types': 16.2.1
       ajv: 6.12.6
     dev: true
     optional: true
@@ -346,8 +362,8 @@ packages:
     engines: {node: '>=v10'}
     dev: true
 
-  /@commitlint/execute-rule/16.0.0:
-    resolution: {integrity: sha512-8edcCibmBb386x5JTHSPHINwA5L0xPkHQFY8TAuDEt5QyRZY/o5DF8OPHSa5Hx2xJvGaxxuIz4UtAT6IiRDYkw==}
+  /@commitlint/execute-rule/16.2.1:
+    resolution: {integrity: sha512-oSls82fmUTLM6cl5V3epdVo4gHhbmBFvCvQGHBRdQ50H/690Uq1Dyd7hXMuKITCIdcnr9umyDkr8r5C6HZDF3g==}
     engines: {node: '>=v12'}
     dev: true
     optional: true
@@ -391,25 +407,25 @@ packages:
       resolve-from: 5.0.0
     dev: true
 
-  /@commitlint/load/16.1.0_@types+node@16.11.22:
-    resolution: {integrity: sha512-MtlEhKjP8jAF85jjX4mw8DUUwCxKsCgAc865hhpnwxjrfBcmGP7Up2AFE/M3ZMGDmSl1X1TMybQk/zohj8Cqdg==}
+  /@commitlint/load/16.2.1:
+    resolution: {integrity: sha512-oSpz0jTyVI/A1AIImxJINTLDOMB8YF7lWGm+Jg5wVWM0r7ucpuhyViVvpSRTgvL0z09oIxlctyFGWUQQpI42uw==}
     engines: {node: '>=v12'}
     requiresBuild: true
     dependencies:
-      '@commitlint/config-validator': 16.1.0
-      '@commitlint/execute-rule': 16.0.0
-      '@commitlint/resolve-extends': 16.1.0
-      '@commitlint/types': 16.0.0
+      '@commitlint/config-validator': 16.2.1
+      '@commitlint/execute-rule': 16.2.1
+      '@commitlint/resolve-extends': 16.2.1
+      '@commitlint/types': 16.2.1
+      '@types/node': 17.0.15
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 1.0.4_247b6ed5e900a7cb1f087e65be0c3da9
+      cosmiconfig-typescript-loader: 1.0.4_2659dc6620f2255efe6a8f122d014e4b
       lodash: 4.17.21
       resolve-from: 5.0.0
       typescript: 4.5.5
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
     dev: true
     optional: true
 
@@ -447,12 +463,12 @@ packages:
       resolve-global: 1.0.0
     dev: true
 
-  /@commitlint/resolve-extends/16.1.0:
-    resolution: {integrity: sha512-8182s6AFoUFX6+FT1PgQDt15nO2ogdR/EN8SYVAdhNXw1rLz8kT5saB/ICw567GuRAUgFTUMGCXy3ctMOXPEDg==}
+  /@commitlint/resolve-extends/16.2.1:
+    resolution: {integrity: sha512-NbbCMPKTFf2J805kwfP9EO+vV+XvnaHRcBy6ud5dF35dxMsvdJqke54W3XazXF1ZAxC4a3LBy4i/GNVBAthsEg==}
     engines: {node: '>=v12'}
     dependencies:
-      '@commitlint/config-validator': 16.1.0
-      '@commitlint/types': 16.0.0
+      '@commitlint/config-validator': 16.2.1
+      '@commitlint/types': 16.2.1
       import-fresh: 3.3.0
       lodash: 4.17.21
       resolve-from: 5.0.0
@@ -489,8 +505,8 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@commitlint/types/16.0.0:
-    resolution: {integrity: sha512-+0FvYOAS39bJ4aKjnYn/7FD4DfWkmQ6G/06I4F0Gvu4KS5twirEg8mIcLhmeRDOOKn4Tp8PwpLwBiSA6npEMQA==}
+  /@commitlint/types/16.2.1:
+    resolution: {integrity: sha512-7/z7pA7BM0i8XvMSBynO7xsB3mVQPUZbVn6zMIlp/a091XJ3qAXRXc+HwLYhiIdzzS5fuxxNIHZMGHVD4HJxdA==}
     engines: {node: '>=v12'}
     dependencies:
       chalk: 4.1.2
@@ -584,8 +600,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@ombro/logger/1.5.0:
-    resolution: {integrity: sha512-MwrbJx4sMc+VONKkdIzZb6bWLkugfQlb8hKqq1ncNGfrKOROsgKz70NaGiLakQCKOrxRpcBzzrRn2yS9A0HXuQ==}
+  /@ombro/logger/1.5.5:
+    resolution: {integrity: sha512-cZ0zDUIriVwetP1Lwjcs9Rp8IPNuV+JoDXthLjLmGs0EkzWLgZdcyxuHpVlk6Eb9WBPRKS4rVF1/pyPibIh5EA==}
     dependencies:
       '@types/dedent': 0.7.0
       '@types/figlet': 1.5.4
@@ -596,6 +612,11 @@ packages:
       ora: 5.4.1
       readline: 1.3.0
       strip-ansi: 6.0.1
+
+  /@ombro/ts-config/1.3.0:
+    resolution: {integrity: sha512-jury5XXH3x/hoemehhHGsrUnr3Ddphh2qlgoq8LP2jugh+M+dBhTr/mlWImOOU9RNz4veLIv/bs4zkm3R7lczA==}
+    engines: {node: '>=12'}
+    dev: true
 
   /@tsconfig/node10/1.0.8:
     resolution: {integrity: sha512-6XFfSQmMgq0CFLY1MslA/CPUfhIL919M1rMsa5lP2P097N2Wd1sSX0tx1u4olM16fLNhtHZpRhedZJphNJqmZg==}
@@ -1159,13 +1180,13 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
-  /commitizen/4.2.4_@types+node@16.11.22:
+  /commitizen/4.2.4:
     resolution: {integrity: sha512-LlZChbDzg3Ir3O2S7jSo/cgWp5/QwylQVr59K4xayVq8S4/RdKzSyJkghAiZZHfhh5t4pxunUoyeg0ml1q/7aw==}
     engines: {node: '>= 10'}
     hasBin: true
     dependencies:
       cachedir: 2.2.0
-      cz-conventional-changelog: 3.2.0_@types+node@16.11.22
+      cz-conventional-changelog: 3.2.0
       dedent: 0.7.0
       detect-indent: 6.0.0
       find-node-modules: 2.1.2
@@ -1181,7 +1202,6 @@ packages:
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
     dev: true
 
   /compare-func/2.0.0:
@@ -1229,16 +1249,16 @@ packages:
       through2: 4.0.2
     dev: true
 
-  /cosmiconfig-typescript-loader/1.0.4_247b6ed5e900a7cb1f087e65be0c3da9:
+  /cosmiconfig-typescript-loader/1.0.4_2659dc6620f2255efe6a8f122d014e4b:
     resolution: {integrity: sha512-ulv2dvwurP/MZAIthXm69bO7EzzIUThZ6RJ1qXhdlXM6to3F+IKBL/17EnhYSG52A5N1KcAUu66vSG/3/77KrA==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@types/node': '*'
       typescript: '>=3'
     dependencies:
-      '@types/node': 16.11.22
+      '@types/node': 17.0.15
       cosmiconfig: 7.0.1
-      ts-node: 10.4.0_247b6ed5e900a7cb1f087e65be0c3da9
+      ts-node: 10.4.0_2659dc6620f2255efe6a8f122d014e4b
       typescript: 4.5.5
     transitivePeerDependencies:
       - '@swc/core'
@@ -1300,40 +1320,38 @@ packages:
       stream-transform: 2.1.3
     dev: true
 
-  /cz-conventional-changelog/3.2.0_@types+node@16.11.22:
+  /cz-conventional-changelog/3.2.0:
     resolution: {integrity: sha512-yAYxeGpVi27hqIilG1nh4A9Bnx4J3Ov+eXy4koL3drrR+IO9GaWPsKjik20ht608Asqi8TQPf0mczhEeyAtMzg==}
     engines: {node: '>= 10'}
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.2.4_@types+node@16.11.22
+      commitizen: 4.2.4
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
       word-wrap: 1.2.3
     optionalDependencies:
-      '@commitlint/load': 16.1.0_@types+node@16.11.22
+      '@commitlint/load': 16.2.1
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
     dev: true
 
-  /cz-conventional-changelog/3.3.0_@types+node@16.11.22:
+  /cz-conventional-changelog/3.3.0:
     resolution: {integrity: sha512-U466fIzU5U22eES5lTNiNbZ+d8dfcHcssH4o7QsdWaCcRs/feIPCxKYSWkYBNs5mny7MvEfwpTLWjvbm94hecw==}
     engines: {node: '>= 10'}
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.2.4_@types+node@16.11.22
+      commitizen: 4.2.4
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
       word-wrap: 1.2.3
     optionalDependencies:
-      '@commitlint/load': 16.1.0_@types+node@16.11.22
+      '@commitlint/load': 16.2.1
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
     dev: true
 
   /dargs/7.0.0:
@@ -3375,7 +3393,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-node/10.4.0_247b6ed5e900a7cb1f087e65be0c3da9:
+  /ts-node/10.4.0_2659dc6620f2255efe6a8f122d014e4b:
     resolution: {integrity: sha512-g0FlPvvCXSIO1JDF6S232P5jPYqBkRL9qly81ZgAOSU7rwI0stphCgd2kLiCrU9DjQCrJMWEqcNSjQL02s6d8A==}
     hasBin: true
     peerDependencies:
@@ -3394,7 +3412,7 @@ packages:
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
-      '@types/node': 16.11.22
+      '@types/node': 17.0.15
       acorn: 8.7.0
       acorn-walk: 8.2.0
       arg: 4.1.3

@@ -3,7 +3,13 @@
 tsconfig.tsbuildinfo
 *.code-workspace
 
+.vscode/
 node_modules/
 lib/
 dist/
 tmp/
+
+# Do not commit the lock file in the boilerplate
+**/boilerplate/package-lock.json
+**/boilerplate/yarn.lock
+**/boilerplate/pnpm-lock.yaml

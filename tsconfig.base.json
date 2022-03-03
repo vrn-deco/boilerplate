@@ -1,15 +1,7 @@
 {
+  "extends": "@ombro/ts-config/tsconfig.json",
   "compilerOptions": {
-    "target": "es2017",
     "module": "commonjs",
-    "moduleResolution": "node",
-    "declaration": true,
-    "declarationMap": false,
-    "sourceMap": false,
-    "strict": true,
-    "composite": true,
-    "esModuleInterop": true,
-    "removeComments": true,
-    "useUnknownInCatchVariables": false
+    "esModuleInterop": true
   }
 }

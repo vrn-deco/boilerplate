@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-manifest",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "boilerplate manifest",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
@@ -8,7 +8,6 @@
   "main": "dist/index.js",
   "files": [
     "dist",
-    "!dist/generator*",
     "vrn-manifest.json"
   ],
   "publishConfig": {
@@ -21,20 +20,23 @@
   },
   "scripts": {
     "clean": "rm -rf dist coverage tsconfig.tsbuildinfo",
-    "dev": "tsc -b -w",
-    "build": "tsc",
-    "gen": "node dist/generator.js",
+    "build": "tsc -p tsconfig.build.json",
+    "gen": "esno scripts/generator.ts",
     "prepublish": "pnpm clean && pnpm build && pnpm gen"
   },
   "bugs": {
     "url": "https://github.com/vrn-deco/boilerplate/issues"
   },
   "dependencies": {
-    "@vrn-deco/boilerplate-protocol": "workspace:*",
     "fs-extra": "^10.0.0"
   },
   "devDependencies": {
-    "@ombro/logger": "^1.5.0",
-    "@types/fs-extra": "^9.0.13"
+    "@ombro/logger": "^1.5.5",
+    "@types/fs-extra": "^9.0.13",
+    "@vrn-deco/boilerplate-javascript-vue2-vant": "workspace:*",
+    "@vrn-deco/boilerplate-javascript-vue2-vant-h5plus": "workspace:*",
+    "@vrn-deco/boilerplate-protocol": "workspace:*",
+    "@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus": "workspace:*",
+    "execa": "^5.1.1"
   }
 }

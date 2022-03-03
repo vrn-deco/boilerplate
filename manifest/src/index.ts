@@ -6,7 +6,7 @@
 
 import path from 'path'
 import fs from 'fs-extra'
-import { Manifest } from '@vrn-deco/boilerplate-protocol'
+import type { Manifest } from '@vrn-deco/boilerplate-protocol'
 
 const MANIFEST_FILE = path.resolve(__dirname, '..', 'vrn-manifest.json')
 
