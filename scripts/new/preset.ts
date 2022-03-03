@@ -3,9 +3,9 @@ import fs from 'fs-extra'
 import { prompt } from 'inquirer'
 import { logger } from '@ombro/logger'
 
-const _TPL_ = path.resolve(__dirname, '..', '.tpl')
+const _REPO_ = path.resolve(__dirname, '..', '..')
+const _TPL_ = path.join(_REPO_, '.tpl')
 const _PRESET_PACKAGE_TPL_ = path.join(_TPL_, 'preset-package')
-const _BOI_PACKAGE_TPL_ = path.join(_TPL_, 'boi-package')
 
 /**
  * interactive create new preset package
@@ -29,7 +29,9 @@ export async function createPresetPackage() {
       default: ({ folderName }) => `boilerplate preset ${folderName} package installer`,
     },
   ])
-  const targetDir = path.resolve(__dirname, '..', 'presets', folderName)
+  logger.log('')
+
+  const targetDir = path.join(_REPO_, 'presets', folderName)
   fs.copySync(_PRESET_PACKAGE_TPL_, targetDir)
 
   // overwrite package.json fields
@@ -63,18 +65,4 @@ export async function createPresetPackage() {
   })
 
   logger.done(`${packageName} created: presets/${folderName}`)
-}
-
-/**
- * interactive create new boilerplate package
- */
-export async function createBoilerplatePackage() {
-  //
-}
-
-if (require.main === module) {
-  process.argv.includes('--preset') && createPresetPackage()
-  if (process.argv.includes('--boilerplate') || process.argv.includes('--boi')) {
-    createBoilerplatePackage()
-  }
 }
