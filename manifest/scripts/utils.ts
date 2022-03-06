@@ -9,7 +9,7 @@ import {
   VRNBoilerplateConfig,
 } from '@vrn-deco/boilerplate-protocol'
 
-interface ScanPackage {
+export interface ScanPackage {
   name: string
   version: string
   private: boolean
@@ -63,7 +63,6 @@ export function archivePackage(pkgs: ScanPackage[]): Manifest {
   })
 
   const manifest: Manifest = Object.entries(langMap).map(([name, boilerplate]) => {
-    boilerplate.sort((a, b) => (a.name > b.name ? 1 : -1))
     return {
       name,
       boilerplate,

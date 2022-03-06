@@ -9,9 +9,11 @@ import fs from 'fs-extra'
 import { logger } from '@ombro/logger'
 import { Boilerplate, Lang, Manifest } from '@vrn-deco/boilerplate-protocol'
 import { archivePackage, getAllBoilerplatePackage } from './utils'
+import { httpBoilerplateArchive } from './http-boilerplate'
 
 if (require.main === module) {
-  genManifest()
+  const manifest = genManifest()
+  process.argv.includes('--http-boilerplate-release') && httpBoilerplateArchive(manifest)
 } else {
   throw new Error('The module can only be used as a startup module.')
 }
@@ -28,7 +30,8 @@ function genManifest() {
     logger.startLoading('Write vrn-manifest.json...')
     writeManifest(manifest)
 
-    logger.done('Generated vrn-manifest.json.')
+    logger.done('Generated Package release vrn-manifest.json.')
+    return manifest
   } finally {
     logger.stopLoading()
   }
