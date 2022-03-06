@@ -6,11 +6,12 @@
 
 // ----------------------------------------------------------------------------
 
-export type Manifest = Lang[]
+// Package manifest
+export type Manifest = Lang<Boilerplate>[]
 
-export type Lang = {
+export type Lang<T = Boilerplate> = {
   name: string
-  boilerplate: Boilerplate[]
+  boilerplate: T[]
 }
 
 export type Boilerplate = {
@@ -22,6 +23,12 @@ export type Boilerplate = {
   sort?: number
 }
 
+// HTTP API manifest
+export type APIManifest = Lang<APIBoilerplate>[]
+
+export type APIBoilerplate = Omit<Boilerplate, 'package' | 'sort'> & {
+  file: string
+}
 // ----------------------------------------------------------------------------
 
 export type VRNBoilerplateConfig = {

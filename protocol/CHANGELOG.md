@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-protocol
 
+## 1.2.0
+
+### Minor Changes
+
+- HTTP API Manifest interface
+
 ## 1.1.2
 
 ### Patch Changes
