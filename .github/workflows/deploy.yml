@@ -49,6 +49,7 @@ jobs:
         run: pnpm build
 
       - name: Generate manifest and pack boilerplate
+        run: pnpm gen:manifest:http
 
       - name: Deploy
         run: pnpm deploy:ci
