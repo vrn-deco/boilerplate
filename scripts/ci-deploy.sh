@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 ###
 # @Author: Cphayim
 # @Description: CI deploy script
@@ -18,13 +18,11 @@ fi
 ssh vrn "
   set -e
   if [ ! -d $BOILERPLATE_DEPLOY_DIR ];then
-    echo '创建目录: ${BOILERPLATE_DEPLOY_DIR}'
+    echo 'Create directory: ${BOILERPLATE_DEPLOY_DIR}'
     mkdir -p $BOILERPLATE_DEPLOY_DIR
   fi
 "
 
-ls release
-
-echo "正在将 release 目录下的文件递归上传"
+echo "Recursively uploading files from the \`release\` directory\n"
 rsync -a --progress 'release/' vrn:$BOILERPLATE_DEPLOY_DIR
-echo '文件部署完毕'
+echo "Finished uploading files"

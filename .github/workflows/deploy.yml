@@ -4,11 +4,19 @@ on:
   push:
     branches:
       - '**'
-  # pull_request:
-  #   branches:
-  #     - main
-  #   paths:
-  #     - 'packages/**'
+    paths:
+      - 'manifest/**'
+      - 'packages/**'
+      - 'presets/**'
+      - 'protocol/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'manifest/**'
+      - 'packages/**'
+      - 'presets/**'
+      - 'protocol/**'
 
 jobs:
   deploy:
