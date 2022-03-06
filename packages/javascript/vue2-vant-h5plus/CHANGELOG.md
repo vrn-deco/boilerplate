@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-javascript-vue-vant-h5plus
 
+## 0.0.5
+
+### Patch Changes
+
+- @vrn-deco/boilerplate-preset-npm@1.0.2
+
 ## 0.0.4
 
 ### Patch Changes
