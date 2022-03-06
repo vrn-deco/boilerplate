@@ -4,6 +4,7 @@
 <img src="./docs/images/boilerplate-logo.png" width="600" alt="vrn-cli" />
 </a>
 
+[![deploy](https://github.com/vrn-deco/boilerplate/actions/workflows/deploy.yml/badge.svg)](https://github.com/vrn-deco/boilerplate/actions/workflows/deploy.yml)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![pnpm](https://img.shields.io/badge/maintained%20with-pnpm-f49033.svg)](https://pnpm.io/)
 
