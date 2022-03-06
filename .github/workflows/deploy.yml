@@ -1,21 +1,22 @@
-name: Build and Deploy
+name: deploy
 
 on:
   push:
     branches:
-      - 'master'
-  # 仅合并完成才执行构建和部署
+      - '**'
   # pull_request:
   #   branches:
-  #     - 'master'
+  #     - main
+  #   paths:
+  #     - 'packages/**'
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [16]
 
     steps:
       - uses: actions/checkout@v2
@@ -28,22 +29,28 @@ jobs:
           known_hosts: ${{ secrets.VRN_REMOTE_SERVER_SSH_KNOWN_HOSTS }}
           config: ${{ secrets.VRN_REMOTE_SERVER_SSH_CONFIG }}
 
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.28.0
+
       - name: Install Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm i
 
-      - name: Testing
-        run: npm run test
+      # - name: Testing
+      #   run: npm run test
 
-      - name: Build
-        run: npm run build
+      - name: Run compile and build packages
+        run: pnpm build
+
+      - name: Generate manifest and pack boilerplate
 
       - name: Deploy
-        run: npm run deploy:ci
+        run: pnpm deploy:ci
         env:
-          VRN_REMOTE_SERVER_NGINX_CONF_DIR: ${{ secrets.VRN_REMOTE_SERVER_NGINX_CONF_DIR }}
           BOILERPLATE_DEPLOY_DIR: ${{ secrets.BOILERPLATE_DEPLOY_DIR }}

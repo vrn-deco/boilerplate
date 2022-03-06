@@ -23,7 +23,8 @@
     "test": "exit 0;",
     "lint": "scripts/lint.sh",
     "format": "scripts/format.sh",
-    "commit": "git add . && cz"
+    "commit": "git add . && cz",
+    "deploy:ci": "scripts/ci-deploy.sh"
   },
   "config": {
     "commitizen": {
