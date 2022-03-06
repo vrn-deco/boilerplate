@@ -7,13 +7,13 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![pnpm](https://img.shields.io/badge/maintained%20with-pnpm-f49033.svg)](https://pnpm.io/)
 
-[简体中文](./README_zh.md)
+[English]](./README.md)
 
 </div>
 
-## Usage
+## 如何使用
 
-If you need to pull a project template from this repository to create a project, we recommend using `@vrn-deco/cli`
+如您需要拉取本仓库中的项目模板创建项目，推荐使用 `@vrn-deco/cli`
 
 ```sh
 $ npm install -g @vrn-deco/cli
@@ -21,7 +21,7 @@ $ npm install -g @vrn-deco/cli
 $ vrn create you-project
 ```
 
-Subsequently created interactively based on command line prompts, detailed usage and parameter descriptions, see **[vrn-cli repository](https://github.com/vrn-deco/vrn-cli)**
+随后根据命令行提示交互式创建，详细使用和参数说明请查看 **[vrn-cli 仓库](https://github.com/vrn-deco/vrn-cli)**
 
 ## Boilerplate Packages
 
