@@ -1,7 +1,7 @@
 {
   "name": "@vrn-deco/boilerplate-javascript-vue2-vant",
-  "version": "0.0.5",
-  "description": "boilerplate-javascript-vue-vant",
+  "version": "2.2.10",
+  "description": "boilerplate-javascript-vue2-vant",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
   "license": "MIT",
@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vrn-deco/boilerplate.git",
-    "directory": "javascript/vue-vant"
+    "directory": "javascript/vue2-vant"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"

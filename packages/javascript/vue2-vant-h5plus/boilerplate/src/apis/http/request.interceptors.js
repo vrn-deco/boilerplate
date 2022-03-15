@@ -4,7 +4,6 @@
  * @Description:
  */
 import store from '@/store'
-import { authorizationFormat } from '@/utils/helpers'
 
 export const registerRequestInterceptors = (axiosInstance) => {
   // 这里注册你的请求拦截(成功操作)
@@ -21,7 +20,7 @@ function authorize(requestConfig) {
   const token = store.getters['auth/token']
   // token 存在且请求头中没有 Authorization 字段时添加
   if (token && !requestConfig.headers.Authorization) {
-    requestConfig.headers.Authorization = authorizationFormat(token)
+    requestConfig.headers.Authorization = `Bearer ${token}`
   }
   return requestConfig
 }

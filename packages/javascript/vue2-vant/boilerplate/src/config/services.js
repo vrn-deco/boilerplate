@@ -6,21 +6,16 @@
 import { ENVS } from './envs'
 
 // 开发环境地址
-const DEV_BASE_URL = 'http://58.210.169.163:19006'
+const DEV_BASE_URL = 'http://127.0.0.1:3000'
 // 生产环境地址，如果和后端合并部署留空''或 '/'，独立部署同上填协议+主机名+端口号
 const PROD_BASE_URL = '/'
-
-// 是否启用 mock
-const MOCK_ENABLE = false
 
 export const SERVICES = {
   /*
     start: 网络请求相关配置
   */
-  // 是否启用 mock
-  MOCK_ENABLE,
   // 协议+主机名+端口号
-  BASE_URL: ENVS.IS_DEV ? (MOCK_ENABLE ? '/' : DEV_BASE_URL) : PROD_BASE_URL,
+  BASE_URL: ENVS.IS_DEV ? DEV_BASE_URL : PROD_BASE_URL,
   /**
    * 这里假设假设你的服务端返回的 response body 为
    * {

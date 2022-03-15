@@ -1,6 +1,7 @@
 {
-  "name": "vue2-vantui-h5plus-boilerplate",
-  "version": "0.1.0",
+  "name": "boilerplate",
+  "version": "0.0.1",
+  "author": "unknown",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
