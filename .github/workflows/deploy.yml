@@ -3,15 +3,7 @@ name: deploy
 on:
   push:
     branches:
-      - '**'
-    paths:
-      - 'manifest/**'
-      - 'packages/**'
-      - 'presets/**'
-      - 'protocol/**'
-  pull_request:
-    branches:
-      - main
+      - 'main'
     paths:
       - 'manifest/**'
       - 'packages/**'
