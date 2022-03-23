@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/@vrn-deco/boilerplate-protocol/vrn-boilerplate.schema.json",
+  "name": "Vue2 Element",
+  "package": "@vrn-deco/boilerplate-javascript-vue2-element",
+  "language": "JavaScript",
+  "techStack": "vue2+element",
+  "preset": "@vrn-deco/boilerplate-preset-npm",
+  "tags": ["front-end", "pc"],
+  "sort": 100
+}

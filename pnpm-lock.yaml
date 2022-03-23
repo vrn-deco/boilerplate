@@ -56,6 +56,7 @@ importers:
     specifiers:
       '@ombro/logger': ^1.5.5
       '@types/fs-extra': ^9.0.13
+      '@vrn-deco/boilerplate-javascript-vue2-element': workspace:^0.0.1
       '@vrn-deco/boilerplate-javascript-vue2-vant': workspace:*
       '@vrn-deco/boilerplate-javascript-vue2-vant-h5plus': workspace:*
       '@vrn-deco/boilerplate-protocol': workspace:*
@@ -67,11 +68,18 @@ importers:
     devDependencies:
       '@ombro/logger': 1.5.5
       '@types/fs-extra': 9.0.13
+      '@vrn-deco/boilerplate-javascript-vue2-element': link:../packages/javascript/vue2-element
       '@vrn-deco/boilerplate-javascript-vue2-vant': link:../packages/javascript/vue2-vant
       '@vrn-deco/boilerplate-javascript-vue2-vant-h5plus': link:../packages/javascript/vue2-vant-h5plus
       '@vrn-deco/boilerplate-protocol': link:../protocol
       '@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus': link:../packages/typescript/vue3-varlet-h5plus
       execa: 5.1.1
+
+  packages/javascript/vue2-element:
+    specifiers:
+      '@vrn-deco/boilerplate-preset-npm': workspace:*
+    dependencies:
+      '@vrn-deco/boilerplate-preset-npm': link:../../../presets/npm
 
   packages/javascript/vue2-vant:
     specifiers:
