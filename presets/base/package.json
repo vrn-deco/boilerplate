@@ -1,7 +1,7 @@
 {
-  "name": "@vrn-deco/boilerplate-preset-npm",
-  "version": "1.0.4",
-  "description": "boilerplate preset npm package installer",
+  "name": "@vrn-deco/boilerplate-preset-base",
+  "version": "1.0.0",
+  "description": "boilerplate preset base",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
   "license": "MIT",
@@ -16,7 +16,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vrn-deco/boilerplate.git",
-    "directory": "presets/npm"
+    "directory": "presets/base"
   },
   "scripts": {
     "clean": "rm -rf dist coverage *.tsbuildinfo",
@@ -27,8 +27,7 @@
     "url": "https://github.com/vrn-deco/boilerplate/issues"
   },
   "dependencies": {
-    "@ombro/logger": "^1.5.5",
-    "@vrn-deco/boilerplate-preset-base": "workspace:*",
+    "@ombro/logger": "^1.5.0",
     "@vrn-deco/boilerplate-protocol": "workspace:*",
     "execa": "^5.1.1",
     "fs-extra": "^10.0.0",
