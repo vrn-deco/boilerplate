@@ -135,6 +135,27 @@ importers:
     devDependencies:
       '@types/fs-extra': 9.0.13
 
+  presets/pip:
+    specifiers:
+      '@ombro/logger': ^1.5.0
+      '@types/fs-extra': ^9.0.13
+      '@types/minimist': ^1.2.2
+      '@vrn-deco/boilerplate-preset-base': workspace:*
+      '@vrn-deco/boilerplate-protocol': workspace:*
+      execa: ^5.1.1
+      fs-extra: ^10.0.0
+      minimist: ^1.2.5
+    dependencies:
+      '@ombro/logger': 1.5.5
+      '@vrn-deco/boilerplate-preset-base': link:../base
+      '@vrn-deco/boilerplate-protocol': link:../../protocol
+      execa: 5.1.1
+      fs-extra: 10.0.0
+      minimist: 1.2.5
+    devDependencies:
+      '@types/fs-extra': 9.0.13
+      '@types/minimist': 1.2.2
+
   protocol:
     specifiers:
       '@types/fs-extra': ^9.0.12
