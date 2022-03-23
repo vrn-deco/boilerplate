@@ -56,7 +56,7 @@ importers:
     specifiers:
       '@ombro/logger': ^1.5.5
       '@types/fs-extra': ^9.0.13
-      '@vrn-deco/boilerplate-javascript-vue2-element': workspace:^0.0.1
+      '@vrn-deco/boilerplate-javascript-vue2-element': workspace:*
       '@vrn-deco/boilerplate-javascript-vue2-vant': workspace:*
       '@vrn-deco/boilerplate-javascript-vue2-vant-h5plus': workspace:*
       '@vrn-deco/boilerplate-protocol': workspace:*

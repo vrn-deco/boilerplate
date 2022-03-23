@@ -1,5 +1,16 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.1.1
+
+### Patch Changes
+
+Migrate some of the original boilerplate
+
+- JavaScript
+  - @vrn-deco/boilerplate-javascript-vue2-element
+  - @vrn-deco/boilerplate-javascript-vue2-vant
+  - @vrn-deco/boilerplate-javascript-vue2-vant-h5plus
+
 ## 1.1.0
 
 ### Minor Changes
