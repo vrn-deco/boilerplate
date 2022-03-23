@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/@vrn-deco/boilerplate-protocol/vrn-boilerplate.schema.json",
+  "name": "Flask SQLAlchemy",
+  "package": "@vrn-deco/boilerplate-python-flask-sqlalchemy",
+  "language": "Python",
+  "techStack": "flask+sqlalchemy",
+  "preset": "@vrn-deco/boilerplate-preset-pip",
+  "tags": ["back-end", "rest-api"],
+  "sort": 1
+}

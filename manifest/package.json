@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-manifest",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "boilerplate manifest",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
@@ -38,6 +38,7 @@
     "@vrn-deco/boilerplate-javascript-vue2-vant": "workspace:*",
     "@vrn-deco/boilerplate-javascript-vue2-vant-h5plus": "workspace:*",
     "@vrn-deco/boilerplate-protocol": "workspace:*",
+    "@vrn-deco/boilerplate-python-flask-sqlalchemy": "workspace:*",
     "@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus": "workspace:*",
     "execa": "^5.1.1"
   }
