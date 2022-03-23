@@ -1,5 +1,18 @@
 # @vrn-deco/boilerplate-javascript-vue2-element
 
+## 2.2.16
+
+### Patch Changes
+
+- Updated dependencies
+  - @vrn-deco/boilerplate-preset-npm@1.1.0
+
+## 2.2.15
+
+### Patch Changes
+
+- @vrn-deco/boilerplate-preset-npm@1.0.6
+
 ## 2.2.14
 
 ### Patch Changes
