@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.1.2
+
+### Patch Changes
+
+- Updated the preset installer for boi-package
+
 ## 1.1.1
 
 ### Patch Changes
