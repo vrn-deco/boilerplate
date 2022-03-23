@@ -6,5 +6,5 @@
   "techStack": "vue2+element",
   "preset": "@vrn-deco/boilerplate-preset-npm",
   "tags": ["front-end", "pc"],
-  "sort": 100
+  "sort": 35
 }
