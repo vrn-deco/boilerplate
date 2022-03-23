@@ -60,6 +60,7 @@ importers:
       '@vrn-deco/boilerplate-javascript-vue2-vant': workspace:*
       '@vrn-deco/boilerplate-javascript-vue2-vant-h5plus': workspace:*
       '@vrn-deco/boilerplate-protocol': workspace:*
+      '@vrn-deco/boilerplate-python-flask-sqlalchemy': workspace:*
       '@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus': workspace:*
       execa: ^5.1.1
       fs-extra: ^10.0.0
@@ -72,6 +73,7 @@ importers:
       '@vrn-deco/boilerplate-javascript-vue2-vant': link:../packages/javascript/vue2-vant
       '@vrn-deco/boilerplate-javascript-vue2-vant-h5plus': link:../packages/javascript/vue2-vant-h5plus
       '@vrn-deco/boilerplate-protocol': link:../protocol
+      '@vrn-deco/boilerplate-python-flask-sqlalchemy': link:../packages/python/flask-sqlalchemy
       '@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus': link:../packages/typescript/vue3-varlet-h5plus
       execa: 5.1.1
 
@@ -92,6 +94,12 @@ importers:
       '@vrn-deco/boilerplate-preset-npm': workspace:*
     dependencies:
       '@vrn-deco/boilerplate-preset-npm': link:../../../presets/npm
+
+  packages/python/flask-sqlalchemy:
+    specifiers:
+      '@vrn-deco/boilerplate-preset-pip': workspace:*
+    dependencies:
+      '@vrn-deco/boilerplate-preset-pip': link:../../../presets/pip
 
   packages/typescript/vue3-varlet-h5plus:
     specifiers:

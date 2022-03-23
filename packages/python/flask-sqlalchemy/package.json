@@ -1,0 +1,27 @@
+{
+  "name": "@vrn-deco/boilerplate-python-flask-sqlalchemy",
+  "version": "1.0.2",
+  "description": "boilerplate python flask sqlalchemy",
+  "author": "Cphayim <i@cphayim.me>",
+  "homepage": "https://github.com/vrn-deco/boilerplate#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrn-deco/boilerplate.git",
+    "directory": "packages/python/flask-sqlalchemy"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/vrn-deco/boilerplate/issues"
+  },
+  "dependencies": {
+    "@vrn-deco/boilerplate-preset-pip": "workspace:*"
+  }
+}
