@@ -2,6 +2,7 @@ import path from 'path'
 import fs from 'fs-extra'
 import execa from 'execa'
 
+import { logger } from '@ombro/logger'
 import type { PresetOptions, PresetRunner } from '@vrn-deco/boilerplate-protocol'
 import { BaseRunner } from '@vrn-deco/boilerplate-preset-base'
 
@@ -31,7 +32,7 @@ export class NPMRunner extends BaseRunner {
     return false
   }
 
-  private updatePackageJSON() {
+  private updatePackageJSON(): void {
     const { name, version, author } = this
     const pkgFile = path.join(this.targetDir, 'package.json')
     const pkg = fs.readJsonSync(pkgFile)
@@ -39,11 +40,19 @@ export class NPMRunner extends BaseRunner {
   }
 
   private async installDeps(): Promise<void> {
-    const { targetDir, packageManager = 'npm' } = this.options
-    await execa(packageManager, [installCommand[packageManager]], {
-      cwd: targetDir,
-      stdio: 'inherit',
-    })
+    let packageManager = this.options.packageManager ?? 'npm'
+    if (packageManager !== 'npm' && !this.cmdIsExists(packageManager)) {
+      logger.warn(`'${packageManager}' is not installed, fallback to 'npm'.`)
+      packageManager = 'npm'
+    }
+    try {
+      await execa(packageManager, [installCommand[packageManager]], {
+        cwd: this.targetDir,
+        stdio: 'inherit',
+      })
+    } catch (error) {
+      logger.warn("Failed to install dependencies. You'll need to install it yourself")
+    }
   }
 }
 

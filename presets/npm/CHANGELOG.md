@@ -1,5 +1,18 @@
 # @vrn-deco/boilerplate-preset-npm
 
+## 1.1.0
+
+### Minor Changes
+
+- Fall back to `npm` if the selected package manager does not exist
+
+## 1.0.6
+
+### Patch Changes
+
+- Updated dependencies
+  - @vrn-deco/boilerplate-preset-base@1.1.0
+
 ## 1.0.5
 
 ### Patch Changes
