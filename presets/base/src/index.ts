@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import path from 'path'
+import os from 'os'
 import fs from 'fs-extra'
+import { execSync } from 'child_process'
 import minimist from 'minimist'
 import execa from 'execa'
 import { logger } from '@ombro/logger'
@@ -163,6 +165,20 @@ export class BaseRunner implements Runner {
         cwd: this.targetDir,
       },
     )
+  }
+
+  protected cmdIsExists(cmd: string): boolean {
+    try {
+      execSync(
+        os.platform() === 'win32'
+          ? `cmd /c "(help ${cmd} > nul || exit 0) && where ${cmd} > nul 2> nul"`
+          : `command -v ${cmd}`,
+        { stdio: 'ignore' },
+      )
+      return true
+    } catch {
+      return false
+    }
   }
 }
 
