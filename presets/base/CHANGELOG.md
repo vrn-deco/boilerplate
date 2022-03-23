@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-preset-base
 
+## 1.1.0
+
+### Minor Changes
+
+- Attached `cmdIsExists` methods
+
 ## 1.0.0
 
 ### Major Changes
