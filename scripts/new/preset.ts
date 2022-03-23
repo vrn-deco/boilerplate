@@ -43,7 +43,7 @@ export async function createPresetPackage() {
   fs.writeJsonSync(packageJson, packageJsonData, { spaces: 2 })
 
   // overwrite src/index.ts {{RUNNER_NAME}}
-  const runnerName = `${folderName.toUpperCase()}PresetRunner`
+  const runnerName = `${folderName.toUpperCase()}Runner`
   const runnerFile = path.join(targetDir, 'src', 'index.ts')
   fs.writeFileSync(
     runnerFile,

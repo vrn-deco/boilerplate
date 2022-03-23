@@ -19,7 +19,7 @@
     "directory": "presets/xxx"
   },
   "scripts": {
-    "clean": "rm -rf dist coverage tsconfig.tsbuildinfo",
+    "clean": "rm -rf dist coverage *.tsbuildinfo",
     "build": "tsc",
     "prepublish": "pnpm clean && pnpm build"
   },
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@ombro/logger": "^1.5.0",
+    "@vrn-deco/boilerplate-preset-base": "workspace:*",
     "@vrn-deco/boilerplate-protocol": "workspace:*",
     "execa": "^5.1.1",
     "fs-extra": "^10.0.0",
