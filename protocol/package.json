@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-protocol",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "boilerplate protocol",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
@@ -19,7 +19,7 @@
     "directory": "protocol"
   },
   "scripts": {
-    "clean": "rimraf -rf dist coverage tsconfig.tsbuildinfo",
+    "clean": "rimraf -rf dist coverage *.tsbuildinfo",
     "build": "tsc",
     "prepublish": "pnpm clean && pnpm build"
   },

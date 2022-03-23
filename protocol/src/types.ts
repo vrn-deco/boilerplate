@@ -61,6 +61,7 @@ export type PresetOptions = {
   version: string
   author: string
   packageManager: 'npm' | 'yarn' | 'pnpm'
+  autoInstallDeps: boolean
 }
 
 export type PresetRunner = (opts: Partial<PresetOptions>) => Promise<void>

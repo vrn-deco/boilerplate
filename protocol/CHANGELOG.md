@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-protocol
 
+## 1.2.1
+
+### Patch Changes
+
+- Add `autoInstallDeps` options to PresetOptions
+
 ## 1.2.0
 
 ### Minor Changes
