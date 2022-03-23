@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.1.3
+
+### Patch Changes
+
+- Migrate to the original flask-sqlalchemy boilerplate
+
 ## 1.1.2
 
 ### Patch Changes
