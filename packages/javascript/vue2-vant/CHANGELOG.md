@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-javascript-vue-vant
 
+## 2.2.11
+
+### Patch Changes
+
+- Migrate some of the original boilerplate
+
 ## 0.0.5
 
 ### Patch Changes
