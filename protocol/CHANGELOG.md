@@ -1,5 +1,13 @@
 # @vrn-deco/boilerplate-protocol
 
+## 1.3.0
+
+### Minor Changes
+
+- `PresetRunner` add generic `T` to allow `runner` to support extended `PresetOptions`
+- `PresetOptions` add `gitInit` option, `runner` needs to implement git initialization based on this
+- `Lang`, `Boilerplate` and `VRNBoilerplateConfig` adds optional fields `recommended` and `deprecated`,
+
 ## 1.2.1
 
 ### Patch Changes
