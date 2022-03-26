@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.0
+
+### Minor Changes
+
+- Implements the new conventions of protocol v1.3.0
+
 ## 1.1.3
 
 ### Patch Changes

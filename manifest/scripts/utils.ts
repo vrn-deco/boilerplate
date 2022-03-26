@@ -9,6 +9,7 @@ import {
   VRNBoilerplateConfig,
 } from '@vrn-deco/boilerplate-protocol'
 
+import { recommendedLangs, deprecatedLangs } from './config'
 export interface ScanPackage {
   name: string
   version: string
@@ -54,6 +55,8 @@ export function archivePackage(pkgs: ScanPackage[]): Manifest {
       version: pkg.version,
       tags: config.tags ?? [],
       sort: config.sort ?? 100,
+      recommended: config.recommended ?? false,
+      deprecated: config.deprecated ?? false,
     }
     if (langMap[config.language]) {
       langMap[config.language]!.push(boilerplate)
@@ -65,6 +68,8 @@ export function archivePackage(pkgs: ScanPackage[]): Manifest {
   const manifest: Manifest = Object.entries(langMap).map(([name, boilerplate]) => {
     return {
       name,
+      recommended: recommendedLangs.includes(name),
+      deprecated: deprecatedLangs.includes(name),
       boilerplate,
     }
   })

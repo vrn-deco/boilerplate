@@ -35,7 +35,7 @@ export function httpBoilerplateArchive(manifest: Manifest): APIManifest {
   const pkgs = getAllBoilerplatePackage()
   const apiManifest: APIManifest = manifest.map((lang) => {
     return {
-      name: lang.name,
+      ...lang,
       boilerplate: lang.boilerplate.map((boilerplate) => {
         const file = transformBoilerplateTGZ(boilerplate.package, pkgs)
         return {
@@ -44,6 +44,8 @@ export function httpBoilerplateArchive(manifest: Manifest): APIManifest {
           version: boilerplate.version,
           tags: boilerplate.tags,
           file,
+          recommended: boilerplate.recommended,
+          deprecated: boilerplate.deprecated,
         }
       }),
     } as Lang<APIBoilerplate>
