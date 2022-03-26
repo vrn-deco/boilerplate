@@ -111,6 +111,9 @@ export class BaseRunner implements Runner {
       return true
     }
 
+    // git init
+    await this.initGitRepo()
+
     // Subclasses should execute their own default logic
     return false
   }
@@ -165,6 +168,25 @@ export class BaseRunner implements Runner {
         cwd: this.targetDir,
       },
     )
+  }
+
+  protected async initGitRepo(): Promise<void> {
+    const { gitInit = true } = this.options
+    if (!gitInit) return
+
+    try {
+      if (this.cmdIsExists('git')) {
+        logger.startLoading('init git repo...')
+        await execa('git', ['init'], { cwd: this.targetDir, stdio: 'pipe' })
+        logger.done('init git repo finished.')
+      } else {
+        logger.warn('git is not installed, skip init git repo.')
+      }
+    } catch (error) {
+      logger.warn('init git repo failed.')
+    } finally {
+      logger.stopLoading()
+    }
   }
 
   protected cmdIsExists(cmd: string): boolean {
