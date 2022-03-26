@@ -1,0 +1,35 @@
+{
+  "appId": "com.vrndeco.electron",
+  "asar": true,
+  "directories": {
+    "output": "release/"
+  },
+  "files": ["dist"],
+  "mac": {
+    "artifactName": "${productName}_${version}.${ext}",
+    "target": ["dmg"],
+    "icon": "assets/icon.png"
+  },
+  "win": {
+    "artifactName": "${productName}_${version}.${ext}",
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "assets/icon.png"
+  },
+  "linux": {
+    "target": "AppImage",
+    "icon": "assets/icon.png",
+    "category": "Utility"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false,
+    "createDesktopShortcut": true
+  }
+}
