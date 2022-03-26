@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-typescript-vue3-varlet-h5plus
 
+## 0.1.11
+
+### Patch Changes
+
+- @vrn-deco/boilerplate-preset-npm@1.1.1
+
 ## 0.1.10
 
 ### Patch Changes
