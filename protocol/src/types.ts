@@ -12,6 +12,8 @@ export type Manifest = Lang<Boilerplate>[]
 export type Lang<T = Boilerplate> = {
   name: string
   boilerplate: T[]
+  recommended?: boolean
+  deprecated?: boolean
 }
 
 export type Boilerplate = {
@@ -21,6 +23,8 @@ export type Boilerplate = {
   version: string
   tags?: string[]
   sort?: number
+  recommended?: boolean
+  deprecated?: boolean
 }
 
 // HTTP API manifest
@@ -43,6 +47,8 @@ export type VRNBoilerplateConfig = {
   clean?: CustomScript
   tags?: string[]
   sort?: number
+  recommended?: boolean
+  deprecated?: boolean
 }
 
 export type CustomScript = {
@@ -62,6 +68,9 @@ export type PresetOptions = {
   author: string
   packageManager: 'npm' | 'yarn' | 'pnpm'
   autoInstallDeps: boolean
+  gitInit: boolean
 }
 
-export type PresetRunner = (opts: Partial<PresetOptions>) => Promise<void>
+export type PresetRunner<T extends PresetOptions = PresetOptions> = (
+  opts: Partial<T>,
+) => Promise<void>

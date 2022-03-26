@@ -91,6 +91,14 @@
     "sort": {
       "type": "number",
       "title": "排序，越小越靠前"
+    },
+    "recommended": {
+      "type": "boolean",
+      "title": "推荐的"
+    },
+    "deprecated": {
+      "type": "boolean",
+      "title": "已弃用"
     }
   },
   "required": ["name", "package", "language", "techStack", "preset"]
