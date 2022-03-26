@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-preset-base
 
+## 1.3.0
+
+### Minor Changes
+
+- Implements the `gitInit` of protocol v1.3.0
+
 ## 1.1.0
 
 ### Minor Changes
