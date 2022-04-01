@@ -5,15 +5,11 @@ on:
     branches:
       - main
       - next
-    paths:
-      - 'packages/**'
 
   pull_request:
     branches:
       - main
       - next
-    paths:
-      - 'packages/**'
 
 jobs:
   coverage-report:
