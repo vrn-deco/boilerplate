@@ -28,7 +28,6 @@ const transitionName = computed(() => `slide-${direction.value}`)
 function setDirection(to: RouteLocationNormalized, from: RouteLocationNormalized) {
   const toDepth = to.meta.depth as number | undefined
   const fromDepth = from.meta.depth as number | undefined
-  console.log(toDepth, fromDepth)
   if (toDepth === fromDepth || toDepth === void 0 || fromDepth === void 0) {
     direction.value = Direction.None
   } else if (toDepth > fromDepth) {

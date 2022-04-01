@@ -51,7 +51,6 @@ const scrollTop = ref(0)
 // store scrollTop
 const handleScroll = useDebounceFn((e) => {
   scrollTop.value = e.target.scrollTop
-  console.log(scrollTop)
 }, 100)
 // restore scrollTop
 onActivated(() => {
