@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.4
+
+### Patch Changes
+
+- Add @vrn-deco/boilerplate-typescript-monorepo-lerna-yarn boi-package
+
 ## 1.2.3
 
 ### Patch Changes
