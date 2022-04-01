@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.3
+
+### Patch Changes
+
+- Update @vrn-deco/boilerplate-typescript-vue3-varlet tags
+
 ## 1.2.2
 
 ### Patch Changes
