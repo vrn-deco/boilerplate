@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.2
+
+### Patch Changes
+
+- Add TypeScript Vue3 Varlet boilerplate
+
 ## 1.2.1
 
 ### Patch Changes
