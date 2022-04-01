@@ -96,6 +96,9 @@ export class BaseRunner implements Runner {
     const boiDir = path.resolve(this.boiPackageDir, 'boilerplate')
     fs.copySync(boiDir, this.targetDir)
 
+    // git init
+    await this.initGitRepo()
+
     // Subclasses should execute their own default logic
     return false
   }
@@ -110,9 +113,6 @@ export class BaseRunner implements Runner {
       this.execCustomScript(scriptType, scriptFile)
       return true
     }
-
-    // git init
-    await this.initGitRepo()
 
     // Subclasses should execute their own default logic
     return false
