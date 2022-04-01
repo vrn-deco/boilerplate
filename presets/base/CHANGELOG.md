@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-preset-base
 
+## 1.3.1
+
+### Patch Changes
+
+- Hoist Git initialization tasks from clean phase to install phase in preser-base
+
 ## 1.3.0
 
 ### Minor Changes
