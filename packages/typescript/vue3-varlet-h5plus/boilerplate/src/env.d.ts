@@ -9,9 +9,9 @@ declare namespace NodeJS {
   interface ProcessEnv {
     readonly NODE_ENV: 'development' | 'production'
     // app
-    readonly VITE_APP_NAME: string
-    readonly VITE_APP_SECRET_CODE: string
+    readonly VUE_APP_NAME: string
+    readonly VUE_APP_SECRET_CODE: string
     // server
-    readonly VITE_SERVER_BASE_URL: string
+    readonly VUE_SERVER_BASE_URL: string
   }
 }
