@@ -41,7 +41,7 @@ type LayoutProps = {
   backArrow?: boolean
   showTabBar?: boolean
 }
-const props = defineProps<LayoutProps>()
+defineProps<LayoutProps>()
 
 const router = useRouter()
 const routerBack = () => router.back()

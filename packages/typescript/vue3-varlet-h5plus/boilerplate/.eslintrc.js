@@ -1,18 +1,10 @@
 module.exports = {
   root: true,
-  env: {
-    node: true,
-  },
-  extends: [
-    'plugin:vue/vue3-essential',
-    '@vue/typescript/recommended',
-    'plugin:prettier/recommended',
-    '.eslintrc-auto-import.json',
-  ],
-  parserOptions: {
-    ecmaVersion: 2020,
-  },
+  extends: ['@ombro/eslint-config-vue3-typescript', '.eslintrc-auto-import.json'],
   rules: {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    'vue/multi-word-component-names': 'off',
   },
 }
