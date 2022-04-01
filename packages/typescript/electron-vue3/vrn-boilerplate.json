@@ -5,6 +5,6 @@
   "language": "TypeScript",
   "techStack": "electron+vue3",
   "preset": "@vrn-deco/boilerplate-preset-npm",
-  "tags": [],
+  "tags": ["front-end", "pc", "client"],
   "sort": 51
 }
