@@ -6,5 +6,6 @@
   "techStack": "vue3+varlet",
   "preset": "@vrn-deco/boilerplate-preset-npm",
   "tags": ["thin", "front-end", "mobile"],
-  "sort": 31
+  "sort": 31,
+  "recommended": true
 }

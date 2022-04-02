@@ -6,5 +6,6 @@
   "techStack": "pnpm",
   "preset": "@vrn-deco/boilerplate-preset-npm",
   "tags": ["empty", "library"],
-  "sort": 201
+  "sort": 201,
+  "recommended": true
 }
