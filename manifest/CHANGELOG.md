@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.5
+
+### Patch Changes
+
+- Update boilerplate category tags
+
 ## 1.2.4
 
 ### Patch Changes
