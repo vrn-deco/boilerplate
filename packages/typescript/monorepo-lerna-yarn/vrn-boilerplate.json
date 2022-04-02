@@ -1,0 +1,11 @@
+{
+  "$schema": "https://unpkg.com/@vrn-deco/boilerplate-protocol/vrn-boilerplate.schema.json",
+  "name": "<Monorepo> Lerna Yarn Workspace",
+  "package": "@vrn-deco/boilerplate-typescript-monorepo-lerna-yarn",
+  "language": "TypeScript",
+  "techStack": "lerna+yarn",
+  "preset": "@vrn-deco/boilerplate-preset-npm",
+  "tags": ["empty", "library"],
+  "sort": 202,
+  "recommended": true
+}
