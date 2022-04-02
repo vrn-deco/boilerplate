@@ -5,6 +5,6 @@
   "language": "JavaScript",
   "techStack": "vue+vant",
   "preset": "@vrn-deco/boilerplate-preset-npm",
-  "tags": ["front-end", "mobile"],
+  "tags": ["thin", "front-end", "mobile"],
   "sort": 31
 }

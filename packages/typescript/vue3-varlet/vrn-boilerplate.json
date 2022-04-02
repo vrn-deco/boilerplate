@@ -5,6 +5,6 @@
   "language": "TypeScript",
   "techStack": "vue3+varlet",
   "preset": "@vrn-deco/boilerplate-preset-npm",
-  "tags": ["front-end", "app"],
+  "tags": ["thin", "front-end", "mobile"],
   "sort": 31
 }
