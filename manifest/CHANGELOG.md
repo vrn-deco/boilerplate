@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.7
+
+### Patch Changes
+
+- Some packages are recommended
+
 ## 1.2.6
 
 ### Patch Changes
