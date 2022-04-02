@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.6
+
+### Patch Changes
+
+- Add @vrn-deco/boilerplate-typescript-monorepo-pnpm boi-package
+
 ## 1.2.5
 
 ### Patch Changes

@@ -1,0 +1,21 @@
+{
+  "name": "@my/main",
+  "version": "0.0.0",
+  "author": "unknown",
+  "description": "> TODO: description",
+  "license": "UNLICENSED",
+  "bin": {},
+  "main": "dist/index.js",
+  "exports": "./dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsc -b -w",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@my/shared": "0.0.0"
+  }
+}
