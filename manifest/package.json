@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-manifest",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "boilerplate manifest",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
@@ -42,6 +42,7 @@
     "@vrn-deco/boilerplate-typescript-electron-vue3": "workspace:*",
     "@vrn-deco/boilerplate-typescript-monorepo-lerna-yarn": "workspace:*",
     "@vrn-deco/boilerplate-typescript-monorepo-pnpm": "workspace:*",
+    "@vrn-deco/boilerplate-typescript-nest-typeorm": "workspace:*",
     "@vrn-deco/boilerplate-typescript-vue3-varlet": "workspace:*",
     "@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus": "workspace:*",
     "execa": "^5.1.1"

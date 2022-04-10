@@ -1,0 +1,27 @@
+{
+  "name": "@vrn-deco/boilerplate-typescript-nest-typeorm",
+  "version": "1.1.2",
+  "description": "boilerplate typescript nest typeorm",
+  "author": "Cphayim <i@cphayim.me>",
+  "homepage": "https://github.com/vrn-deco/boilerplate#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrn-deco/boilerplate.git",
+    "directory": "packages/typescript/nest-typeorm"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/vrn-deco/boilerplate/issues"
+  },
+  "dependencies": {
+    "@vrn-deco/boilerplate-preset-npm": "workspace:*"
+  }
+}
