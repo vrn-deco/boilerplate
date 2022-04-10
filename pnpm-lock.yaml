@@ -129,6 +129,12 @@ importers:
     dependencies:
       '@vrn-deco/boilerplate-preset-npm': link:../../../presets/npm
 
+  packages/typescript/nest-typeorm:
+    specifiers:
+      '@vrn-deco/boilerplate-preset-npm': workspace:*
+    dependencies:
+      '@vrn-deco/boilerplate-preset-npm': link:../../../presets/npm
+
   packages/typescript/vue3-varlet:
     specifiers:
       '@vrn-deco/boilerplate-preset-npm': workspace:*
