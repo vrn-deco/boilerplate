@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.8
+
+### Patch Changes
+
+- Add @vrn-deco/boilerplate-typescript-nest-typeorm boi-package
+
 ## 1.2.7
 
 ### Patch Changes

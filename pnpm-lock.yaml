@@ -64,6 +64,7 @@ importers:
       '@vrn-deco/boilerplate-typescript-electron-vue3': workspace:*
       '@vrn-deco/boilerplate-typescript-monorepo-lerna-yarn': workspace:*
       '@vrn-deco/boilerplate-typescript-monorepo-pnpm': workspace:*
+      '@vrn-deco/boilerplate-typescript-nest-typeorm': workspace:*
       '@vrn-deco/boilerplate-typescript-vue3-varlet': workspace:*
       '@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus': workspace:*
       execa: ^5.1.1
@@ -81,6 +82,7 @@ importers:
       '@vrn-deco/boilerplate-typescript-electron-vue3': link:../packages/typescript/electron-vue3
       '@vrn-deco/boilerplate-typescript-monorepo-lerna-yarn': link:../packages/typescript/monorepo-lerna-yarn
       '@vrn-deco/boilerplate-typescript-monorepo-pnpm': link:../packages/typescript/monorepo-pnpm
+      '@vrn-deco/boilerplate-typescript-nest-typeorm': link:../packages/typescript/nest-typeorm
       '@vrn-deco/boilerplate-typescript-vue3-varlet': link:../packages/typescript/vue3-varlet
       '@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus': link:../packages/typescript/vue3-varlet-h5plus
       execa: 5.1.1

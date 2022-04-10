@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/@vrn-deco/boilerplate-protocol/vrn-boilerplate.schema.json",
+  "name": "Nest TypeORM",
+  "package": "@vrn-deco/boilerplate-typescript-nest-typeorm",
+  "language": "TypeScript",
+  "techStack": "nest+typeorm",
+  "preset": "@vrn-deco/boilerplate-preset-npm",
+  "tags": ["fat", "back-end", "rest-api"],
+  "sort": 101
+}
