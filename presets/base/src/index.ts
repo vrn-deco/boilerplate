@@ -177,7 +177,13 @@ export class BaseRunner implements Runner {
     try {
       if (this.cmdIsExists('git')) {
         logger.startLoading('init git repo...')
+        // git init && git add . && git commit -m "chore: init repository"
         await execa('git', ['init'], { cwd: this.targetDir, stdio: 'pipe' })
+        await execa('git', ['add', '.'], { cwd: this.targetDir, stdio: 'pipe' })
+        await execa('git', ['commit', '-m', 'chore: init repository'], {
+          cwd: this.targetDir,
+          stdio: 'pipe',
+        })
         logger.done('init git repo finished.')
       } else {
         logger.warn('git is not installed, skip init git repo.')
