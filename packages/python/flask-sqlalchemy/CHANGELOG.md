@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-python-flask-sqlalchemy
 
+## 1.0.5
+
+### Patch Changes
+
+- @vrn-deco/boilerplate-preset-pip@0.0.5
+
 ## 1.0.4
 
 ### Patch Changes

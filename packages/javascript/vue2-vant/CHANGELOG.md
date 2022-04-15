@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-javascript-vue-vant
 
+## 2.2.19
+
+### Patch Changes
+
+- @vrn-deco/boilerplate-preset-npm@1.1.3
+
 ## 2.2.18
 
 ### Patch Changes
