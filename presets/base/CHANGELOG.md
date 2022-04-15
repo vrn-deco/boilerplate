@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-preset-base
 
+## 1.3.2
+
+### Patch Changes
+
+- Will create an init commit after initializing the git repository
+
 ## 1.3.1
 
 ### Patch Changes

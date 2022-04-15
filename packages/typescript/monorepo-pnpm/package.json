@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-typescript-monorepo-pnpm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "boilerplate typescript monorepo pnpm workspace",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
