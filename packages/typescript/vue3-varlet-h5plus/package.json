@@ -8,6 +8,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "*.{?(m|c)js,sh,py}",
+    "README*.md",
+    "CHANGELOG.md",
+    "vrn-boilerplate.json",
+    "boilerplate/",
+    "boilerplate/.gitignore"
+  ],
   "main": "index.js",
   "bin": "index.js",
   "repository": {

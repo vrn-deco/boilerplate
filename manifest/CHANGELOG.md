@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.9
+
+### Patch Changes
+
+- Update packages affected by preset
+
 ## 1.2.8
 
 ### Patch Changes
