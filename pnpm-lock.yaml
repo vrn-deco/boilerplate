@@ -67,6 +67,7 @@ importers:
       '@vrn-deco/boilerplate-typescript-nest-typeorm': workspace:*
       '@vrn-deco/boilerplate-typescript-vue3-varlet': workspace:*
       '@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus': workspace:*
+      '@vrn-deco/boilerplate-typescript-vue3-vben-admin': workspace:*
       execa: ^5.1.1
       fs-extra: ^10.0.0
     dependencies:
@@ -85,6 +86,7 @@ importers:
       '@vrn-deco/boilerplate-typescript-nest-typeorm': link:../packages/typescript/nest-typeorm
       '@vrn-deco/boilerplate-typescript-vue3-varlet': link:../packages/typescript/vue3-varlet
       '@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus': link:../packages/typescript/vue3-varlet-h5plus
+      '@vrn-deco/boilerplate-typescript-vue3-vben-admin': link:../packages/typescript/vue3-vben-admin
       execa: 5.1.1
 
   packages/javascript/vue2-element:

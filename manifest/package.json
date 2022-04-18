@@ -45,6 +45,7 @@
     "@vrn-deco/boilerplate-typescript-nest-typeorm": "workspace:*",
     "@vrn-deco/boilerplate-typescript-vue3-varlet": "workspace:*",
     "@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus": "workspace:*",
+    "@vrn-deco/boilerplate-typescript-vue3-vben-admin": "workspace:*",
     "execa": "^5.1.1"
   }
 }
