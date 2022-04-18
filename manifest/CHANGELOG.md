@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.10
+
+### Patch Changes
+
+- Add @vrn-deco/boilerplate-typescript-vue3-vben-admin
+
 ## 1.2.9
 
 ### Patch Changes

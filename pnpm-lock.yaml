@@ -149,6 +149,12 @@ importers:
     dependencies:
       '@vrn-deco/boilerplate-preset-npm': link:../../../presets/npm
 
+  packages/typescript/vue3-vben-admin:
+    specifiers:
+      '@vrn-deco/boilerplate-preset-npm': workspace:*
+    dependencies:
+      '@vrn-deco/boilerplate-preset-npm': link:../../../presets/npm
+
   presets/base:
     specifiers:
       '@ombro/logger': ^1.5.0
