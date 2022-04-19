@@ -116,9 +116,10 @@ export async function createBoilerplatePackage() {
   logger.stopLoading()
 
   // add new boilerplate package to minifest package.json
-  execa.commandSync(`pnpm add -D ${packageName}@* --filter @vrn-deco/boilerplate-manifest`, {
-    cwd: _REPO_,
-  })
+  execa.commandSync(
+    `pnpm add --workspace -D ${packageName}@* --filter @vrn-deco/boilerplate-manifest`,
+    { cwd: _REPO_ },
+  )
 
   logger.done(
     `${packageName} created: packages/${path.posix.join(language.toLowerCase(), folderName)}`,
