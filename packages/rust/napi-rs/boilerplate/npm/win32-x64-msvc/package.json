@@ -1,0 +1,19 @@
+{
+  "name": "@cy-pg/rs-cool-win32-x64-msvc",
+  "version": "0.0.1",
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "rs-cool.win32-x64-msvc.node",
+  "files": [
+    "rs-cool.win32-x64-msvc.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": "https://github.com/Cphayim/napi-cool.git"
+}

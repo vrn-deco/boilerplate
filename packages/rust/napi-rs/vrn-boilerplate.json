@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/@vrn-deco/boilerplate-protocol/vrn-boilerplate.schema.json",
+  "name": "Napi-rs",
+  "package": "@vrn-deco/boilerplate-rust-napi-rs",
+  "language": "Rust",
+  "techStack": "napi+rs",
+  "preset": "@vrn-deco/boilerplate-preset-base",
+  "tags": ["thin", "node.js add-on"],
+  "sort": 11
+}

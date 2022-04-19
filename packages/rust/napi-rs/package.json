@@ -1,0 +1,35 @@
+{
+  "name": "@vrn-deco/boilerplate-rust-napi-rs",
+  "version": "0.0.1",
+  "description": "boilerplate rust napi rs",
+  "author": "Cphayim <i@cphayim.me>",
+  "homepage": "https://github.com/vrn-deco/boilerplate#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "*.{?(m|c)js,sh,py}",
+    "README*.md",
+    "CHANGELOG.md",
+    "vrn-boilerplate.json",
+    "boilerplate/",
+    "boilerplate/.gitignore"
+  ],
+  "main": "index.js",
+  "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrn-deco/boilerplate.git",
+    "directory": "packages/rust/napi-rs"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/vrn-deco/boilerplate/issues"
+  },
+  "dependencies": {
+    "@vrn-deco/boilerplate-preset-base": "workspace:*"
+  }
+}

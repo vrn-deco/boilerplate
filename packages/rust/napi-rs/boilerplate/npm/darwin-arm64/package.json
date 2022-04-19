@@ -1,0 +1,19 @@
+{
+  "name": "@cy-pg/rs-cool-darwin-arm64",
+  "version": "0.0.1",
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "arm64"
+  ],
+  "main": "rs-cool.darwin-arm64.node",
+  "files": [
+    "rs-cool.darwin-arm64.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": "https://github.com/Cphayim/napi-cool.git"
+}
