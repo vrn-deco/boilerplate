@@ -123,6 +123,12 @@ importers:
     dependencies:
       '@vrn-deco/boilerplate-preset-base': link:../../../presets/base
 
+  packages/rust/napi-rs:
+    specifiers:
+      '@vrn-deco/boilerplate-preset-base': workspace:*
+    dependencies:
+      '@vrn-deco/boilerplate-preset-base': link:../../../presets/base
+
   packages/typescript/electron-vue3:
     specifiers:
       '@vrn-deco/boilerplate-preset-npm': workspace:*
