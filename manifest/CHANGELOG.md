@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.11
+
+### Patch Changes
+
+- Add two rust boilerplate
+
 ## 1.2.10
 
 ### Patch Changes
