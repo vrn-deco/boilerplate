@@ -6,5 +6,6 @@
   "techStack": "napi+rs",
   "preset": "@vrn-deco/boilerplate-preset-base",
   "tags": ["thin", "node.js add-on"],
-  "sort": 11
+  "sort": 11,
+  "recommended": true
 }
