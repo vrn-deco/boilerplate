@@ -10,6 +10,7 @@ import { logger } from '@ombro/logger'
 import { Boilerplate, Lang, Manifest } from '@vrn-deco/boilerplate-protocol'
 import { archivePackage, getAllBoilerplatePackage } from './utils'
 import { httpBoilerplateArchive } from './http-boilerplate'
+import { LangPriority, UNKNOWN_PRIORITY } from './config'
 
 if (require.main === module) {
   const manifest = genManifest()
@@ -38,13 +39,6 @@ function genManifest() {
 }
 
 function sortManifest(manifest: Manifest) {
-  const UNKNOWN_PRIORITY = 100
-  const LangPriority: Record<string, number> = {
-    TypeScript: 0,
-    JavaScript: 1,
-    Python: 2,
-    Dart: 3,
-  }
   const cached = new Set<Lang>()
   manifest.sort((langA, langB) => {
     if (!cached.has(langA)) {

@@ -61,6 +61,8 @@ importers:
       '@vrn-deco/boilerplate-javascript-vue2-vant-h5plus': workspace:*
       '@vrn-deco/boilerplate-protocol': workspace:*
       '@vrn-deco/boilerplate-python-flask-sqlalchemy': workspace:*
+      '@vrn-deco/boilerplate-rust-cargo-base': workspace:*
+      '@vrn-deco/boilerplate-rust-napi-rs': workspace:*
       '@vrn-deco/boilerplate-typescript-electron-vue3': workspace:*
       '@vrn-deco/boilerplate-typescript-monorepo-lerna-yarn': workspace:*
       '@vrn-deco/boilerplate-typescript-monorepo-pnpm': workspace:*
@@ -80,6 +82,8 @@ importers:
       '@vrn-deco/boilerplate-javascript-vue2-vant-h5plus': link:../packages/javascript/vue2-vant-h5plus
       '@vrn-deco/boilerplate-protocol': link:../protocol
       '@vrn-deco/boilerplate-python-flask-sqlalchemy': link:../packages/python/flask-sqlalchemy
+      '@vrn-deco/boilerplate-rust-cargo-base': link:../packages/rust/cargo-base
+      '@vrn-deco/boilerplate-rust-napi-rs': link:../packages/rust/napi-rs
       '@vrn-deco/boilerplate-typescript-electron-vue3': link:../packages/typescript/electron-vue3
       '@vrn-deco/boilerplate-typescript-monorepo-lerna-yarn': link:../packages/typescript/monorepo-lerna-yarn
       '@vrn-deco/boilerplate-typescript-monorepo-pnpm': link:../packages/typescript/monorepo-pnpm
@@ -112,6 +116,18 @@ importers:
       '@vrn-deco/boilerplate-preset-pip': workspace:*
     dependencies:
       '@vrn-deco/boilerplate-preset-pip': link:../../../presets/pip
+
+  packages/rust/cargo-base:
+    specifiers:
+      '@vrn-deco/boilerplate-preset-base': workspace:*
+    dependencies:
+      '@vrn-deco/boilerplate-preset-base': link:../../../presets/base
+
+  packages/rust/napi-rs:
+    specifiers:
+      '@vrn-deco/boilerplate-preset-base': workspace:*
+    dependencies:
+      '@vrn-deco/boilerplate-preset-base': link:../../../presets/base
 
   packages/typescript/electron-vue3:
     specifiers:

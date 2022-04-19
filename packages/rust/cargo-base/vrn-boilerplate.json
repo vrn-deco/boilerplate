@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/@vrn-deco/boilerplate-protocol/vrn-boilerplate.schema.json",
+  "name": "Cargo Base",
+  "package": "@vrn-deco/boilerplate-rust-cargo-base",
+  "language": "Rust",
+  "techStack": "cargo+base",
+  "preset": "@vrn-deco/boilerplate-preset-base",
+  "tags": ["empty"],
+  "sort": 1
+}

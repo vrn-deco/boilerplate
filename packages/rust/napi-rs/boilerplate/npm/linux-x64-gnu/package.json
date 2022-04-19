@@ -1,0 +1,22 @@
+{
+  "name": "@cy-pg/rs-cool-linux-x64-gnu",
+  "version": "0.0.1",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "rs-cool.linux-x64-gnu.node",
+  "files": [
+    "rs-cool.linux-x64-gnu.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": "https://github.com/Cphayim/napi-cool.git",
+  "libc": [
+    "glibc"
+  ]
+}
