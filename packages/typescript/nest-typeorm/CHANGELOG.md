@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-typescript-nest-typeorm
 
+## 1.1.4
+
+### Patch Changes
+
+- Update pack rule
+
 ## 1.1.3
 
 ### Patch Changes

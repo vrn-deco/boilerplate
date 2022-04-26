@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-python-flask-sqlalchemy",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "boilerplate python flask sqlalchemy",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
@@ -14,7 +14,10 @@
     "CHANGELOG.md",
     "vrn-boilerplate.json",
     "boilerplate/",
-    "boilerplate/.gitignore"
+    "boilerplate/.gitignore",
+    "!boilerplate/package-lock.json",
+    "!boilerplate/yarn.lock",
+    "!boilerplate/pnpm-lock.yaml"
   ],
   "main": "index.js",
   "bin": "index.js",

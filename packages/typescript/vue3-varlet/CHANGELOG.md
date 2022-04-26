@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-typescript-vue3-varlet
 
+## 0.1.16
+
+### Patch Changes
+
+- Update pack rule
+
 ## 0.1.15
 
 ### Patch Changes

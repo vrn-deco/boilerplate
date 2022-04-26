@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-typescript-electron-vue3
 
+## 0.0.9
+
+### Patch Changes
+
+- Update pack rule
+
 ## 0.0.8
 
 ### Patch Changes

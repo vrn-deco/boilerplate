@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-javascript-vue2-element
 
+## 2.2.20
+
+### Patch Changes
+
+- Update pack rule
+
 ## 2.2.19
 
 ### Patch Changes

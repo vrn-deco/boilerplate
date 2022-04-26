@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-typescript-vue3-varlet",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "boilerplate typescript vue3 varlet",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
@@ -14,7 +14,10 @@
     "CHANGELOG.md",
     "vrn-boilerplate.json",
     "boilerplate/",
-    "boilerplate/.gitignore"
+    "boilerplate/.gitignore",
+    "!boilerplate/package-lock.json",
+    "!boilerplate/yarn.lock",
+    "!boilerplate/pnpm-lock.yaml"
   ],
   "main": "index.js",
   "bin": "index.js",
