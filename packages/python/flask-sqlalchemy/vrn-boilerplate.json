@@ -5,6 +5,6 @@
   "language": "Python",
   "techStack": "flask+sqlalchemy",
   "preset": "@vrn-deco/boilerplate-preset-pip",
-  "tags": ["fat", "back-end", "rest-api"],
+  "tags": ["fat-boi", "backend", "rest-api"],
   "sort": 1
 }

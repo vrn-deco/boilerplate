@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.15
+
+### Patch Changes
+
+- Update boi-package info
+
 ## 1.2.14
 
 ### Patch Changes

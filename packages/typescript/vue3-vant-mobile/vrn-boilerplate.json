@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@vrn-deco/boilerplate-protocol/vrn-boilerplate.schema.json",
-  "name": "Vue3 VantUI Mobile",
+  "name": "Vue3 Vant Mobile",
   "package": "@vrn-deco/boilerplate-typescript-vue3-vant-mobile",
   "language": "TypeScript",
   "techStack": "vue3+vue-router+pinia+vant+axios+vueuse",

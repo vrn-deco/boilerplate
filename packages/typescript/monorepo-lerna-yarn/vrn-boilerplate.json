@@ -5,6 +5,6 @@
   "language": "TypeScript",
   "techStack": "lerna+yarn",
   "preset": "@vrn-deco/boilerplate-preset-npm",
-  "tags": ["empty", "library"],
+  "tags": ["empty-boi", "library"],
   "sort": 202
 }

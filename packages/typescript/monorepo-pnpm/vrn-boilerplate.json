@@ -5,7 +5,7 @@
   "language": "TypeScript",
   "techStack": "pnpm",
   "preset": "@vrn-deco/boilerplate-preset-npm",
-  "tags": ["empty", "library"],
+  "tags": ["empty-boi", "library"],
   "sort": 201,
   "recommended": true
 }

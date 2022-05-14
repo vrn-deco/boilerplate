@@ -3,8 +3,8 @@
   "name": "Electron Vue3",
   "package": "@vrn-deco/boilerplate-typescript-electron-vue3",
   "language": "TypeScript",
-  "techStack": "electron+vue3",
+  "techStack": "electron+vue3+pinia",
   "preset": "@vrn-deco/boilerplate-preset-npm",
-  "tags": ["thin", "front-end", "pc", "client"],
+  "tags": ["thin-boi", "frontend", "pc-client", "vite"],
   "sort": 51
 }

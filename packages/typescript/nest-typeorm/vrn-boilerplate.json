@@ -5,6 +5,6 @@
   "language": "TypeScript",
   "techStack": "nest+typeorm",
   "preset": "@vrn-deco/boilerplate-preset-npm",
-  "tags": ["fat", "back-end", "rest-api"],
+  "tags": ["fat-boi", "backend", "rest-api"],
   "sort": 101
 }

@@ -5,6 +5,6 @@
   "language": "Rust",
   "techStack": "cargo+base",
   "preset": "@vrn-deco/boilerplate-preset-base",
-  "tags": ["empty"],
+  "tags": ["empty-boi"],
   "sort": 1
 }

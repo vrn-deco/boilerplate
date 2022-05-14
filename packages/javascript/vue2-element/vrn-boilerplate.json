@@ -5,6 +5,6 @@
   "language": "JavaScript",
   "techStack": "vue2+element",
   "preset": "@vrn-deco/boilerplate-preset-npm",
-  "tags": ["thin", "front-end", "pc"],
+  "tags": ["thin-boi", "frontend", "webpack"],
   "sort": 35
 }

@@ -1,10 +1,10 @@
 {
   "$schema": "https://unpkg.com/@vrn-deco/boilerplate-protocol/vrn-boilerplate.schema.json",
-  "name": "Vue2 VantUI",
+  "name": "Vue2 Vant Mobile",
   "package": "@vrn-deco/boilerplate-javascript-vue2-vant",
   "language": "JavaScript",
   "techStack": "vue+vant",
   "preset": "@vrn-deco/boilerplate-preset-npm",
-  "tags": ["thin", "front-end", "mobile"],
+  "tags": ["thin-boi", "frontend", "webpack"],
   "sort": 31
 }

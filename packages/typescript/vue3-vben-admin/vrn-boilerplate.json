@@ -5,6 +5,6 @@
   "language": "TypeScript",
   "techStack": "vue3+vben+admin",
   "preset": "@vrn-deco/boilerplate-preset-npm",
-  "tags": ["fat", "frontend", "admin"],
+  "tags": ["fat-boi", "frontend", "vite"],
   "sort": 40
 }
