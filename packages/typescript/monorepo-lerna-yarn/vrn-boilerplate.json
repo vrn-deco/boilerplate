@@ -6,6 +6,5 @@
   "techStack": "lerna+yarn",
   "preset": "@vrn-deco/boilerplate-preset-npm",
   "tags": ["empty", "library"],
-  "sort": 202,
-  "recommended": true
+  "sort": 202
 }
