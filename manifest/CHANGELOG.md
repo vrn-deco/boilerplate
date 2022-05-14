@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.14
+
+### Patch Changes
+
+- Replace Varlet boi-package with Vant boi-package
+
 ## 1.2.12
 
 ### Patch Changes
