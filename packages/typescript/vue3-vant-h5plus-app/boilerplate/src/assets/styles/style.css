@@ -1,0 +1,16 @@
+/* color palette from <https://github.com/vuejs/theme> */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}

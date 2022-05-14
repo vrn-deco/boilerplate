@@ -45,8 +45,8 @@
     "@vrn-deco/boilerplate-typescript-monorepo-lerna-yarn": "workspace:*",
     "@vrn-deco/boilerplate-typescript-monorepo-pnpm": "workspace:*",
     "@vrn-deco/boilerplate-typescript-nest-typeorm": "workspace:*",
-    "@vrn-deco/boilerplate-typescript-vue3-varlet": "workspace:*",
-    "@vrn-deco/boilerplate-typescript-vue3-varlet-h5plus": "workspace:*",
+    "@vrn-deco/boilerplate-typescript-vue3-vant-h5plus-app": "workspace:*",
+    "@vrn-deco/boilerplate-typescript-vue3-vant-mobile": "workspace:*",
     "@vrn-deco/boilerplate-typescript-vue3-vben-admin": "workspace:*",
     "execa": "^5.1.1"
   }

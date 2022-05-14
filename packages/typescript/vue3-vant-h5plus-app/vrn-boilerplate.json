@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/@vrn-deco/boilerplate-protocol/vrn-boilerplate.schema.json",
+  "name": "Vue3 Vant H5plus App",
+  "package": "@vrn-deco/boilerplate-typescript-vue3-vant-h5plus-app",
+  "language": "TypeScript",
+  "techStack": "vue3+vue-router+pinia+vant+axios+vueuse+h5plus",
+  "preset": "@vrn-deco/boilerplate-preset-npm",
+  "tags": ["thin-boi", "frontend", "webpack"],
+  "sort": 32
+}

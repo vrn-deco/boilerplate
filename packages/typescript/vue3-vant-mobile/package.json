@@ -1,0 +1,38 @@
+{
+  "name": "@vrn-deco/boilerplate-typescript-vue3-vant-mobile",
+  "version": "1.1.17",
+  "description": "boilerplate typescript vue3 vant mobile",
+  "author": "Cphayim <i@cphayim.me>",
+  "homepage": "https://github.com/vrn-deco/boilerplate#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "*.{?(m|c)js,sh,py}",
+    "README*.md",
+    "CHANGELOG.md",
+    "vrn-boilerplate.json",
+    "boilerplate/",
+    "boilerplate/.gitignore",
+    "!boilerplate/package-lock.json",
+    "!boilerplate/yarn.lock",
+    "!boilerplate/pnpm-lock.yaml"
+  ],
+  "main": "index.js",
+  "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrn-deco/boilerplate.git",
+    "directory": "packages/typescript/vue3-vant-mobile"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/vrn-deco/boilerplate/issues"
+  },
+  "dependencies": {
+    "@vrn-deco/boilerplate-preset-npm": "workspace:*"
+  }
+}
