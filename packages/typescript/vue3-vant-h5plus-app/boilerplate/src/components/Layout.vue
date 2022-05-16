@@ -6,10 +6,13 @@
 import TabBar from './TabBar.vue'
 
 type LayoutProps = {
-  title: string // 头部标题
+  title?: string // 头部标题
   backArrow?: boolean // 头部显示返回箭头
+  hideHeaderBorder?: boolean // 隐藏头部底边
   hideHeader?: boolean // 隐藏头部
   showTabBar?: boolean // 显示 tabBar
+  disableScroll?: boolean // 禁止主体滚动
+  disableSwipeBack?: boolean // 禁止主体左侧右滑返回
 }
 const props = defineProps<LayoutProps>()
 
@@ -17,6 +20,7 @@ const slots = useSlots()
 const hasHeader = computed(() => !props.hideHeader)
 const hasFooter = computed(() => !!slots.footer)
 
+const route = useRoute()
 const router = useRouter()
 const handleBack = () => router.back()
 
@@ -31,13 +35,31 @@ onActivated(() => {
   if (!main.value) return
   main.value.scrollTop = scrollTop.value
 })
+
+// swipe back
+let touchOriginX = Infinity
+const handleTouchStart = (e: TouchEvent) => {
+  const { clientX } = e.touches[0]
+  touchOriginX = clientX
+}
+const handleTouchEnd = (e: TouchEvent) => {
+  const { clientX } = e.changedTouches[0]
+  if (props.disableSwipeBack || touchOriginX >= 40) return
+  if (route.meta.depth > 0 && clientX - touchOriginX >= 160) {
+    router.back()
+  }
+  touchOriginX = Infinity
+}
+const handleTouchCancel = () => {
+  touchOriginX = Infinity
+}
 </script>
 
 <template>
   <div class="layout" :class="{ 'has-tab-bar': showTabBar }">
     <!-- header -->
     <div v-if="hasHeader" class="layout__header">
-      <van-nav-bar :title="title" fixed placeholder safe-area-inset-top>
+      <van-nav-bar :title="title" fixed placeholder safe-area-inset-top :border="!hideHeaderBorder">
         <template v-if="backArrow" #left>
           <van-icon name="arrow-left" size="18" @click="handleBack" />
         </template>
@@ -55,8 +77,15 @@ onActivated(() => {
     <div
       ref="main"
       class="layout__main"
-      :class="{ 'shim-top': !hasHeader, 'shim-bottom': !hasFooter }"
+      :class="{
+        'shim-top': !hasHeader,
+        'shim-bottom': !hasFooter,
+        'disable-scroll': disableScroll,
+      }"
       @scroll="handleScroll"
+      @touchstart="handleTouchStart"
+      @touchend="handleTouchEnd"
+      @touchcancel="handleTouchCancel"
     >
       <slot />
     </div>
@@ -75,7 +104,7 @@ onActivated(() => {
 
 <style scoped>
 .layout {
-  --layout-background-color: #fff;
+  --layout-background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -92,6 +121,9 @@ onActivated(() => {
   /* only main scroll */
   overflow-x: hidden;
   overflow-y: auto;
+}
+.disable-scroll {
+  overflow-y: hidden;
 }
 
 .layout__footer {
