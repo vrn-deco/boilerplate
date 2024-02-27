@@ -8,6 +8,7 @@ import path from 'path'
 import fs from 'fs-extra'
 import type { Manifest } from '@vrn-deco/boilerplate-protocol'
 
+const __dirname = new URL('.', import.meta.url).pathname
 const MANIFEST_FILE = path.resolve(__dirname, '..', 'vrn-manifest.json')
 
 export function getManifest(): Manifest {
@@ -15,8 +16,4 @@ export function getManifest(): Manifest {
     throw new Error('vrn-manifest.json not exists')
   }
   return fs.readJSONSync(MANIFEST_FILE)
-}
-
-if (require.main === module) {
-  console.log(getManifest())
 }

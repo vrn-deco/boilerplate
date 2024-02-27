@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.17
+
+### Patch Changes
+
+- ESMify
+
 ## 1.2.16
 
 ### Patch Changes

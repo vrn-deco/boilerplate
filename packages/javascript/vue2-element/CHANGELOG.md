@@ -1,5 +1,13 @@
 # @vrn-deco/boilerplate-javascript-vue2-element
 
+## 2.2.21
+
+### Patch Changes
+
+- ESMify
+- Updated dependencies
+  - @vrn-deco/boilerplate-preset-npm@1.1.4
+
 ## 2.2.20
 
 ### Patch Changes

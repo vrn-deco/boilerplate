@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-protocol
 
+## 1.3.1
+
+### Patch Changes
+
+- ESMify
+
 ## 1.3.0
 
 ### Minor Changes

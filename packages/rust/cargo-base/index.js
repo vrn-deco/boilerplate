@@ -1,8 +1,12 @@
-const { runner } = require('@vrn-deco/boilerplate-preset-base')
+import { isMain, runner } from '@vrn-deco/boilerplate-preset-base'
+
+const __dirname = new URL('.', import.meta.url).pathname
 
 // Here, you should install and execute a preset or implement your own installation logic
-module.exports = (opts) => runner({ ...opts, boiPackageDir: __dirname })
+export default (opts) => {
+  runner({ ...opts, boiPackageDir: __dirname })
+}
 
-if (require.main === module) {
+if (isMain(import.meta)) {
   runner({ boiPackageDir: __dirname })
 }

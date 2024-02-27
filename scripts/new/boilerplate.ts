@@ -1,6 +1,6 @@
 import path from 'node:path'
 import fs from 'fs-extra'
-import execa from 'execa'
+import { execaCommandSync } from 'execa'
 import { prompt } from 'inquirer'
 import { logger } from '@ombro/logger'
 
@@ -116,7 +116,7 @@ export async function createBoilerplatePackage() {
   logger.stopLoading()
 
   // add new boilerplate package to minifest package.json
-  execa.commandSync(
+  execaCommandSync(
     `pnpm add --workspace -D ${packageName}@* --filter @vrn-deco/boilerplate-manifest`,
     { cwd: _REPO_ },
   )
@@ -129,7 +129,7 @@ export async function createBoilerplatePackage() {
 }
 
 function getAllPresetPackages() {
-  const { stdout } = execa.commandSync('pnpm list -r --json --depth -1', { cwd: _REPO_ })
+  const { stdout } = execaCommandSync('pnpm list -r --json --depth -1', { cwd: _REPO_ })
   return JSON.parse(stdout).filter((pkg: { name: string; path: string }) =>
     /\/presets\/.+/.test(pkg.path),
   )

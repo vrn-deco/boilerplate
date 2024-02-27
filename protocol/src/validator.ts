@@ -7,15 +7,15 @@ import path from 'path'
 import fs from 'fs-extra'
 import Ajv from 'ajv'
 
-import { VRNBoilerplateConfig } from './types'
+import type { VRNBoilerplateConfig } from './types'
 
-const boilerplateSchama = fs.readJSONSync(
+const boilerplateSchema = fs.readJSONSync(
   path.resolve(__dirname, '..', 'vrn-boilerplate.schema.json'),
 )
 
 export function verifyVRNBoilerplateConfig(config: VRNBoilerplateConfig, path: string): boolean {
   const ajv = new Ajv()
-  const validate = ajv.compile(boilerplateSchama)
+  const validate = ajv.compile(boilerplateSchema)
   const valid = validate(config)
   if (!valid) {
     throw new Error(

@@ -1,6 +1,7 @@
 import path from 'path'
 import fs from 'fs-extra'
-import execa from 'execa'
+import { execaCommandSync } from 'execa'
+
 
 import type { PresetOptions, PresetRunner } from '@vrn-deco/boilerplate-protocol'
 import { BaseRunner } from '@vrn-deco/boilerplate-preset-base'

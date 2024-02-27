@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-rust-cargo-base",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "boilerplate rust cargo base",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
@@ -19,6 +19,7 @@
     "!boilerplate/yarn.lock",
     "!boilerplate/pnpm-lock.yaml"
   ],
+  "type": "module",
   "main": "index.js",
   "bin": "index.js",
   "repository": {

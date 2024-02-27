@@ -1,5 +1,13 @@
 # @vrn-deco/boilerplate-preset-base
 
+## 1.3.3
+
+### Patch Changes
+
+- ESMify
+- Updated dependencies
+  - @vrn-deco/boilerplate-protocol@1.3.1
+
 ## 1.3.2
 
 ### Patch Changes

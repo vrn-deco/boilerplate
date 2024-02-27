@@ -1,10 +1,10 @@
 import path from 'path'
 import fs from 'fs-extra'
-import execa from 'execa'
+import { execa } from 'execa'
 
 import { logger } from '@ombro/logger'
 import type { PresetOptions, PresetRunner } from '@vrn-deco/boilerplate-protocol'
-import { BaseRunner } from '@vrn-deco/boilerplate-preset-base'
+import { BaseRunner, isMain } from '@vrn-deco/boilerplate-preset-base'
 
 type PMInstallCommand = {
   [P in PresetOptions['packageManager']]: string
@@ -61,6 +61,7 @@ export const runner: PresetRunner = async (options) => {
 }
 
 // Direct run
-if (require.main === module) {
+if (isMain(import.meta)) {
   runner({})
 }
+export { isMain }

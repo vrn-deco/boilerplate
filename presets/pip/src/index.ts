@@ -1,8 +1,8 @@
-import execa from 'execa'
+import { execa } from 'execa'
 
 import { logger } from '@ombro/logger'
 import type { PresetRunner } from '@vrn-deco/boilerplate-protocol'
-import { BaseRunner } from '@vrn-deco/boilerplate-preset-base'
+import { BaseRunner, isMain } from '@vrn-deco/boilerplate-preset-base'
 
 export class PIPRunner extends BaseRunner {
   override async install(): Promise<boolean> {
@@ -36,6 +36,7 @@ export const runner: PresetRunner = async (options) => {
 }
 
 // Direct run
-if (require.main === module) {
+if (isMain(import.meta)) {
   runner({})
 }
+export { isMain }
