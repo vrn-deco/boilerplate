@@ -16,10 +16,11 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16]
+        node-version: [18]
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
@@ -29,12 +30,11 @@ jobs:
           known_hosts: ${{ secrets.VRN_REMOTE_SERVER_SSH_KNOWN_HOSTS }}
           config: ${{ secrets.VRN_REMOTE_SERVER_SSH_CONFIG }}
 
-      - uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6.28.0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
 
-      - name: Install Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
