@@ -5,6 +5,7 @@
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
   "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "files": [
     "dist",

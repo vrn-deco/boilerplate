@@ -33,6 +33,7 @@
     "fs-extra": "^10.0.0"
   },
   "devDependencies": {
+    "@ombro/is-main": "^0.1.1",
     "@ombro/logger": "^1.5.5",
     "@types/fs-extra": "^9.0.13",
     "@vrn-deco/boilerplate-javascript-vue2-element": "workspace:*",

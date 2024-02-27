@@ -1,15 +1,18 @@
 import path from 'path'
 import fs from 'fs-extra'
-import { execaCommandSync, execaCommand } from 'execa'
+import { execaCommandSync } from 'execa'
 import {
-  Boilerplate,
-  Lang,
-  Manifest,
+  type Boilerplate,
+  type Lang,
+  type Manifest,
   verifyVRNBoilerplateConfig,
-  VRNBoilerplateConfig,
+  type VRNBoilerplateConfig,
 } from '@vrn-deco/boilerplate-protocol'
 
 import { recommendedLangs, deprecatedLangs } from './config'
+
+const __dirname = new URL('.', import.meta.url).pathname
+
 export interface ScanPackage {
   name: string
   version: string
