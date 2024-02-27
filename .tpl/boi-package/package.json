@@ -19,6 +19,7 @@
     "!boilerplate/yarn.lock",
     "!boilerplate/pnpm-lock.yaml"
   ],
+  "type": "module",
   "main": "index.js",
   "bin": "index.js",
   "repository": {
