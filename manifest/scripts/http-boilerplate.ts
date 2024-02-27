@@ -1,9 +1,11 @@
 import path from 'path'
 import fs from 'fs-extra'
 import { execaCommandSync } from 'execa'
-import { Manifest, APIManifest, APIBoilerplate, Lang } from '@vrn-deco/boilerplate-protocol'
-import { getAllBoilerplatePackage, ScanPackage } from './utils'
+import type { Manifest, APIManifest, APIBoilerplate, Lang } from '@vrn-deco/boilerplate-protocol'
+import { getAllBoilerplatePackage, type ScanPackage } from './utils'
 import { logger } from '@ombro/logger'
+
+const __dirname = new URL('.', import.meta.url).pathname
 
 const RELEASE_DIR = path.join(__dirname, '..', 'release')
 const IGNORE_LIST = [

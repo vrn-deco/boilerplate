@@ -7,12 +7,16 @@
 import path from 'path'
 import fs from 'fs-extra'
 import { logger } from '@ombro/logger'
-import { Boilerplate, Lang, Manifest } from '@vrn-deco/boilerplate-protocol'
+import { isMain } from '@ombro/is-main'
+
+import type { Boilerplate, Lang, Manifest } from '@vrn-deco/boilerplate-protocol'
 import { archivePackage, getAllBoilerplatePackage } from './utils'
 import { httpBoilerplateArchive } from './http-boilerplate'
 import { LangPriority, UNKNOWN_PRIORITY } from './config'
 
-if (require.main === module) {
+const __dirname = new URL('.', import.meta.url).pathname
+
+if (isMain(import.meta)) {
   const manifest = genManifest()
   process.argv.includes('--http-boilerplate-release') && httpBoilerplateArchive(manifest)
 } else {

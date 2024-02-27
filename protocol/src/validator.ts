@@ -9,6 +9,7 @@ import Ajv from 'ajv'
 
 import type { VRNBoilerplateConfig } from './types'
 
+const __dirname = new URL('.', import.meta.url).pathname
 const boilerplateSchema = fs.readJSONSync(
   path.resolve(__dirname, '..', 'vrn-boilerplate.schema.json'),
 )
