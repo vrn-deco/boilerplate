@@ -1,7 +1,7 @@
 {
-  "extends": "@ombro/ts-config/tsconfig.json",
+  "extends": "@ombro/tsconfig/tsconfig.esm.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "esModuleInterop": true
+    // "module": "commonjs",
+    // "esModuleInterop": true
   }
 }

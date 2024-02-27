@@ -1,5 +1,13 @@
 # @vrn-deco/boilerplate-typescript-nest-typeorm
 
+## 1.1.5
+
+### Patch Changes
+
+- ESMify
+- Updated dependencies
+  - @vrn-deco/boilerplate-preset-npm@1.1.4
+
 ## 1.1.4
 
 ### Patch Changes

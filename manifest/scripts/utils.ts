@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs-extra'
-import execa from 'execa'
+import { execaCommandSync, execaCommand } from 'execa'
 import {
   Boilerplate,
   Lang,
@@ -27,7 +27,7 @@ export function getRepoDir(): string {
 }
 
 export function getAllBoilerplatePackage(): ScanPackage[] {
-  const { stdout } = execa.commandSync('pnpm list -r --json --depth -1', { cwd: getRepoDir() })
+  const { stdout } = execaCommandSync('pnpm list -r --json --depth -1', { cwd: getRepoDir() })
   return JSON.parse(stdout).filter((pkg: ScanPackage) => /\/packages\/.+\/.+/.test(pkg.path))
 }
 

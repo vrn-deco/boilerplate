@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs-extra'
-import execa from 'execa'
+import { execaCommandSync } from 'execa'
 import { Manifest, APIManifest, APIBoilerplate, Lang } from '@vrn-deco/boilerplate-protocol'
 import { getAllBoilerplatePackage, ScanPackage } from './utils'
 import { logger } from '@ombro/logger'
@@ -62,7 +62,7 @@ function transformBoilerplateTGZ(packageName: string, pkgs: ScanPackage[]): stri
   const file = `${match.groups!.file}.tgz`
   const output = path.join(RELEASE_DIR, file)
   const ignoreArgs = IGNORE_LIST.map((i) => `--exclude ${i}`).join(' ')
-  execa.commandSync(`tar ${ignoreArgs} -cvzPhf ${output} boilerplate`, {
+  execaCommandSync(`tar ${ignoreArgs} -cvzPhf ${output} boilerplate`, {
     stdio: 'ignore',
     cwd: location,
   })

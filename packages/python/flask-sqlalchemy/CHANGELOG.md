@@ -1,5 +1,13 @@
 # @vrn-deco/boilerplate-python-flask-sqlalchemy
 
+## 1.0.7
+
+### Patch Changes
+
+- ESMify
+- Updated dependencies
+  - @vrn-deco/boilerplate-preset-pip@0.0.6
+
 ## 1.0.6
 
 ### Patch Changes

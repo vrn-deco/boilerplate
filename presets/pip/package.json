@@ -1,10 +1,11 @@
 {
   "name": "@vrn-deco/boilerplate-preset-pip",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "boilerplate preset pip package installer",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
   "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "bin": "dist/index.js",
   "files": [
@@ -27,10 +28,11 @@
     "url": "https://github.com/vrn-deco/boilerplate/issues"
   },
   "dependencies": {
-    "@ombro/logger": "^1.5.0",
+    "@ombro/is-main": "^0.1.1",
+    "@ombro/logger": "^1.5.5",
     "@vrn-deco/boilerplate-preset-base": "workspace:*",
     "@vrn-deco/boilerplate-protocol": "workspace:*",
-    "execa": "^5.1.1",
+    "execa": "^6.1.0",
     "fs-extra": "^10.0.0",
     "minimist": "^1.2.5"
   },

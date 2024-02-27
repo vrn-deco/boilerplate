@@ -1,5 +1,13 @@
 # @vrn-deco/boilerplate-typescript-electron-vue3
 
+## 0.0.10
+
+### Patch Changes
+
+- ESMify
+- Updated dependencies
+  - @vrn-deco/boilerplate-preset-npm@1.1.4
+
 ## 0.0.9
 
 ### Patch Changes

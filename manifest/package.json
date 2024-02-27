@@ -1,10 +1,11 @@
 {
   "name": "@vrn-deco/boilerplate-manifest",
-  "version": "1.2.16",
+  "version": "1.2.17",
   "description": "boilerplate manifest",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
   "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "files": [
     "dist",
@@ -21,8 +22,8 @@
   "scripts": {
     "clean": "rm -rf dist coverage tsconfig.tsbuildinfo",
     "build": "tsc -p tsconfig.build.json",
-    "gen": "esno scripts/generator.ts",
-    "gen:http": "esno scripts/generator.ts --http-boilerplate-release",
+    "gen": "tsx scripts/generator.ts",
+    "gen:http": "tsx scripts/generator.ts --http-boilerplate-release",
     "prepublish": "pnpm clean && pnpm build && pnpm gen"
   },
   "bugs": {
@@ -48,6 +49,6 @@
     "@vrn-deco/boilerplate-typescript-vue3-vant-h5plus-app": "workspace:*",
     "@vrn-deco/boilerplate-typescript-vue3-vant-mobile": "workspace:*",
     "@vrn-deco/boilerplate-typescript-vue3-vben-admin": "workspace:*",
-    "execa": "^5.1.1"
+    "execa": "^6.1.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-javascript-vue2-vant",
-  "version": "2.2.20",
+  "version": "2.2.21",
   "description": "boilerplate-javascript-vue2-vant",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
@@ -19,6 +19,7 @@
     "!boilerplate/yarn.lock",
     "!boilerplate/pnpm-lock.yaml"
   ],
+  "type": "module",
   "main": "index.js",
   "bin": "index.js",
   "repository": {

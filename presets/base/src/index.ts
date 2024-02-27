@@ -4,8 +4,9 @@ import os from 'os'
 import fs from 'fs-extra'
 import { execSync } from 'child_process'
 import minimist from 'minimist'
-import execa from 'execa'
+import { execaSync, execa } from 'execa'
 import { logger } from '@ombro/logger'
+import { isMain } from '@ombro/is-main'
 
 import type {
   CustomScriptType,
@@ -159,7 +160,7 @@ export class BaseRunner implements Runner {
   protected execCustomScript(scriptType: CustomScriptType, scriptFile: string) {
     const absoluteScriptFile = path.join(this.boiPackageDir, scriptFile)
     logger.verbose(`exec custom script: ${absoluteScriptFile}`)
-    execa.sync(
+    execaSync(
       scriptInterpreter[scriptType] ?? scriptInterpreter.sh,
       [absoluteScriptFile, `--name`, this.name, `--version`, this.version, `--author`, this.author],
       {
@@ -214,6 +215,8 @@ export const runner: PresetRunner = async (options) => {
   await new BaseRunner(options).run()
 }
 
-if (require.main === module) {
+// Direct run
+if (isMain(import.meta)) {
   runner({})
 }
+export { isMain }
