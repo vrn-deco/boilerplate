@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-rust-napi-rs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "boilerplate rust napi rs",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",

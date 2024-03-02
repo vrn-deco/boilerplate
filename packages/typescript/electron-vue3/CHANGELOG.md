@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-typescript-electron-vue3
 
+## 0.0.11
+
+### Patch Changes
+
+- Fix the exported runner
+
 ## 0.0.10
 
 ### Patch Changes

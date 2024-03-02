@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-typescript-monorepo-lerna-yarn
 
+## 1.0.4
+
+### Patch Changes
+
+- Fix the exported runner
+
 ## 1.0.3
 
 ### Patch Changes

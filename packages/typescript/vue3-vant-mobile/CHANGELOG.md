@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-typescript-vue3-vant-mobile
 
+## 1.1.20
+
+### Patch Changes
+
+- Fix the exported runner
+
 ## 1.1.19
 
 ### Patch Changes
