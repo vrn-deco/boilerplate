@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-javascript-vue-vant
 
+## 2.2.22
+
+### Patch Changes
+
+- Fix the exported runner
+
 ## 2.2.21
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-typescript-nest-typeorm",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "boilerplate typescript nest typeorm",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",

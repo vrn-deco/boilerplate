@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-typescript-vue3-vben-admin
 
+## 2.8.3
+
+### Patch Changes
+
+- Fix the exported runner
+
 ## 2.8.2
 
 ### Patch Changes

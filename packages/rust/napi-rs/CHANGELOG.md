@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-rust-napi-rs
 
+## 1.0.3
+
+### Patch Changes
+
+- Fix the exported runner
+
 ## 1.0.2
 
 ### Patch Changes

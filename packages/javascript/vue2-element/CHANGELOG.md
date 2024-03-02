@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-javascript-vue2-element
 
+## 2.2.22
+
+### Patch Changes
+
+- Fix the exported runner
+
 ## 2.2.21
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-typescript-nest-typeorm
 
+## 1.1.6
+
+### Patch Changes
+
+- Fix the exported runner
+
 ## 1.1.5
 
 ### Patch Changes
