@@ -1,5 +1,12 @@
 # @vrn-deco/boilerplate-typescript-vue3-vant-h5plus-app
 
+## 1.1.21
+
+### Patch Changes
+
+- Fixed path parse incorrect in Windows
+  - @vrn-deco/boilerplate-preset-npm@1.1.5
+
 ## 1.1.20
 
 ### Patch Changes

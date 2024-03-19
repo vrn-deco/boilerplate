@@ -1,5 +1,12 @@
 # @vrn-deco/boilerplate-typescript-electron-vue3
 
+## 0.0.12
+
+### Patch Changes
+
+- Fixed path parse incorrect in Windows
+  - @vrn-deco/boilerplate-preset-npm@1.1.5
+
 ## 0.0.11
 
 ### Patch Changes

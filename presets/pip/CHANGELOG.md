@@ -1,5 +1,13 @@
 # @vrn-deco/boilerplate-preset-pip
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies
+  - @vrn-deco/boilerplate-protocol@1.3.2
+  - @vrn-deco/boilerplate-preset-base@1.3.4
+
 ## 0.0.6
 
 ### Patch Changes

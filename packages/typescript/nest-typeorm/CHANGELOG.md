@@ -1,5 +1,12 @@
 # @vrn-deco/boilerplate-typescript-nest-typeorm
 
+## 1.1.7
+
+### Patch Changes
+
+- Fixed path parse incorrect in Windows
+  - @vrn-deco/boilerplate-preset-npm@1.1.5
+
 ## 1.1.6
 
 ### Patch Changes

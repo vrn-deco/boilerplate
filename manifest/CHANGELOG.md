@@ -1,5 +1,11 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.18
+
+### Patch Changes
+
+- Fixed path parse incorrect in Windows
+
 ## 1.2.17
 
 ### Patch Changes

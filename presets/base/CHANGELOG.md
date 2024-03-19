@@ -1,5 +1,12 @@
 # @vrn-deco/boilerplate-preset-base
 
+## 1.3.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @vrn-deco/boilerplate-protocol@1.3.2
+
 ## 1.3.3
 
 ### Patch Changes
