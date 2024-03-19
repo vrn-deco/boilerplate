@@ -1,5 +1,12 @@
 # @vrn-deco/boilerplate-typescript-monorepo-lerna-yarn
 
+## 1.0.5
+
+### Patch Changes
+
+- Fixed path parse incorrect in Windows
+  - @vrn-deco/boilerplate-preset-npm@1.1.5
+
 ## 1.0.4
 
 ### Patch Changes

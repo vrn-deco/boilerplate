@@ -1,5 +1,12 @@
 # @vrn-deco/boilerplate-javascript-vue2-element
 
+## 2.2.23
+
+### Patch Changes
+
+- Fixed path parse incorrect in Windows
+  - @vrn-deco/boilerplate-preset-npm@1.1.5
+
 ## 2.2.22
 
 ### Patch Changes

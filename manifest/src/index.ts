@@ -3,12 +3,13 @@
  * @Date: 2021-07-19 01:01:04
  * @Description:
  */
-
-import path from 'path'
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
 import fs from 'fs-extra'
+
 import type { Manifest } from '@vrn-deco/boilerplate-protocol'
 
-const __dirname = new URL('.', import.meta.url).pathname
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const MANIFEST_FILE = path.resolve(__dirname, '..', 'vrn-manifest.json')
 
 export function getManifest(): Manifest {

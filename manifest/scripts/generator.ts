@@ -4,7 +4,9 @@
  * @Description: generate vrn-manifest.json
  */
 
-import path from 'path'
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
+
 import fs from 'fs-extra'
 import { logger } from '@ombro/logger'
 import { isMain } from '@ombro/is-main'
@@ -14,7 +16,7 @@ import { archivePackage, getAllBoilerplatePackage } from './utils'
 import { httpBoilerplateArchive } from './http-boilerplate'
 import { LangPriority, UNKNOWN_PRIORITY } from './config'
 
-const __dirname = new URL('.', import.meta.url).pathname
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 if (isMain(import.meta)) {
   const manifest = genManifest()

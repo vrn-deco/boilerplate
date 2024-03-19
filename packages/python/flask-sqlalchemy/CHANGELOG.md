@@ -1,5 +1,12 @@
 # @vrn-deco/boilerplate-python-flask-sqlalchemy
 
+## 1.0.9
+
+### Patch Changes
+
+- Fixed path parse incorrect in Windows
+  - @vrn-deco/boilerplate-preset-pip@0.0.7
+
 ## 1.0.8
 
 ### Patch Changes

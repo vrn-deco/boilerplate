@@ -3,13 +3,15 @@
  * @Date: 2021-07-18 03:11:32
  * @Description: validator
  */
-import path from 'path'
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
+
 import fs from 'fs-extra'
 import Ajv from 'ajv'
 
 import type { VRNBoilerplateConfig } from './types'
 
-const __dirname = new URL('.', import.meta.url).pathname
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const boilerplateSchema = fs.readJSONSync(
   path.resolve(__dirname, '..', 'vrn-boilerplate.schema.json'),
 )
