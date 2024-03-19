@@ -1,6 +1,7 @@
+import { fileURLToPath } from 'node:url'
 import { isMain, runner } from '@vrn-deco/boilerplate-preset-base'
 
-const __dirname = new URL('.', import.meta.url).pathname
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 // Here, you should install and execute a preset or implement your own installation logic
 export default (opts) => {

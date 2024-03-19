@@ -1,4 +1,6 @@
-import path from 'path'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
 import fs from 'fs-extra'
 import { execaCommandSync } from 'execa'
 import {
@@ -11,7 +13,7 @@ import {
 
 import { recommendedLangs, deprecatedLangs } from './config'
 
-const __dirname = new URL('.', import.meta.url).pathname
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 export interface ScanPackage {
   name: string
