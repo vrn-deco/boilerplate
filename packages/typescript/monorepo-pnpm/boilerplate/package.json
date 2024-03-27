@@ -9,10 +9,11 @@
     "preinstall": "npx only-allow pnpm -y",
     "prepare": "husky install",
     "clean": "pnpm -r exec rimraf dist *.tsbuildinfo",
+    "dev": "pnpm --parallel -r dev",
     "build": "pnpm -r build",
     "test": "exit 0;",
     "lint": "eslint packages/*/src/**.ts",
-    "format": "prettier --write --parser typescript \"packages/**/*.ts\"",
+    "format": "prettier --write \"packages/**/*.ts\"",
     "commit": "git-cz"
   },
   "config": {
