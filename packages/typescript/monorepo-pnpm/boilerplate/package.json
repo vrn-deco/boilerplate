@@ -27,7 +27,7 @@
     ],
     "*.ts": [
       "eslint",
-      "prettier --write --parser typescript"
+      "prettier --write"
     ]
   },
   "devDependencies": {
