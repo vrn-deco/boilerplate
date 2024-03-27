@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-manifest",
-  "version": "1.2.18",
+  "version": "1.2.19",
   "description": "boilerplate manifest",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",
@@ -35,6 +35,7 @@
   "devDependencies": {
     "@ombro/is-main": "^0.1.1",
     "@ombro/logger": "^1.5.5",
+    "@vrn-deco/boilerplate-protocol": "workspace:*",
     "@types/fs-extra": "^9.0.13",
     "execa": "^6.1.0"
   }

@@ -6,6 +6,6 @@
   "techStack": "monorepo+pnpm+vite",
   "preset": "@vrn-deco/boilerplate-preset-npm",
   "tags": ["empty-boi", "library", "vite"],
-  "sort": 202,
+  "sort": 2,
   "recommended": true
 }

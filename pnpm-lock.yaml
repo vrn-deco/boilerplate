@@ -96,6 +96,9 @@ importers:
       '@types/fs-extra':
         specifier: ^9.0.13
         version: 9.0.13
+      '@vrn-deco/boilerplate-protocol':
+        specifier: workspace:*
+        version: link:../protocol
       execa:
         specifier: ^6.1.0
         version: 6.1.0
