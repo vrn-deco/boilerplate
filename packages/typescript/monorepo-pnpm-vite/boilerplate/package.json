@@ -5,6 +5,9 @@
   "author": "unknown",
   "license": "UNLICENSED",
   "packageManager": "pnpm@6.28.0",
+  "workspaces": [
+    "packages/*"
+  ],
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm -y",
