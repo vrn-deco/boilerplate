@@ -30,8 +30,8 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
     "@ombro/eslint-config-typescript": "^0.1.0",
     "@ombro/logger": "^1.5.5",
     "@ombro/ts-config": "^1.4.0",
