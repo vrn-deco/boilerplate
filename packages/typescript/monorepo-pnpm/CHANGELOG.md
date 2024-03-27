@@ -1,5 +1,12 @@
 # @vrn-deco/boilerplate-typescript-monorepo-pnpm
 
+## 1.0.6
+
+### Patch Changes
+
+- git-fetch-with-cli = true
+  Update monorepo boi-packages
+
 ## 1.0.5
 
 ### Patch Changes

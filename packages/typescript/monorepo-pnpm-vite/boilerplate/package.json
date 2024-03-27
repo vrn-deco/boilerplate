@@ -4,18 +4,19 @@
   "version": "0.0.0",
   "author": "unknown",
   "license": "UNLICENSED",
-  "packageManager": "yarn@1.22.0",
+  "packageManager": "pnpm@6.28.0",
   "workspaces": [
     "packages/*"
   ],
   "type": "module",
   "scripts": {
-    "preinstall": "npx only-allow yarn -y",
+    "preinstall": "npx only-allow pnpm -y",
     "prepare": "husky install",
-    "clean": "lerna exec rimraf dist *.tsbuildinfo",
-    "dev": "lerna run --parallel dev",
-    "build": "lerna run build",
-    "test": "exit 0;",
+    "clean": "pnpm -r exec rimraf dist *.tsbuildinfo",
+    "dev": "pnpm --parallel -r dev",
+    "build": "pnpm -r build",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "lint": "eslint packages/*/src/**.ts",
     "format": "prettier --write \"packages/**/*.ts\"",
     "commit": "git-cz"
@@ -41,14 +42,16 @@
     "@ombro/logger": "^2.0.2",
     "@ombro/tsconfig": "^2.0.0",
     "@types/node": "^18.19.3",
+    "@vitest/coverage-v8": "^1.4.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.12.0",
     "husky": "^8.0.3",
-    "lerna": "^8.1.2",
     "lint-staged": "^15.2.0",
     "prettier": "^2.8.8",
     "rimraf": "^5.0.5",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vite": "^5.2.6",
+    "vitest": "^1.4.0"
   }
 }
