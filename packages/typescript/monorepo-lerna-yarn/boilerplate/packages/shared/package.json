@@ -4,15 +4,16 @@
   "author": "unknown",
   "description": "> TODO: description",
   "license": "UNLICENSED",
+  "type": "module",
   "main": "dist/index.js",
   "exports": "./dist/index.js",
-  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "dev": "tsc -w -p tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {}
 }

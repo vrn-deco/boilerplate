@@ -1,1 +1,1 @@
-# Monorepo - Lerna + Yarn Workspace
+# Monorepo - PNPM Workspace

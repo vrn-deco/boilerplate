@@ -1,0 +1,4 @@
+{
+  "extends": "@ombro/tsconfig/tsconfig.esm.json",
+  "compilerOptions": {}
+}
