@@ -1,0 +1,21 @@
+{
+  "name": "@my/main",
+  "version": "0.0.0",
+  "author": "unknown",
+  "description": "> TODO: description",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsc -w -p tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@my/shared": "workspace:^"
+  }
+}
