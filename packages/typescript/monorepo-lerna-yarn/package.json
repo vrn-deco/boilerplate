@@ -1,6 +1,6 @@
 {
   "name": "@vrn-deco/boilerplate-typescript-monorepo-lerna-yarn",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "boilerplate typescript monorepo lerna yarn workspace",
   "author": "Cphayim <i@cphayim.me>",
   "homepage": "https://github.com/vrn-deco/boilerplate#readme",

@@ -1,7 +1,12 @@
 {
-  // If you plan to output ESM, use `tsconfig.esm.json`
-  "extends": "@ombro/ts-config/tsconfig.cjs.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "composite": true
-  }
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "declaration": false,
+    "paths": {
+      "@my/*": ["packages/*/src"]
+    }
+  },
+  "include": ["packages/*/src", "playgrounds/*/src"]
 }

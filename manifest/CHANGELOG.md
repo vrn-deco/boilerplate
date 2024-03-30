@@ -1,5 +1,12 @@
 # @vrn-deco/boilerplate-manifest
 
+## 1.2.19
+
+### Patch Changes
+
+- git-fetch-with-cli = true
+  Update monorepo boi-packages
+
 ## 1.2.18
 
 ### Patch Changes

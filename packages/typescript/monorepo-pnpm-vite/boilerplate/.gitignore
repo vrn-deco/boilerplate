@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+*.tsbuildinfo
+
+node_modules/
+dist/
+tmp/
+coverage/

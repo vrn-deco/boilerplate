@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@ombro/is-main": "^0.1.1",
-    "@ombro/logger": "^1.5.5",
+    "@ombro/logger": "^2.0.2",
     "@vrn-deco/boilerplate-protocol": "workspace:*",
     "execa": "^6.1.0",
     "fs-extra": "^10.0.0",

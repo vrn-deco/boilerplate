@@ -1,0 +1,39 @@
+{
+  "name": "@vrn-deco/boilerplate-typescript-monorepo-pnpm-vite",
+  "version": "1.0.6",
+  "description": "boilerplate typescript monorepo pnpm workspace vite",
+  "author": "Cphayim <i@cphayim.me>",
+  "homepage": "https://github.com/vrn-deco/boilerplate#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "*.{?(m|c)js,sh,py}",
+    "README*.md",
+    "CHANGELOG.md",
+    "vrn-boilerplate.json",
+    "boilerplate/",
+    "boilerplate/.gitignore",
+    "!boilerplate/package-lock.json",
+    "!boilerplate/yarn.lock",
+    "!boilerplate/pnpm-lock.yaml"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrn-deco/boilerplate.git",
+    "directory": "packages/typescript/monorepo-pnpm-vite"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/vrn-deco/boilerplate/issues"
+  },
+  "dependencies": {
+    "@vrn-deco/boilerplate-preset-npm": "workspace:*"
+  }
+}

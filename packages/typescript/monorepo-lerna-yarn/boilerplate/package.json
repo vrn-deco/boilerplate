@@ -4,23 +4,25 @@
   "version": "0.0.0",
   "author": "unknown",
   "license": "UNLICENSED",
+  "packageManager": "yarn@1.22.0",
   "workspaces": [
     "packages/*"
   ],
-  "packageManager": "yarn@1.22.0",
+  "type": "module",
   "scripts": {
     "preinstall": "npx only-allow yarn -y",
     "prepare": "husky install",
     "clean": "lerna exec rimraf dist *.tsbuildinfo",
+    "dev": "lerna run --parallel dev",
     "build": "lerna run build",
     "test": "exit 0;",
     "lint": "eslint packages/*/src/**.ts",
-    "format": "prettier --write --parser typescript \"packages/**/*.ts\"",
+    "format": "prettier --write \"packages/**/*.ts\"",
     "commit": "git-cz"
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "lint-staged": {
@@ -29,24 +31,24 @@
     ],
     "*.ts": [
       "eslint",
-      "prettier --write --parser typescript"
+      "prettier --write"
     ]
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
-    "@ombro/eslint-config-typescript": "^0.1.0",
-    "@ombro/logger": "^1.5.5",
-    "@ombro/ts-config": "^1.4.0",
-    "@types/node": "^17.0.23",
+    "@ombro/eslint-config-typescript": "^0.1.4",
+    "@ombro/logger": "^2.0.2",
+    "@ombro/tsconfig": "^2.0.0",
+    "@types/node": "^18.19.3",
     "commitizen": "^4.2.4",
-    "cz-lerna-changelog": "^2.0.3",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.12.0",
-    "husky": "^6.0.0",
-    "lerna": "^4.0.0",
-    "lint-staged": "^11.0.0",
-    "prettier": "^2.6.1",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.6.3"
+    "husky": "^8.0.3",
+    "lerna": "^8.1.2",
+    "lint-staged": "^15.2.0",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
   }
 }
