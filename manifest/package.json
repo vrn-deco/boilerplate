@@ -34,9 +34,9 @@
   },
   "devDependencies": {
     "@ombro/is-main": "^0.1.1",
-    "@ombro/logger": "^1.5.5",
-    "@vrn-deco/boilerplate-protocol": "workspace:*",
+    "@ombro/logger": "^2.0.2",
     "@types/fs-extra": "^9.0.13",
+    "@vrn-deco/boilerplate-protocol": "workspace:*",
     "execa": "^6.1.0"
   }
 }

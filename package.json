@@ -35,7 +35,7 @@
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
     "@ombro/eslint-config-typescript": "^0.1.4",
-    "@ombro/logger": "^1.5.5",
+    "@ombro/logger": "^2.0.2",
     "@ombro/tsconfig": "^2.0.0",
     "@types/inquirer": "^8.2.0",
     "@types/node": "^16.11.26",
